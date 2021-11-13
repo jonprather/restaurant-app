@@ -1,0 +1,138 @@
+.footer {
+  overflow: hidden;
+  max-width: 100%;
+  height: fit-content;
+  padding-bottom: 5rem;
+  background-color: #2a333e;
+  color: #fff;
+
+  @media only screen and (min-width: $bp-largest) {
+    height: 45rem;
+    padding-bottom: 0rem;
+  }
+
+  // typography to inherit for all footer paragraphs text
+  .footer,
+  div > p {
+    font-family: Poppins;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 2.1rem;
+  }
+
+  &-heading {
+    font-family: Poppins;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.3rem;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 3.2rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    margin-left: 11.4rem;
+    padding-top: 13rem;
+    height: 100%;
+
+    & > div {
+      padding-top: 5rem;
+      @media only screen and (min-width: $bp-largest) {
+        padding-top: 0rem;
+      }
+    }
+
+    @media only screen and (min-width: $bp-small) {
+      margin-left: 13.922rem;
+    }
+
+    @media only screen and (min-width: $bp-large) {
+      grid-template-columns: repeat(2, auto);
+    }
+    @media only screen and (min-width: $bp-largest) {
+      grid-template-columns: repeat(4, auto);
+      width: 98.878rem;
+      height: 22.4rem;
+    }
+  }
+
+  &__social {
+    @media only screen and (min-width: $bp-largest) {
+      margin-right: 20rem;
+      margin-top: 5rem;
+    }
+    margin-right: 10rem;
+    margin-top: 5rem;
+    & > span:hover {
+      color: #43609c; //facebook color;
+      cursor: pointer;
+    }
+  }
+
+  &__contact {
+    margin-right: 6.7rem;
+    & > div {
+      display: flex;
+      gap: 2.149rem;
+    }
+
+    &-address {
+      &-icon {
+        margin-top: 0.45rem;
+      }
+      &-text {
+      }
+    }
+    &-phone {
+      &-icon {
+        margin-top: 0.45rem;
+      }
+      &-text {
+      }
+    }
+    &-email {
+      &-icon {
+        margin-top: 0.65rem;
+      }
+      &-text {
+      }
+    }
+  }
+  &__support {
+    margin-right: 4.5rem;
+    & > p:hover {
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+  &__info {
+    & > p:hover {
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+  &__copyright {
+    margin-top: 6rem;
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+    @media only screen and (min-width: $bp-largest) {
+      margin-top: 18rem;
+      padding-bottom: 0rem;
+      justify-content: center;
+    }
+
+    &,
+    p {
+      line-height: 25;
+    }
+  }
+}

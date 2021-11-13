@@ -1,0 +1,17 @@
+@import "~tailwindcss/base";
+// @import "~tailwindcss/components";
+// @import "~tailwindcss/utilities";
+
+@import "base";
+@import "layout/layout";
+
+@import "typography";
+
+@import "layout/about";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/menu";
+@import "layout/nav";
+@import "layout/popular-menu";
+@import "layout/testomonials";
+@import "layout/newsletter";

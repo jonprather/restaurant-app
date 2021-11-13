@@ -1,0 +1,134 @@
+// <section class="about">
+//     <div class="about__container">
+//         <div class="about__container-image">
+//             <img src={{ asset('images/interior.jpg') }} alt="restaurant interior">
+//         </div>
+//         <div class="about__container-textbox">
+//             <h2 class="about__container-textbox-subtitle">
+
+//             </h2>
+//             <h1 class="about__container-textbox-title">
+
+//             </h1>
+//             <p class="about__container-textbox-paragraph">
+
+//             </p>
+
+//         </div>
+//     </div>
+// </section>
+.about {
+  z-index: 10;
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #ea0000;
+    opacity: 0.05;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    // box-sizing: content-box;
+    // padding:10.4rem 0;
+  }
+  margin: 0 auto;
+  padding-bottom: 10.4rem;
+  padding-top: 10.4rem;
+  // another 10.4 on next
+  // background: url('/images/background.jpg') no-repeat;
+  // -webkit-background-position: center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;//87.9rem,89.1rem ;
+  // // background-origin: content-box;
+
+  // could make the img on side disapper for smallest and instead use a bg image the blurry one
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    justify-content: center;
+
+    @media only screen and (min-width: $bp-large) {
+      flex-direction: row;
+      gap: 17.6rem;
+    }
+    @media only screen and (min-width: $bp-largest) {
+    }
+    &-image {
+      flex: 1 1 60%;
+      margin: 0 auto;
+      // padding: 0 8rem;
+      @media only screen and (min-width: $bp-large) {
+        padding: 0;
+      }
+
+      & img {
+        // border-radius: 2.4rem;
+        @media only screen and (min-width: $bp-large) {
+          margin-left: 10.2rem;
+          border-radius: 0.4rem;
+          padding: 0;
+        }
+      }
+    }
+    &-textbox {
+      @media only screen and (min-width: $bp-large) {
+        flex-direction: row;
+        flex: 1 1 60%;
+      }
+
+      &-subtitle {
+        font-family: $font-primary;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3rem;
+        letter-spacing: -0.04em;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+        @media only screen and (min-width: $bp-large) {
+          text-align: left;
+        }
+      }
+      &-title {
+        //typography first
+        font-family: Abhaya Libre ExtraBold;
+        font-size: 6.2rem;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 6rem;
+        letter-spacing: -0.08em;
+        text-align: center;
+        color: $color-primary;
+
+        margin-bottom: 2.1rem;
+
+        @media only screen and (min-width: $bp-large) {
+          text-align: left;
+        }
+      }
+      &-paragraph {
+        font-family: Poppins;
+        font-size: 1.7rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.55rem;
+        letter-spacing: 0em;
+        text-align: left;
+
+        max-width: 36ch;
+
+        margin: 0 auto;
+        @media only screen and (min-width: $bp-large) {
+          margin: 0;
+          max-width: 45ch;
+        }
+      }
+    }
+  }
+}

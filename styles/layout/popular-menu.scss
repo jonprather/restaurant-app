@@ -1,0 +1,172 @@
+.popular-products-heading-container {
+  margin-bottom: 5.3rem;
+
+  &-subheading {
+    margin-bottom: 0.08rem;
+  }
+}
+.popular-products {
+  // background-color:
+  margin: 0 auto;
+  max-width: 90%;
+  @media only screen and (min-width: $bp-small) {
+    max-width: 100%;
+  }
+  &-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 14.4rem;
+  }
+  &-container {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      // DEV CSS PADDING
+      margin-bottom: 5.5rem;
+    }
+    & > * {
+      // box-shadow: 0px 46px 25px -31px #0000001A;
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+      --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+    & > :not(:last-child) {
+      // margin-right:4rem;
+    }
+    // margin:0 auto; //idk how to get the centered grid itself
+
+    @media only screen and (min-width: $bp-small) {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      row-gap: 4rem;
+      column-gap: 3rem;
+      justify-content: center;
+    }
+
+    @media only screen and (min-width: $bp-large) {
+      grid-template-columns: repeat(2, auto);
+    }
+    @media only screen and (min-width: $bp-largest) {
+      grid-template-columns: repeat(3, auto);
+      justify-content: unset;
+    }
+    &__card {
+      height: 41.4rem;
+      width: 37rem;
+      border-radius: 2.4rem;
+      border: 1.2px solid #efefef;
+
+      &-image {
+        width: 20rem;
+        height: 20rem;
+
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+
+        width: 20rem;
+        height: 20rem;
+        clip-path: circle(50%);
+
+        & > img {
+          object-fit: cover;
+          // width: 40rem;
+          // height: 40rem;
+          // object-position: 50% 9.7rem;
+        }
+      }
+      &-body {
+        padding-left: 2.8rem;
+        &-rating {
+          height: 2.2rem;
+          // width:10.2rem;
+          margin-bottom: 1rem;
+
+          &-star.star {
+            // height: 1px;;
+            font-size: 2.2rem;
+          }
+        }
+        &-text {
+          font-family: $font-primary;
+          &--title {
+            font-family: inherit;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 3rem;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 0.6rem;
+          }
+          &--paragraph {
+            font-family: inherit;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2.6rem;
+            letter-spacing: -0.01em;
+            text-align: left;
+            margin-bottom: 1.6rem;
+          }
+        }
+      }
+      &-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 3.5rem;
+        padding-left: 2.8rem;
+        margin-bottom: 2rem;
+        &-price {
+          font-family: $font-primary;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 2rem;
+          line-height: 3rem;
+          color: #2a333e;
+          padding-right: 1rem;
+        }
+        &-favorite {
+          color: $color-primary;
+          //     color: white;
+          //     border-radius: 10px;
+          //     height: 3.2rem;
+          //     width:3.2rem;
+          //     text-align: center;
+          //    padding: .25rem;
+          font-size: 2.2rem;
+        }
+        &-icons {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
+.star {
+  // font-size: 2.2rem !important;
+  // color:black;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 1.8rem;
+
+  @media only screen and (min-width: $bp-large) {
+    width: 2rem;
+    height: 2rem;
+  }
+  @media only screen and (min-width: $bp-largest) {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  //uggh i need to overwrite these so design fits to spec but having toruble
+}

@@ -9,9 +9,11 @@ export default function CategoryList({ categories }) {
     <ul>
       {categories.map((category) => (
         <li key={category.slug}>
-          <Link href={`/categories/${category.slug}`}>
+          <Link href={`/menu/${category.slug}`}>
             <a>
-              <Category {...category} />
+              <button className='menu-heading-container-button menu-heading-container-subheading heading-small--black'>
+                <Category {...category} />
+              </button>
             </a>
           </Link>
         </li>

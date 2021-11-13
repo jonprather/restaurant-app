@@ -1,0 +1,70 @@
+// COLOR VARIABLES
+$color-primary: #ea0000;
+$color-primary-dark: #b28451;
+
+// $color-secondary: #101d2c;
+
+$color-black: #2a333e;
+$color-btn: #2a333e; // #444444; this was for lighter button
+//used for buttons and also text ; also the footer
+//FCC7C3
+//used for the extra background around a small oval around the bike icon
+$color-text-bold: #2a333e;
+// font-family: 'Abhaya Libre', serif;
+// font-family: 'Poppins', sans-serif;
+
+// FONT VARIABLES
+// $font-primary: "Poppins, sans-serif"; //
+$font-primary: "Poppins"; //, sans-serif;
+$font-display: "Abhaya Libre, sans-serif"; //replacement for Abhaya Libre ExtraBold  maybe not best as AL is serif
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-larger: 74em; // 1000px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+$bp-smallest: 37em;
+html {
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  } //undefined var
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 42%;
+  } //undefined var
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-black;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+}
+
+// Utility color
+.color-primary {
+  color: $color-primary;
+}
