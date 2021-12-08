@@ -4,6 +4,7 @@ import Link from "next/link";
 import commerce from "../lib/commerce";
 import CategoryList from "../components/CategoryList";
 import ProductList from "../components/ProductList";
+import Layout from "../components/Layout";
 
 export async function getStaticProps() {
   const merchant = await commerce.merchants.about();
@@ -22,23 +23,25 @@ export async function getStaticProps() {
 export default function IndexPage({ merchant, categories, products }) {
   return (
     <React.Fragment>
-      <h1>{merchant.business_name}</h1>
+      <Layout>
+        <h1>{merchant.business_name}</h1>
 
-      <h3>
-        <Link href="/categories">
-          <a>Categories</a>
-        </Link>
-      </h3>
+        <h3>
+          <Link href='/categories'>
+            <a>Categories</a>
+          </Link>
+        </h3>
 
-      <CategoryList categories={categories} />
+        <CategoryList categories={categories} />
 
-      <h3>
-        <Link href="/products">
-          <a>Products</a>
-        </Link>
-      </h3>
+        <h3>
+          <Link href='/products'>
+            <a>Products</a>
+          </Link>
+        </h3>
 
-      <ProductList products={products} />
+        <ProductList products={products} />
+      </Layout>
     </React.Fragment>
   );
 }

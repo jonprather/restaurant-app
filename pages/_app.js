@@ -1,6 +1,7 @@
 import { CartProvider } from "../context/cart";
 import React from "react";
-
+import { StoreProvider } from "../components/Store";
+//instead of the cart prodiver he uses the store it has more types
 import "../styles/global.scss";
 import Layout from "../components/Layout";
 import Head from "next/head";
@@ -21,9 +22,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
       <CartProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </CartProvider>
     </>
   );

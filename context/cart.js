@@ -51,4 +51,7 @@ export const CartProvider = ({ children }) => {
 };
 
 export const useCartState = () => useContext(CartStateContext);
+//ohh this is that shortcut so dont have to do it in the component which subscribes to the provider
+//now can jus tuse this like a method and get the values off of it like setCart in this state
+//and get the state of useCartState and the method setCart of the other one
 export const useCartDispatch = () => useContext(CartDispatchContext);

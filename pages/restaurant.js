@@ -1,27 +1,21 @@
 import React from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import About from "../components/About";
-
 import PopularProducts from "../components/PopularProducts";
 import Newsletter from "../components/Newsletter";
+import Layout from "../components/Layout";
 
-//
 import commerce from "../lib/commerce";
 
 export default function restuarant({ merchant, categories, products }) {
   return (
     <>
-      <Header />
-
-      {/* POpular products */}
-      <PopularProducts products={products} />
-      {/* ABOUT */}
-      <About />
-      <Newsletter />
-      {/* Newsletter */}
-      {/* {{-- \\\\\\\\\\\\\\\\\ FOOTER ////////////// --}} */}
-      {/* <x-footer /> */}
+      <Layout title='Yannal'>
+        <Header />
+        <PopularProducts products={products} />
+        <About />
+        <Newsletter />
+      </Layout>
     </>
   );
 }
