@@ -1,6 +1,6 @@
 import React from "react";
 // import Nav from "./Nav";
-
+import Image from "next/image";
 export default function Header() {
   return (
     <header class='header'>
@@ -19,6 +19,7 @@ export default function Header() {
           easy to ... This is a standard Indian mint chutney served with
           poppadums along with mint and lemon.
         </p>
+        <img src='hero-small.jpg' alt='Kebabs' />
         <div class='header-button-box'>
           <div class='header-button-wrapper'>
             <div class='btn-wrapper--1'>

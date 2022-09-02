@@ -29,7 +29,7 @@ export default function FormTest() {
     cvv: "",
     billingPostalZipcode: "",
   });
-
+  const [step, setStep] = useState(0);
   let schema = yup.object().shape({
     firstname: yup.string().required(),
   });
@@ -57,11 +57,15 @@ export default function FormTest() {
     const hasEmptyFields = Object.values(values).some(
       (element) => element === ""
     );
-    if (hasEmptyFields) {
+    if (false && hasEmptyFields) {
       toast.error("Please fill in all fields");
-    } else {
+    } else if (step < 2) {
       //submit to commerce js
-      console.log(values);
+      console.log(values, step);
+
+      setStep((prev) => ++prev);
+      console.log(values, step);
+
       //handleCaptureCheckout();
     }
   };
@@ -130,14 +134,11 @@ export default function FormTest() {
     //SO I RESET THE CART BY PASSIN GIN THE RIGHT ACTION OF SETCART AND THE PAYLOAD OF THE NEW CART
     //REDUCER WILL TAKE PREV STATE AND MERGE IT WIHT NEW STATE WHICH IS REALLY JUST  resetiing it
   };
-
-  return (
-    <Layout title='Checkout'>
-      <Link href='/events'>Go Back</Link>
-      <h1>Add Event</h1>
-      <ToastContainer />
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.grid}>
+  function stepForm(step) {
+    // var step = step || 0;
+    if (step === 0) {
+      return (
+        <>
           <div>
             <label htmlFor='firstname'>First Name</label>
             <input
@@ -168,7 +169,12 @@ export default function FormTest() {
               onChange={handleInputChange}
             />
           </div>
-          <div></div>
+        </>
+      );
+    }
+    if (step === 1) {
+      return (
+        <>
           <div>
             <label htmlFor='shippingName'>Shipping Name</label>
             <input
@@ -243,6 +249,12 @@ export default function FormTest() {
               onChange={handleInputChange}
             />
           </div>
+        </>
+      );
+    }
+    if (step === 2) {
+      return (
+        <>
           <div>
             <label htmlFor='cardNum'>Card Number</label>
             <input
@@ -293,7 +305,17 @@ export default function FormTest() {
               onChange={handleInputChange}
             />
           </div>
-        </div>
+        </>
+      );
+    }
+  }
+  return (
+    <Layout title='Checkout'>
+      <Link href='/events'>Go Back</Link>
+      <h1>Add Event {step}</h1>
+      <ToastContainer />
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.grid}>{stepForm(step)}</div>
 
         <input type='submit' value='checkout' className='btn' />
       </form>

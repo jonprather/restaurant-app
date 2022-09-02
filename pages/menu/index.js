@@ -43,6 +43,11 @@ export default function IndexPage({ merchant, categories, products }) {
             </h3>
 
             <CategoryList categories={categories} />
+            <div class='tabs tabs-boxed'>
+              <a class='tab'>Tab 1</a>
+              <a class='tab tab-active'>Tab 2</a>
+              <a class='tab'>Tab 3</a>
+            </div>
           </div>
           {/* HERE IS PRODUCT LIST FOR ALL IF WANT THIS HERE USE PRODUCT LIST for component WITH THESE STYLES
     //can change the product styles to fit with this or it will when i fix it anyway then can import it 
@@ -57,6 +62,7 @@ export default function IndexPage({ merchant, categories, products }) {
                 console.log(product);
                 return <MenuItem {...product} />;
               })}
+
               {/* <div class=' menu-container__card'>
                 <div class='popular-products-container__card-image'>
                   <img alt='Menu item ' src='image' />

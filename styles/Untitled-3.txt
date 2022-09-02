@@ -1,0 +1,96 @@
+ 
+    {
+      shippingName: "",
+      shippingCity: "",
+      shippingStreet: "",
+      shippingCountry: "",
+      shippingStateProvince: "",
+      shippingPostalZipcode: "",
+      shippingOption: "",
+    },
+    {
+      cardNum: "",
+      expMonth: "",
+      expYear: "",
+      cvv: "",
+      billingPostalZipcode: "",
+    },
+ 
+ 
+ <div className='form-group'>
+   <label htmlFor='shippingName'>shippingName</label> 
+   <input' 
+           id='firstName'
+           type='text'
+     {...formik.getFieldProps(shippingName)} 
+   /> 
+   {formik.touched.shippingName && formik.errors.shippingName ? (
+     <div>{formik.errors.shippingName}</div> 
+   ) : null} 
+ </div>
+ <div className='form-group'>
+   <label htmlFor='shippingCity'>shippingCity</label> 
+   <input' 
+           id='firstName'
+           type='text'
+     {...formik.getFieldProps(shippingCity)} 
+   /> 
+   {formik.touched.shippingCity && formik.errors.shippingCity ? (
+     <div>{formik.errors.shippingCity}</div> 
+   ) : null} 
+ </div>
+ <div className='form-group'>
+   <label htmlFor='shippingStreet'>shippingStreet</label> 
+   <input' 
+           id='firstName'
+           type='text'
+     {...formik.getFieldProps(shippingStreet)} 
+   /> 
+   {formik.touched.shippingStreet && formik.errors.shippingStreet ? (
+     <div>{formik.errors.shippingStreet}</div> 
+   ) : null} 
+ </div>
+ <div className='form-group'>
+   <label htmlFor='shippingCountry'>shippingCountry</label> 
+   <input' 
+           id='firstName'
+           type='text'
+     {...formik.getFieldProps(shippingCountry)} 
+   /> 
+   {formik.touched.shippingCountry && formik.errors.shippingCountry ? (
+     <div>{formik.errors.shippingCountry}</div> 
+   ) : null} 
+ </div>
+ <div className='form-group'>
+   <label htmlFor='shippingStateProvince'>shippingStateProvince</label> 
+   <input' 
+           id='firstName'
+           type='text'
+     {...formik.getFieldProps(shippingStateProvince)} 
+   /> 
+   {formik.touched.shippingStateProvince && formik.errors.shippingStateProvince ? (
+     <div>{formik.errors.shippingStateProvince}</div> 
+   ) : null} 
+ </div>
+ <div className='form-group'>
+   <label htmlFor='shippingPostalZipcode'>shippingPostalZipcode</label> 
+   <input' 
+           id='firstName'
+           type='text'
+     {...formik.getFieldProps(shippingPostalZipcode)} 
+   /> 
+   {formik.touched.shippingPostalZipcode && formik.errors.shippingPostalZipcode ? (
+     <div>{formik.errors.shippingPostalZipcode}</div> 
+   ) : null} 
+ </div>
+ <div className='form-group'>
+   <label htmlFor='shippingOption'>shippingOption </label> 
+   <input' 
+           id='firstName'
+           type='text'
+     {...formik.getFieldProps(shippingOption)} 
+   /> 
+   {formik.touched.shippingOption && formik.errors.shippingOption ? (
+     <div>{formik.errors.shippingOption}</div> 
+   ) : null} 
+ </div>

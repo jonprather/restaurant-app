@@ -10,6 +10,7 @@ import commerce from "../lib/commerce";
 export default function restuarant({ merchant, categories, products }) {
   return (
     <>
+      {/* <div>HI</div> */}
       <Layout title='Yannal'>
         <Header />
         <PopularProducts products={products} />
@@ -36,6 +37,7 @@ export async function getStaticProps() {
         categories,
         products,
       },
+      revalidate: 60,
     };
   } catch (e) {
     console.log(e);

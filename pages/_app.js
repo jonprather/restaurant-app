@@ -1,6 +1,7 @@
 import { CartProvider } from "../context/cart";
 import React from "react";
-import { StoreProvider } from "../components/Store";
+// import { StoreProvider } from "../components/Store";
+//need to change the path here
 //instead of the cart prodiver he uses the store it has more types
 import "../styles/global.scss";
 import Layout from "../components/Layout";
