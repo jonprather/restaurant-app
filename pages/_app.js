@@ -22,9 +22,11 @@ export default function MyApp({ Component, pageProps }) {
         <script src='https://use.fontawesome.com/30aff2d8c8.js'></script>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <CartProvider>
-        <Component {...pageProps} />
-      </CartProvider>
+      <Layout title='Yannal'>
+        <CartProvider>
+          <Component {...pageProps} />
+        </CartProvider>
+      </Layout>
     </>
   );
 }

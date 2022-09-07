@@ -11,12 +11,12 @@ export default function restuarant({ merchant, categories, products }) {
   return (
     <>
       {/* <div>HI</div> */}
-      <Layout title='Yannal'>
+      <>
         <Header />
         <PopularProducts products={products} />
         <About />
         <Newsletter />
-      </Layout>
+      </>
     </>
   );
 }
