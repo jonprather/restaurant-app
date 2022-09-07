@@ -1,28 +1,29 @@
 import Link from "next/link";
-
+import React from "react";
 import Category from "./Category";
 
 export default function CategoryList({ categories }) {
+  const [activeId, setActiveId] = React.useState(1);
   if (!categories) return null;
 
   return (
-    <ul>
+    <div class='tabs tabs-boxed'>
       {categories.map((category) => (
-        <li key={category.slug}>
-          <div class='tabs tabs-boxed'>
-            <a class='tab'>Tab 1</a>
-            <a class='tab tab-active'>Tab 2</a>
-            <a class='tab'>Tab 3</a>
-          </div>
-          <Link href={`/menu/${category.slug}`}>
-            <a>
-              <button className='menu-heading-container-button menu-heading-container-subheading heading-small--black'>
-                <Category {...category} />
-              </button>
+        <Link key={category.slug} href={`/menu/${category.slug}`}>
+          <a>
+            {/* //TODO  make text larger 
+            chanage default color to match my styles
+          
+           */}
+            <a
+              className={`tab ${category.id === activeId ? "tab-active" : ""} `}
+              onClick={() => setActiveId(category.id)}
+            >
+              <Category {...category} />
             </a>
-          </Link>
-        </li>
+          </a>
+        </Link>
       ))}
-    </ul>
+    </div>
   );
 }
