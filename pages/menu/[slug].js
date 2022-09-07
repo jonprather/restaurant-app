@@ -2,9 +2,11 @@ import React from "react";
 import MenuItem from "../../components/MenuItem";
 import Link from "next/link";
 import CategoryList from "../../components/CategoryList";
-
+import MenuCategories from "../../components/menuCategories";
 import commerce from "../../lib/commerce";
 import ProductList from "../../components/ProductList";
+import MenuHeader from "../../components/MenuHeader";
+import MenuPageTemplate from "../../components/MenuPageTemplate";
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
@@ -38,27 +40,6 @@ export async function getStaticPaths() {
   };
 }
 
-export default function MenuCategoryPage({ categories, products = null }) {
-  return (
-    <React.Fragment>
-      <div class='menu__content-title'>
-        {/* //THIS WILL BE CATEGORY LIST CAN MAP TO HAVE THESE STYLES */}
-        <h3>
-          <Link href='/categories'>
-            <a>Categories</a>
-          </Link>
-        </h3>
-        WTF HERE
-        <CategoryList categories={categories} />
-      </div>
-      <div class='menu-container-wrapper'>
-        <div class='menu-container'>
-          {products?.map((product) => {
-            console.log(product);
-            return <MenuItem {...product} />;
-          })}
-        </div>
-      </div>
-    </React.Fragment>
-  );
+export default function MenuCategoryPage({ categories, products = [] }) {
+  return <MenuPageTemplate categories={categories} products={products} />;
 }

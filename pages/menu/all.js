@@ -19,12 +19,6 @@ export async function getStaticProps() {
   };
 }
 
-export default function IndexPage({ merchant, categories = [], products }) {
-  return (
-    <MenuPageTemplate
-      merchant={merchant}
-      categories={categories}
-      products={products}
-    />
-  );
+export default function IndexPage({ categories = [], products }) {
+  return <MenuPageTemplate categories={categories} products={products} />;
 }
