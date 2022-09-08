@@ -1,9 +1,16 @@
 import Link from "next/link";
 import React from "react";
 import Category from "./Category";
-
+import { useRouter } from "next/router";
 export default function CategoryList({ categories: { categories } = [] }) {
-  const [activeId, setActiveId] = React.useState(1);
+  const router = useRouter();
+
+  const [activeId, setActiveId] = React.useState("All");
+
+  function isActiveTab(category) {
+    if (!router?.query?.slug && category?.slug === "all") return true;
+    return category?.slug?.toLowerCase() === router?.query?.slug?.toLowerCase();
+  }
   if (!categories) return null;
 
   return (
@@ -23,15 +30,18 @@ export default function CategoryList({ categories: { categories } = [] }) {
           {/* TODO again do i want this to function as a link or just a filter or spa with no route */}
           <a onClick={() => setActiveId(category.id)}>
             {/* //should  use the same logic as the nav bar
-              TODO replace these daisy ui classes either with tail wiind or my scss type classes
-              ie for color on hover also that underline on click should work as well
-              same bolding and stuff as well
+              TODO bad semantics here fix li nested in a
                */}
             <li
               className={` ${
-                category.id === activeId ? "menu__categories--tab-active" : ""
+                isActiveTab(category) ? "menu__categories--tab-active" : ""
               }`}
             >
+              {console.log(
+                category?.slug?.toLowerCase() +
+                  "  " +
+                  router?.query?.slug?.toLowerCase()
+              )}
               {category.name}
             </li>
 

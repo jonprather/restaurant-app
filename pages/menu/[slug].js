@@ -1,20 +1,12 @@
 import React from "react";
-import MenuItem from "../../components/MenuItem";
-import Link from "next/link";
-import CategoryList from "../../components/CategoryList";
-import MenuCategories from "../../components/menuCategories";
 import commerce from "../../lib/commerce";
-import ProductList from "../../components/ProductList";
-import MenuHeader from "../../components/MenuHeader";
 import MenuPageTemplate from "../../components/MenuPageTemplate";
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-
-  // const category = await commerce.categories.retrieve(slug, {
-  //   type: "slug",
-  // });
   const { data: categories } = await commerce.categories.list();
+  //here is the main difference between index and slug
+  //this gets data based on filtering by slug
   let { data: products } = await commerce.products.list({
     category_slug: slug,
   });
