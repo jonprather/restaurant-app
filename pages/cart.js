@@ -1,8 +1,10 @@
 import { useCartDispatch, useCartState } from "../context/cart";
-
+// TODO style cart
+//TODO add functionality...
 import commerce from "../lib/commerce";
+import CartContainer from "../components/CartContainer";
 
-function CartItem({ id, name, quantity, line_total }) {
+function CartItem({ id, name, quantity, line_total, price, image }) {
   const { setCart } = useCartDispatch();
 
   const handleUpdateCart = ({ cart }) => setCart(cart);
@@ -21,16 +23,16 @@ function CartItem({ id, name, quantity, line_total }) {
     commerce.cart.update(id, { quantity: quantity + 1 }).then(handleUpdateCart);
 
   return (
-    <div>
-      <p>{name}</p>
-      <p>{quantity}</p>
-      <p>{line_total.formatted_with_symbol}</p>
-      <div>
-        <button onClick={decrementQuantity}>-</button>
-        <button onClick={incrementQuantity}>+</button>
-      </div>
-      <button onClick={removeItem}>&times;</button>
-    </div>
+    <CartContainer
+      name={name}
+      price={price.formatted_with_symbol}
+      image={image?.url}
+      quantity={quantity}
+      line_total={line_total.formatted_with_symbol}
+      decrementQuantity={decrementQuantity}
+      incrementQuantity={incrementQuantity}
+      removeItem={removeItem}
+    />
   );
 }
 
@@ -39,21 +41,22 @@ export default function CartPage() {
 
   const isEmpty = line_items.length === 0;
 
-  if (isEmpty) return <p>Your cart is empty</p>;
-
+  // if (isEmpty) return <p>Your cart is empty</p>;
+  // TODO get image and pass it down
   return (
-    <div>
-      <h1>Cart</h1>
-
+    <div className='mx-auto w-10/12 shadow-lg mt-40 pb-40 rounded-lg max-w-6xl'>
+      <h1 className='text-center text-4xl uppercase font-medium p-8'> Cart</h1>
+      <hr />
       {line_items.map((item) => (
         <CartItem key={item.id} {...item} />
       ))}
 
       <hr />
 
-      <p>
-        <strong>Sub total:</strong> {subtotal.formatted_with_symbol}
-      </p>
+      <div className='flex justify-between text-3xl p-8 '>
+        <strong className='uppercase font-normal'>Sub total:</strong>
+        <span className='font-medium'>{subtotal?.formatted_with_symbol} </span>
+      </div>
     </div>
   );
 }
