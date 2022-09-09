@@ -53,8 +53,8 @@ export default function CartPage() {
 
       <hr />
 
-      <div className='flex justify-between text-3xl p-8 '>
-        <strong className='uppercase font-normal'>Sub total:</strong>
+      <div className='flex justify-end text-3xl p-8 '>
+        <strong className='uppercase font-normal mr-10'>Sub total:</strong>
         <span className='font-medium'>{subtotal?.formatted_with_symbol} </span>
       </div>
     </div>
