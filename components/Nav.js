@@ -79,7 +79,7 @@ export default function Nav() {
             />
           </svg>
         </i>
-        <i>
+        <a href='/cart'>
           <svg
             width='24'
             height='24'
@@ -112,7 +112,7 @@ export default function Nav() {
               fill='#2A333E'
             />
           </svg>
-        </i>
+        </a>
         <i>
           <svg
             width='24'
