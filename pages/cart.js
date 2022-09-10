@@ -49,7 +49,7 @@ export default function CartPage() {
     );
   // TODO get image and pass it down
   return (
-    <div className='mx-auto sm:w-10/12 shadow-lg mt-40 pb-40 rounded-lg max-w-6xl'>
+    <div className='max-w-6xl sm:w-10/12 mx-auto mt-40 mb-40 pb-40 shadow-lg rounded-lg'>
       {/* TODO fixing BEM naming this needs a name like CartContainer the other like CartItem */}
       {/* Have CartItem-> cartItem COntainer then the bem clas of CartItem COntainer in that seems jank */}
       {/* But its also just the cart page... so maybe call this cart page? */}
