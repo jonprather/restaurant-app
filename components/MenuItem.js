@@ -76,7 +76,7 @@ export default function MenuItem({ name, description, price, image, id }) {
           text={"add to cart"}
           Icon={() => {
             return (
-              <FaCartPlus className='text-3xl font-normal mr-6 text-gray-400' />
+              <FaCartPlus className='text-4xl font-normal mr-6 text-gray-400' />
             );
           }}
         />

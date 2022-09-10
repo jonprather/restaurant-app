@@ -1,5 +1,5 @@
 import React from "react";
-import { NavModal } from "./navModal";
+import { NavModal } from "@/components/organisms/navModal";
 export default function Nav() {
   return (
     <nav role='navigation' className='nav'>
