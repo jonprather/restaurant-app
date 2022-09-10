@@ -47,25 +47,21 @@ export default function CartPage() {
         Your cart is empty
       </h1>
     );
-  // TODO get image and pass it down
   return (
-    <div className='max-w-6xl sm:w-10/12 mx-auto mt-40 mb-40 pb-40 shadow-lg rounded-lg'>
-      {/* TODO fixing BEM naming this needs a name like CartContainer the other like CartItem */}
-      {/* Have CartItem-> cartItem COntainer then the bem clas of CartItem COntainer in that seems jank */}
-      {/* But its also just the cart page... so maybe call this cart page? */}
-      <h1 className=' text-4xl uppercase font-medium pl-10 pb-8'>Cart</h1>
+    <main className='max-w-6xl sm:w-10/12 mx-auto mt-40 mb-40 pb-16 pt-16 shadow-lg rounded-lg'>
+      <h1 className='text-4xl uppercase font-medium pl-10 pb-8'>Cart</h1>
       <hr className='hr-light mr-6 ml-6' />
 
       {line_items.map((item) => (
         <CartItem key={item.id} {...item} />
       ))}
 
-      <div className='flex justify-end text-3xl p-8 '>
-        <strong className='capitalize font-normal mr-8'>
+      <h2 className='flex justify-end text-3xl pt-10 pr-10'>
+        <span className='capitalize font-normal mr-8'>
           {subtotal?.formatted_with_symbol && "Sub total:"}
-        </strong>
+        </span>
         <span className='font-medium '>{subtotal?.formatted_with_symbol} </span>
-      </div>
-    </div>
+      </h2>
+    </main>
   );
 }
