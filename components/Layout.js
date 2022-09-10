@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Nav from "@/components/organisms/Nav";
+import Footer from "@/components/organisms/Footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
 

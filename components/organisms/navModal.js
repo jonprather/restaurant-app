@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Content } from "./navModalContent";
+import { Content } from "../navModalContent";
 
 export const NavModal = ({ children }) => {
   const [open, setOpen] = useState(false);
@@ -7,7 +7,9 @@ export const NavModal = ({ children }) => {
   return (
     <div className='nav__hamburger'>
       <button onClick={() => setOpen(true)}>
-        <i class='fa fa-bars nav__hamburger__icon fa-lg'>FUCK</i>
+        <i class='fa fa-bars nav__hamburger__icon fa-lg'>
+          {/* TODO implement proper Modal */}
+        </i>
       </button>
       {open && (
         <Content

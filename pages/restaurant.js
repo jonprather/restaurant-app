@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../components/Header";
-import About from "../components/About";
-import PopularProducts from "../components/PopularProducts";
-import Newsletter from "../components/Newsletter";
-import Layout from "../components/Layout";
+import Header from "@/components/Header";
+import About from "@/components/organisms/About";
+import PopularProducts from "@/components/organisms/PopularProducts";
+import Testomonials from "@/components/organisms/Testomonials";
 
-import commerce from "../lib/commerce";
+import Newsletter from "@/components/organisms//Newsletter";
+import commerce from "@/lib/commerce";
 
 export default function restuarant({ merchant, categories, products }) {
   return (
@@ -15,6 +15,7 @@ export default function restuarant({ merchant, categories, products }) {
         <Header />
         <PopularProducts products={products} />
         <About />
+        <Testomonials />
         <Newsletter />
       </>
     </>

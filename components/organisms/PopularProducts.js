@@ -1,5 +1,5 @@
 import React from "react";
-import MenuItem from "./MenuItem";
+import MenuItem from "@/components/MenuItem";
 export default function popularProducts({ products }) {
   return (
     <main class='popular-products' id='popular-products'>
