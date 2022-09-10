@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { FaStar } from "react-icons/fa";
-
+import Stars from "../molecules/Stars";
 const text1 = (
   <>
     <span class=''>“</span>Him rendered may attended concerns jennings reserved
@@ -88,14 +87,9 @@ function Testomonial({ imageURL, name, text, state, starsGiven }) {
         <h3 class='testomonials__body-card-container-name'>{name}</h3>
         <h4 class='testomonials__body-card-container-state'>{state}</h4>
         <div class='testomonials__body-card-container-rating flex'>
-          {Array.from({ length: starsGiven }, (_) => {
-            return (
-              <span class='color-primary testomonials__body-card-container-rating-star'>
-                <FaStar className='text-3xl' />
-              </span>
-            );
-          })}
+          <Stars starsGiven={starsGiven} />
         </div>
+
         <p class='testomonials__body-card-container-text'>{text}</p>
       </div>
     </div>

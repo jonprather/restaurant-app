@@ -4,6 +4,7 @@ import { useCartDispatch, useCartState } from "../context/cart";
 import commerce from "../lib/commerce";
 import { FaCartPlus } from "react-icons/fa";
 import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
+import Stars from "@/components/molecules/Stars";
 
 export default function MenuItem({ name, description, price, image, id }) {
   const { setCart } = useCartDispatch();
@@ -38,8 +39,9 @@ export default function MenuItem({ name, description, price, image, id }) {
         than workign like the other one does idk how to have it wait */}
       </div>
       <div class='popular-products-container__card-body'>
-        <div class='popular-products-container__card-body-rating'>
-          <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
+        <div class='popular-products-container__card-body-rating flex'>
+          <Stars starsGiven={5} />
+          {/* <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
             star
           </span>
           <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
@@ -53,7 +55,7 @@ export default function MenuItem({ name, description, price, image, id }) {
           </span>
           <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
             star
-          </span>
+          </span> */}
         </div>
         <div class='popular-products-container__card-body-text'>
           <h4 class='popular-products-container__card-body-text--title'>
