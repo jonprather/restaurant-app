@@ -1,6 +1,7 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { HiOutlineTrash } from "react-icons/hi";
+import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
 export default function CartContainer({
   name,
   quantity,
@@ -47,12 +48,21 @@ export default function CartContainer({
               </button>
             </div>
             <div className='cartContainer__item__text-container__change-quantity-save__save-button'>
-              <button onClick={() => removeItem()}>
+              <ButtonWithIcon
+                eventHandler={removeItem}
+                text={"delete"}
+                Icon={() => {
+                  return (
+                    <FaTrash className='text-3xl font-normal mr-6 text-gray-400' />
+                  );
+                }}
+              />
+              {/* <button onClick={() => removeItem()}>
                 <FaTrash className='text-3xl font-normal mr-6 text-gray-400' />{" "}
                 <span className='text-2xl font-normal text-gray-500'>
                   Delete
                 </span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

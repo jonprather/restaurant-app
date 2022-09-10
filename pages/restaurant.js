@@ -10,14 +10,11 @@ import commerce from "@/lib/commerce";
 export default function restuarant({ merchant, categories, products }) {
   return (
     <>
-      {/* <div>HI</div> */}
-      <>
-        <Header />
-        <PopularProducts products={products} />
-        <About />
-        <Testomonials />
-        <Newsletter />
-      </>
+      <Header />
+      <PopularProducts products={products} />
+      <About />
+      <Testomonials />
+      <Newsletter />
     </>
   );
 }

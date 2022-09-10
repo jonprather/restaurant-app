@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { useCartDispatch, useCartState } from "../context/cart";
 import commerce from "../lib/commerce";
+import { FaCartPlus } from "react-icons/fa";
+import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
 
 export default function MenuItem({ name, description, price, image, id }) {
   const { setCart } = useCartDispatch();
@@ -11,6 +13,14 @@ export default function MenuItem({ name, description, price, image, id }) {
   React.useEffect(() => {
     setImgURL(image?.url);
   }, [image?.url]);
+
+  function addItem() {
+    commerce.cart
+      .add(id, 5)
+      .then((response) =>
+        commerce.cart.contents().then((items) => console.log(items))
+      );
+  }
   return (
     <div class='popular-products-container__card'>
       <div class='popular-products-container__card-image'>
@@ -59,19 +69,33 @@ export default function MenuItem({ name, description, price, image, id }) {
           {price?.formatted_with_symbol}
         </p>
         {/* { id, name, quantity, line_total } */}
-        <button
+        <ButtonWithIcon
+          eventHandler={addItem}
+          text={"add to cart"}
+          Icon={() => {
+            return (
+              <FaCartPlus className='text-3xl font-normal mr-6 text-gray-400' />
+            );
+          }}
+        />
+        {/* <button
           onClick={() =>
-            console.log(
+            
               commerce.cart
                 .add(id, 5)
                 .then((response) =>
                   commerce.cart.contents().then((items) => console.log(items))
                 )
-            )
+            
           }
         >
-          Add To Cart
-        </button>
+          <FaCartPlus />
+      
+          <span>Add To Cart</span>
+        </button> */}
+        {/* TODO reuse the star component from the other page make it a molecule
+          can do same for icon plus text
+           */}
         {/* {{-- <div>
                         <span
                             class="material-icons color-primary popular-products-container__card-footer-favorite">favorite_border</span>

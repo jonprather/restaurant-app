@@ -1,11 +1,11 @@
 import React from "react";
-import { NavModal } from "./NavModal";
+import { NavModal } from "./navModal";
 export default function Nav() {
   return (
     <nav role='navigation' className='nav'>
       <div class='nav-brand'>
         <span>
-          <a href='/home'>
+          <a href='/'>
             <svg
               width='114'
               height='35'
@@ -52,13 +52,13 @@ export default function Nav() {
         </span>
         <span>
           {" "}
-          <a href='home#popular-products'>Our Specials</a>{" "}
+          <a href='#popular-products'>Our Specials</a>{" "}
         </span>
         <span>
-          <a href='home#about'> About Us </a>{" "}
+          <a href='#about'> About Us </a>{" "}
         </span>
         <span>
-          <a href='home#footer'>Our Locations</a>
+          <a href='#footer'>Our Locations</a>
         </span>{" "}
         <span>Our Chefs</span>
       </div>
@@ -150,13 +150,13 @@ export default function Nav() {
                 </span>
                 <span>
                   {" "}
-                  <a href='home#popular-products'>Our Specials</a>{" "}
+                  <a href='#popular-products'>Our Specials</a>{" "}
                 </span>
                 <span>
-                  <a href='home#about'> About Us </a>{" "}
+                  <a href='#about'> About Us </a>{" "}
                 </span>
                 <span>
-                  <a href='home#footer'>Our Locations</a>
+                  <a href='#footer'>Our Locations</a>
                 </span>{" "}
                 <span>Our Chefs</span>
               </div>
