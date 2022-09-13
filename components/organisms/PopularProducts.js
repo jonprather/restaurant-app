@@ -1,6 +1,12 @@
 import React from "react";
 import MenuItem from "@/components/MenuItem";
+import Loading from "@/components/atoms/Loading";
+import useProducts from "@/components/hooks/useProducts";
+
 export default function popularProducts({ products }) {
+  console.log("WTF IS PRO", products);
+  // TODO problem when use init props it hangs doesnt show up...
+  const updatedProducts = useProducts(products);
   return (
     <main class='popular-products' id='popular-products'>
       <div class='popular-products-heading-container'>
@@ -11,7 +17,8 @@ export default function popularProducts({ products }) {
       </div>
       <div class='popular-products-container-wrapper'>
         <div class='popular-products-container'>
-          {products.map((product) => {
+          <Loading />
+          {updatedProducts?.map((product) => {
             console.log(product);
             return <MenuItem {...product} />;
           })}

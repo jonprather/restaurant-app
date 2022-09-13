@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import About from "@/components/organisms/About";
 import PopularProducts from "@/components/organisms/PopularProducts";
 import Testomonials from "@/components/organisms/Testomonials";
-
 import Newsletter from "@/components/organisms//Newsletter";
 import commerce from "@/lib/commerce";
 
@@ -25,6 +24,7 @@ export async function getStaticProps() {
 
 export default function IndexPage({ products }) {
   // { merchant, categories, products }
+
   return (
     <>
       <Header />

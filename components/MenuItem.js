@@ -6,6 +6,7 @@ import { FaCartPlus } from "react-icons/fa";
 import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
 import Stars from "@/components/molecules/Stars";
 
+// TODO add some effects on transition to menu perhaps and buttons in general
 export default function MenuItem({ name, description, price, image, id }) {
   const { setCart } = useCartDispatch();
   const state = useCartState();
