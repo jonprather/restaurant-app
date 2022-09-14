@@ -29,6 +29,7 @@ export default function useProducts(initialSSGProps) {
     },
     [router?.query?.slug]
     //TODO refactor- is this slow to wait on the router should i find a way to  use state?
+    // yeah maybe do it with a context
   );
   const { data: products = [] } = useQuery(["products"], getProducts, {
     initialData: initialSSGProps,

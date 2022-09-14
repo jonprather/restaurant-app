@@ -24,9 +24,13 @@ export default function Header() {
           <div class='header-button-wrapper'>
             <div class='btn-wrapper--1'>
               <button class=' btn'>Add To Cart</button>
+              {/* TODO add kebabs to BE then add the add to cart button functionality here for it */}
             </div>
             <div class='btn-wrapper--2'>
               <button class=' btn btn--black'>Book a Table</button>
+              {/* TODO add a form to psuedo book a table 
+              a modal would be cool but can make it a page as well
+               */}
             </div>
           </div>
 

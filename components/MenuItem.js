@@ -5,6 +5,7 @@ import commerce from "../lib/commerce";
 import { FaCartPlus } from "react-icons/fa";
 import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
 import Stars from "@/components/molecules/Stars";
+import useAddToCart from "@/components/hooks/useAddToCart";
 
 // TODO add some effects on transition to menu perhaps and buttons in general
 export default function MenuItem({ name, description, price, image, id }) {
@@ -12,16 +13,13 @@ export default function MenuItem({ name, description, price, image, id }) {
   const state = useCartState();
   console.log("STATE", state);
   let [imgURL, setImgURL] = React.useState(null);
+  const addToCart = useAddToCart();
   React.useEffect(() => {
     setImgURL(image?.url);
   }, [image?.url]);
 
   function addItem() {
-    commerce.cart
-      .add(id, 5)
-      .then((response) =>
-        commerce.cart.contents().then((items) => console.log(items))
-      );
+    addToCart(id);
   }
   return (
     <div class='popular-products-container__card'>

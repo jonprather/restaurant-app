@@ -15,10 +15,9 @@ export async function getStaticProps() {
 
 export default function CategoriesPage({ categories }) {
   return (
-    <React.Fragment>
-      <h1 class=' text-3xl'>Categories dude</h1>
-
+    <>
+      <h3 className='text-4xl uppercase'>Categories</h3>
       <CategoryList categories={categories} />
-    </React.Fragment>
+    </>
   );
 }
