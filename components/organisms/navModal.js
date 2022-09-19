@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Content } from "../navModalContent";
-
+import Hamburger from "hamburger-react";
 export const NavModal = ({ children }) => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <div className='nav__hamburger'>
       <button onClick={() => setOpen(true)}>
         <i class='fa fa-bars nav__hamburger__icon fa-lg'>
-          {/* TODO implement proper Modal */}
+          <Hamburger />
         </i>
       </button>
-      {open && (
+      {isOpen && (
         <Content
           onClose={() => {
             setOpen(false);

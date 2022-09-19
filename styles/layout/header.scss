@@ -39,9 +39,11 @@
     }
 
     &::after {
-      display: block;
-      content: "";
-      padding-top: 56.25%;
+      @media only screen and (min-width: $bp-medium) {
+        display: block;
+        content: "";
+        padding-top: 56.25%;
+      }
     }
   }
 }

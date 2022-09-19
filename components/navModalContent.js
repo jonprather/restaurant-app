@@ -19,12 +19,10 @@ export const Content = ({ onClose, children }) => {
     },
     [ref.current]
   );
-  // Below is the 10 lines of code you need.
+
   useEffect(() => {
-    // Attach the listeners on component mount.
     document.addEventListener("click", clickListener);
     document.addEventListener("keyup", escapeListener);
-    // Detach the listeners on component unmount.
     return () => {
       document.removeEventListener("click", clickListener);
       document.removeEventListener("keyup", escapeListener);

@@ -17,8 +17,11 @@
   }
   display: flex;
   justify-content: space-between;
+  padding: 5.2rem 4rem 0rem 4rem;
+  @media screen and (min-width: 860px) {
+    padding: 5.2rem 8.4rem 0rem 5.822rem;
+  }
 
-  padding: 5.2rem 8.4rem 0rem 5.822rem;
   &-brand {
   }
   &-menu {
@@ -67,7 +70,7 @@
 
       color: black;
     }
-    @media only screen and (min-width: $bp-small) {
+    @media only screen and (min-width: 860px) {
       display: none;
     }
   }
@@ -77,7 +80,7 @@
     color: $color-black;
     position: relative;
     width: 20rem;
-
+    padding: 4rem 0px;
     @media screen and (max-width: 859.9px) {
       display: inline-block;
     }
@@ -127,9 +130,9 @@
   right: 0;
   width: 25rem;
   height: fit-content;
+  z-index: 10000;
   // background-color: transparent;
   background-color: rgba($color-black, 0.9);
-  padding: 1rem 0;
   border-radius: 6px;
   color: white;
   & > button {
@@ -142,4 +145,5 @@
   &__wrapper {
     position: relative;
   }
+  // TODO add animation ifor dropdown maybe a slide in
 }
