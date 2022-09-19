@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { useCartDispatch, useCartState } from "../context/cart";
-import commerce from "../lib/commerce";
 import { FaCartPlus } from "react-icons/fa";
 import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
 import Stars from "@/components/molecules/Stars";
@@ -9,9 +7,6 @@ import useAddToCart from "@/components/hooks/useAddToCart";
 
 // TODO add some effects on transition to menu perhaps and buttons in general
 export default function MenuItem({ name, description, price, image, id }) {
-  const { setCart } = useCartDispatch();
-  const state = useCartState();
-  console.log("STATE", state);
   let [imgURL, setImgURL] = React.useState(null);
   const addToCart = useAddToCart();
   React.useEffect(() => {

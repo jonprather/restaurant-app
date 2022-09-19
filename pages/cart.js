@@ -1,4 +1,3 @@
-import { useCartDispatch, useCartState } from "../context/cart";
 // TODO style cart
 //TODO add functionality...
 import commerce from "../lib/commerce";
@@ -11,8 +10,6 @@ import useUpdateQuantity from "@/components/hooks/useUpdateQuantity";
 
 //TODO add min heights for loading states for content shifting
 function CartItem({ id, name, quantity, line_total, price, image }) {
-  const { setCart } = useCartDispatch();
-  // const handleUpdateCart = ({ cart }) => setCart(cart);
   const handleQuantityUpdate = useUpdateQuantity();
 
   const removeItem = useDeleteFromCart();
@@ -90,7 +87,7 @@ export default function CartPage() {
       </h2>
       {/* TODO add nice looking button here like on home page */}
       <div class='btn-wrapper--1 w-0 mx-auto mt-20'>
-        <button class='btn '>Checkout</button>
+        <button class='btn capitalize'>Checkout</button>
         {/* TODO add kebabs to BE then add the add to cart button functionality here for it */}
       </div>
     </main>

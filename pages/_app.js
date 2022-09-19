@@ -63,17 +63,15 @@ export default function MyApp({ Component, pageProps }) {
         <script src='https://use.fontawesome.com/30aff2d8c8.js'></script>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <CartProvider>
-        <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <Layout title='Yannal'>
-              <Component {...pageProps} />
-              <ToastContainer position='bottom-left' />
-            </Layout>
-            <ReactQueryDevtools />
-          </Hydrate>
-        </QueryClientProvider>
-      </CartProvider>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Layout title='Yannal'>
+            <Component {...pageProps} />
+            <ToastContainer position='bottom-left' />
+          </Layout>
+          <ReactQueryDevtools />
+        </Hydrate>
+      </QueryClientProvider>
     </>
   );
 }
