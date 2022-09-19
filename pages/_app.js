@@ -1,4 +1,3 @@
-import { CartProvider } from "../context/cart";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { QueryClient, QueryClientProvider, QueryCache } from "react-query";
