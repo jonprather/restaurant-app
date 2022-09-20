@@ -6,6 +6,8 @@ import Stars from "@/components/molecules/Stars";
 import useAddToCart from "@/components/hooks/useAddToCart";
 
 // TODO add some effects on transition to menu perhaps and buttons in general
+//TODO could ...abrev the extra text then make it either expand or go to another page
+// or be a modal
 export default function MenuItem({ name, description, price, image, id }) {
   let [imgURL, setImgURL] = React.useState(null);
   const addToCart = useAddToCart();
