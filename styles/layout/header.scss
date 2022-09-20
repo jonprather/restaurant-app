@@ -15,6 +15,30 @@
     // overflow: visible;
     z-index: -1;
 
+    &--small {
+      position: relative;
+
+      @media only screen and (min-width: $bp-medium) {
+        display: none;
+      }
+      & > img {
+        position: relative;
+        right: 10rem;
+        @media only screen and (min-width: $bp-small) {
+          right: 40rem;
+        }
+        @media only screen and (min-width: $bp-smallest) {
+          right: 20rem;
+        }
+        // TODO reconsider the spacing on mid size 500-800px for the header text and buttosn seems a bit cramped on left
+        //when the hero is on top rather than on the right
+        overflow: hidden;
+        z-index: 0;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
     @media only screen and (min-width: $bp-medium) {
       background: url("/images/hero-large.jpg") no-repeat;
       -webkit-background-position: center;

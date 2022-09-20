@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header class='header'>
       <div class='header-hero-description'>
-        <div class=' header-brand'>
+        <div class='header-brand'>
           <div>
             <span class='heading-small'>Now Taking Online Orders </span>
             <h1 class=' header-kebabs heading heading-1'>Kebabs </h1>
@@ -14,6 +14,13 @@ export default function Header() {
           <span class='header-brand-price'>
             <span class='header-brand-price--sign'> $</span> 14.97{" "}
           </span>
+        </div>
+        <div className='header__hero--small'>
+          <img
+            className=''
+            src='/images/hero-small.jpg'
+            alt='kebab menu item'
+          />
         </div>
         <p class='header-paragraph'>
           Restaurant style Yogurt Mint Sauce is delicious dip which is quick and
