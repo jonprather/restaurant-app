@@ -32,3 +32,5 @@ export default function useAddToCart() {
 
 //TODO ok this works but do i need to invalidate queries or anything it seems to work as it is
 // also would be cool if there were stale data to show in cart before refresh .. or atlest loader....
+//Then next tackle the other card crud methods
+//have C,R just need the U fro INC or decr  then Delete

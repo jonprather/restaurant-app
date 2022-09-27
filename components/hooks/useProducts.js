@@ -30,6 +30,12 @@ export default function useProducts(initialSSGProps) {
     [router?.query?.slug]
     //TODO refactor- is this slow to wait on the router should i find a way to  use state?
     // yeah maybe do it with a context
+    //change RQ defualt settings esp for cart to update more often ie on refresh refocus
+    // etc atleas tin productino 
+    //DELETE should be a simple invalidate queries and a toast on Success
+    //test this based on cart page first loads then will it be not refreshed if go to main an add then come back
+    //can make the cart page empty state show up in the cart form
+    //can make the cart items have defaulst so not empty
   );
   const { data: products = [] } = useQuery(["products"], getProducts, {
     initialData: initialSSGProps,

@@ -31,4 +31,6 @@ export default function useIncrementQuantity() {
   return mutate;
 }
 //COULD make this optimistic updates or atlest setQuery CACHE
+// this works but is pretty slow so maybe optimistic updates would be better
+
 //TODO ok this works but do i need to invalidate queries or anything it seems to work as it is

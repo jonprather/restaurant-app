@@ -7,6 +7,7 @@ export default function popularProducts({ products }) {
   console.log("WTF IS PRO", products);
   // TODO problem when use init props it hangs doesnt show up...
   const updatedProducts = useProducts(products);
+  //this isnt filtering by slot type in menu
   return (
     <main class='popular-products' id='popular-products'>
       <div class='popular-products-heading-container'>
