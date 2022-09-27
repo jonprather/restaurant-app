@@ -1,22 +1,3 @@
-// <section class="about">
-//     <div class="about__container">
-//         <div class="about__container-image">
-//             <img src={{ asset('images/interior.jpg') }} alt="restaurant interior">
-//         </div>
-//         <div class="about__container-textbox">
-//             <h2 class="about__container-textbox-subtitle">
-
-//             </h2>
-//             <h1 class="about__container-textbox-title">
-
-//             </h1>
-//             <p class="about__container-textbox-paragraph">
-
-//             </p>
-
-//         </div>
-//     </div>
-// </section>
 .about {
   z-index: 10;
   position: relative;
@@ -68,6 +49,7 @@
 
       & img {
         // border-radius: 2.4rem;
+        opacity: 0.95;
         @media only screen and (min-width: $bp-large) {
           margin-left: 10.2rem;
           border-radius: 0.4rem;
