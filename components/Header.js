@@ -5,7 +5,7 @@ import { FaCartPlus } from "react-icons/fa";
 export default function Header() {
   return (
     <header class='header'>
-      <div class='header-hero-description'>
+      <div class='header-hero-description pl-8 md:pl-0'>
         <div class='header-brand'>
           <div>
             <span class='heading-small'>Now Taking Online Orders </span>
