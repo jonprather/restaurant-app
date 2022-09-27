@@ -7,6 +7,8 @@ import useAddToCart from "@/components/hooks/useAddToCart";
 
 // TODO add some effects on transition to menu perhaps and buttons in general
 //TODO could ...abrev the extra text then make it either expand or go to another page
+//TODO text overflows and there is a fixed hieght looks bad either chop text or make it extentible or modal or something
+//  on main page can probably just cut it then on menu page can make the card extendidible or bigger or some other solution
 // or be a modal
 export default function MenuItem({ name, description, price, image, id }) {
   let [imgURL, setImgURL] = React.useState(null);
@@ -22,36 +24,10 @@ export default function MenuItem({ name, description, price, image, id }) {
     <div class='popular-products-container__card'>
       <div class='popular-products-container__card-image'>
         <img src={image?.url} alt='menu item' />
-        {/* {imgURL && (
-          <Image
-            src={image?.url}
-            alt='menu item'
-            layout='fill'
-            objectFit='cover'
-            className={""}
-          />
-        )} */}
-        {/* I think i would have to use an image loader here... idk its getting the src prop as empty and failing rather
-        than workign like the other one does idk how to have it wait */}
       </div>
       <div class='popular-products-container__card-body'>
         <div class='popular-products-container__card-body-rating flex'>
           <Stars starsGiven={5} />
-          {/* <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
-            star
-          </span>
-          <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
-            star
-          </span>
-          <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
-            star
-          </span>
-          <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
-            star
-          </span>
-          <span class='material-icons star color-primary popular-products-container__card-body-rating-star'>
-            star
-          </span> */}
         </div>
         <div class='popular-products-container__card-body-text'>
           <h4 class='popular-products-container__card-body-text--title'>
@@ -66,7 +42,6 @@ export default function MenuItem({ name, description, price, image, id }) {
         <p class='popular-products-container__card-footer-price'>
           {price?.formatted_with_symbol}
         </p>
-        {/* { id, name, quantity, line_total } */}
         <ButtonWithIcon
           eventHandler={addItem}
           text={"add to cart"}
@@ -76,29 +51,6 @@ export default function MenuItem({ name, description, price, image, id }) {
             );
           }}
         />
-        {/* <button
-          onClick={() =>
-            
-              commerce.cart
-                .add(id, 5)
-                .then((response) =>
-                  commerce.cart.contents().then((items) => console.log(items))
-                )
-            
-          }
-        >
-          <FaCartPlus />
-      
-          <span>Add To Cart</span>
-        </button> */}
-        {/* TODO reuse the star component from the other page make it a molecule
-          can do same for icon plus text
-           */}
-        {/* {{-- <div>
-                        <span
-                            class="material-icons color-primary popular-products-container__card-footer-favorite">favorite_border</span>
-                        <span class="material-icons">share</span>
-                    </div> --}} */}
       </div>
     </div>
   );
