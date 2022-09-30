@@ -19,6 +19,17 @@ export default function MenuItem({ name, description, price, image, id }) {
   const [isOpen, setOpen] = React.useState(false);
 
   description = description.slice(3, -4);
+  description = description.slice(0, 1).toUpperCase() + description.slice(1);
+
+  const addPeriod = (text) => {
+    text = text.trim();
+    if (text[text.length - 1] !== ".") {
+      text += ".";
+    }
+    return text;
+  };
+  description = addPeriod(description);
+
   const trimmedDescription =
     description.split(" ").slice(0, 7).join(" ") + "...";
 
