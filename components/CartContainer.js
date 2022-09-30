@@ -21,8 +21,8 @@ export default function CartContainer({
         <div className='cartContainer__item__text-container'>
           <div className='cartContainer__item__text-container__name-price'>
             <div className=''>
-              <span>{name}</span>
-              <div className='text-2xl font-normal text-gray-500'>{price}</div>
+              <span className='capitalize'>{name}</span>
+              <div className='text-2xl font-normal text-gray-600'>{price}</div>
             </div>
             <div className='text-3xl '>{line_total}</div>
           </div>
