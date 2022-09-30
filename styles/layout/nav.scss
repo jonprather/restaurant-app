@@ -1,4 +1,6 @@
 .nav {
+  // TODO
+  //also would be cool to do it to whole page conditionally on modal being open
   &--bg-color {
     position: relative;
     &::after {
@@ -133,8 +135,11 @@
   z-index: 10000;
   // background-color: transparent;
   background-color: rgba($color-black, 0.9);
+
   border-radius: 6px;
   color: white;
+  backdrop-filter: blur(15px);
+
   & > button {
     color: white;
     font-size: 2.4rem;

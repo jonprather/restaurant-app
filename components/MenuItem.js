@@ -4,14 +4,24 @@ import { FaCartPlus } from "react-icons/fa";
 import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
 import Stars from "@/components/molecules/Stars";
 import useAddToCart from "@/components/hooks/useAddToCart";
+import { Modal } from "@/components/organisms/Modal";
 
 // TODO add some effects on transition to menu perhaps and buttons in general
 //TODO could ...abrev the extra text then make it either expand or go to another page
 //TODO text overflows and there is a fixed hieght looks bad either chop text or make it extentible or modal or something
 //  on main page can probably just cut it then on menu page can make the card extendidible or bigger or some other solution
-// or be a modal
+// TODO also not items are proper subsets so some things are only in ALL ie vegies are not meats , also egg adn pasta
+// TODO make it so the icons are flex end aligned to bottom bc right now they are dependent on what comes above and looks bad
+//
+//TODO add a nice modal on click for menu item details
 export default function MenuItem({ name, description, price, image, id }) {
   let [imgURL, setImgURL] = React.useState(null);
+  const [isOpen, setOpen] = React.useState(false);
+
+  description = description.slice(3, -4);
+  const trimmedDescription =
+    description.split(" ").slice(0, 7).join(" ") + "...";
+
   const addToCart = useAddToCart();
   React.useEffect(() => {
     setImgURL(image?.url);
@@ -21,7 +31,11 @@ export default function MenuItem({ name, description, price, image, id }) {
     addToCart(id);
   }
   return (
-    <div class='popular-products-container__card'>
+    <div
+      aria-role={"button"}
+      class='popular-products-container__card cursor-pointer flex flex-col justify-between'
+      onClick={() => setOpen(true)}
+    >
       <div class='popular-products-container__card-image'>
         <img src={image?.url} alt='menu item' />
       </div>
@@ -34,10 +48,52 @@ export default function MenuItem({ name, description, price, image, id }) {
             {name}
           </h4>
           <p class='popular-products-container__card-body-text--paragraph'>
-            {description.slice(3, -4)}
+            {trimmedDescription}
+            <Modal isOpen={isOpen} setOpen={setOpen}>
+              <div class='popular-products-container__card--modal p-4'>
+                <div class='popular-products-container__card-image'>
+                  <img src={image?.url} alt='menu item' />
+                </div>
+                <div class='popular-products-container__card-body'>
+                  <div class='popular-products-container__card-body-rating flex'>
+                    <Stars starsGiven={5} />
+                  </div>
+                  <div class='popular-products-container__card-body-text'>
+                    <h4 class='popular-products-container__card-body-text--title '>
+                      {name}
+                    </h4>
+                    <p class='popular-products-container__card-body-text--paragraph '>
+                      {description}
+                    </p>
+                  </div>
+                </div>
+                <div class='popular-products-container__card-footer pt-5'>
+                  <p class=' text-4xl text-white'>
+                    {price?.formatted_with_symbol}
+                  </p>
+                  <ButtonWithIcon
+                    eventHandler={addItem}
+                    text={"add to cart"}
+                    styles={"text-white"}
+                    Icon={() => {
+                      return (
+                        <FaCartPlus className='text-4xl font-normal mr-6 text-white' />
+                      );
+                    }}
+                  />
+                </div>
+              </div>
+            </Modal>
           </p>
+
+          {/* content should be like this card item itself just larger bigger description right?
+              so what do i do there? hmm perhaps not maybe make a basic design similar but 
+              //TODO ok proablay keep it WET at first bc not sure of the right abstracitons here
+              working on modal conten modal top styling and 
+               */}
         </div>
       </div>
+
       <div class='popular-products-container__card-footer'>
         <p class='popular-products-container__card-footer-price'>
           {price?.formatted_with_symbol}
