@@ -72,7 +72,7 @@ export default function CartPage() {
         <Loading color='black' />
       </div>
       <div className=''>
-        {cartData?.line_items.map((item) => (
+        {cartData?.line_items?.map((item) => (
           <CartItem key={item.id} {...item} />
         ))}
       </div>
