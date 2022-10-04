@@ -7,9 +7,10 @@ export async function getStaticProps({ params }) {
   const { data: categories } = await commerce.categories.list();
   //here is the main difference between index and slug
   //this gets data based on filtering by slug
-  let { data: products } = await commerce.products.list({
-    category_slug: slug,
-  });
+  let { data: products } = await commerce.products.list();
+  // {
+  // category_slug: slug,
+  // }  removed this
   if (!products) products = null;
   return {
     props: {
