@@ -1,8 +1,8 @@
 import React from "react";
-// import Nav from "./Nav";
-import Image from "next/image";
-import { FaCartPlus } from "react-icons/fa";
+import useAddToCart from "@/components/hooks/useAddToCart";
+
 export default function Header() {
+  const addToCart = useAddToCart();
   return (
     <header class='header'>
       <div class='header-hero-description pl-8 md:pl-0'>
@@ -30,13 +30,19 @@ export default function Header() {
         <div class='header-button-box'>
           <div class='header-button-wrapper'>
             <div class='btn-wrapper--1'>
-              <button class=' btn'>Add To Cart</button>
-              {/* TODO add kebabs to BE then add the add to cart button functionality here for it */}
+              <button
+                onClick={() => addToCart("prod_8XO3wpMZjNoYAz")}
+                class=' btn'
+              >
+                {" "}
+                Add To Cart
+              </button>
             </div>
             <div class='btn-wrapper--2'>
               <button class=' btn btn--black'>Book a Table</button>
               {/* TODO add a form to psuedo book a table 
               a modal would be cool but can make it a page as well
+              yeah could reuse the modal here
                */}
             </div>
           </div>

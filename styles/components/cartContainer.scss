@@ -10,6 +10,7 @@
     display: flex;
     min-height: 6.5rem;
     &__image-container {
+      clip-path: circle(50%);
       min-height: 11.78rem;
     }
     &__text-container {
