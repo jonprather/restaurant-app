@@ -62,23 +62,6 @@ export default function Nav() {
         </span>{" "}
       </div>
       <div class='nav-icons'>
-        <i>
-          <svg
-            width='19'
-            height='19'
-            viewBox='0 0 19 19'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
-              d='M15.8723 14.8116C17.1996 13.2436 18 11.2153 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C11.2153 18 13.2436 17.1996 14.8116 15.8723L17.4697 18.5303C17.7626 18.8232 18.2374 18.8232 18.5303 18.5303C18.8232 18.2374 18.8232 17.7626 18.5303 17.4697L15.8723 14.8116ZM16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9Z'
-              fill='#2A333E'
-            />
-          </svg>
-        </i>
-        {/* TODO make these Next Links */}
         <a href='/cart'>
           <svg
             width='24'
@@ -113,28 +96,6 @@ export default function Nav() {
             />
           </svg>
         </a>
-        <i>
-          <svg
-            width='24'
-            height='24'
-            viewBox='0 0 24 24'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
-              d='M12 10.5C13.933 10.5 15.5 8.933 15.5 7C15.5 5.067 13.933 3.5 12 3.5C10.067 3.5 8.5 5.067 8.5 7C8.5 8.933 10.067 10.5 12 10.5ZM12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z'
-              fill='#2A333E'
-            />
-            <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
-              d='M9 15.75C6.65279 15.75 4.75 17.6528 4.75 20V21C4.75 21.4142 4.41421 21.75 4 21.75C3.58579 21.75 3.25 21.4142 3.25 21V20C3.25 16.8244 5.82436 14.25 9 14.25H15C18.1756 14.25 20.75 16.8244 20.75 20V21C20.75 21.4142 20.4142 21.75 20 21.75C19.5858 21.75 19.25 21.4142 19.25 21V20C19.25 17.6528 17.3472 15.75 15 15.75H9Z'
-              fill='#2A333E'
-            />
-          </svg>
-        </i>
       </div>
       <NavModal>
         <div
@@ -142,17 +103,18 @@ export default function Nav() {
           role='navigation'
           aria-label='Toggle Open'
         >
+          {/* TODO these with # only work if on home page make them work regardless */}
           <span>
             <a href='/menu'>Menu</a>
           </span>
           <span>
-            <a href='#popular-products'>Our Specials</a>
+            <a href='/#popular-products'>Our Specials</a>
           </span>
           <span>
-            <a href='#about'> About Us </a>
+            <a href='/#about'> About Us </a>
           </span>
           <span>
-            <a href='#footer'>Our Locations</a>
+            <a href='/#footer'>Our Locations</a>
           </span>
           <a href='/cart'>
             {/* <svg
