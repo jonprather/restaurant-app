@@ -63,14 +63,13 @@ export default function CartPage() {
   //   );
   // }
 
+  // if (!cartData) return <Loading color='black' />;
   return (
     <main className='max-w-6xl sm:w-10/12 mx-auto mt-40 mb-40 pb-16 pt-16 shadow-lg rounded-lg relative'>
       <h1 className='text-4xl uppercase font-medium pl-10 pb-8'>Cart</h1>
 
       <hr className='hr-light mr-6 ml-6' />
-      <div className='mx-auto w-60 pt-20 left-2/4 -translate-x-2/4 absolute'>
-        <Loading color='black' />
-      </div>
+      <div className='mx-auto w-60 pt-20 left-2/4 -translate-x-2/4 absolute'></div>
       <div className=''>
         {cartData?.line_items?.map((item) => (
           <CartItem key={item.id} {...item} />
@@ -87,8 +86,7 @@ export default function CartPage() {
       </h2>
       {/* TODO add nice looking button here like on home page */}
       <div class='btn-wrapper--1 w-0 mx-auto mt-20'>
-        <button class='btn capitalize'>Checkout</button>
-        {/* TODO add kebabs to BE then add the add to cart button functionality here for it */}
+        {cartData && <button class='btn capitalize'>Checkout</button>}
       </div>
     </main>
   );
