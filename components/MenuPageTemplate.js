@@ -1,6 +1,6 @@
 import React from "react";
 import MenuCategories from "./menuCategories";
-import MenuHeader from "./MenuHeader";
+import SectionHeader from "./Sectionheader";
 import MenuItemsContainer from "./MenuItemsContainer";
 export default function MenuPageTemplate({
   merchant,
@@ -10,7 +10,7 @@ export default function MenuPageTemplate({
   return (
     <div class='pb-80'>
       <main id='menu' class='menu__content mt-40'>
-        <MenuHeader />
+        <SectionHeader heading={"Menu"} subheading={"Delicious Delicacies "} />
         <MenuCategories categories={categories} />
         <MenuItemsContainer products={products} />
       </main>
