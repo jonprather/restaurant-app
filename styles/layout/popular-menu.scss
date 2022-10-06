@@ -39,6 +39,8 @@
       // margin-right:4rem;
     }
     // margin:0 auto; //idk how to get the centered grid itself
+    // TODO fix grid with the auto
+    // grid-template-columns: repeat(auto-fit,minmax() );
 
     @media only screen and (min-width: $bp-small) {
       max-width: 100%;

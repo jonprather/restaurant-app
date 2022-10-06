@@ -28,6 +28,21 @@
   }
 
   &-container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    row-gap: 4rem;
+    column-gap: 3rem;
+    justify-content: center;
+    // grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    // TODO improve upon this to make above work instead
+    @media only screen and (min-width: $bp-large) {
+      grid-template-columns: repeat(2, auto);
+    }
+    @media only screen and (min-width: $bp-largest) {
+      grid-template-columns: repeat(3, auto);
+      justify-content: unset;
+    }
+
     &-wrapper {
       display: flex;
       justify-content: center;
@@ -48,19 +63,6 @@
         var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
 
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    row-gap: 4rem;
-    column-gap: 3rem;
-    justify-content: center;
-
-    @media only screen and (min-width: $bp-large) {
-      grid-template-columns: repeat(2, auto);
-    }
-    @media only screen and (min-width: $bp-largest) {
-      grid-template-columns: repeat(3, auto);
-      justify-content: unset;
-    }
     &__card {
       height: 38.5rem;
       width: 37rem;
