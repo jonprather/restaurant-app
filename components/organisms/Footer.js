@@ -133,7 +133,9 @@ export default function Footer() {
         </div>
       </div>
       <div class='footer__copyright'>
-        <p>&copy2021 JP Restaurant </p>
+        <p class='text-center text-gray-100 text-xs'>
+          &copy;2022 JP Corp. All rights reserved.
+        </p>
       </div>
     </footer>
   );
