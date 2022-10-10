@@ -1,36 +1,46 @@
 import React, { useState, useEffect } from "react";
+
 import SectionHeader from "@/components/Sectionheader";
 import { toast } from "react-toastify";
+import { z } from "zod";
 
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
-import { SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+const MAX = 13;
+const MIN = 1;
 
-import { setErrorMap, z } from "zod";
 export default function booking() {
-  const [date, setDate] = useState(new Date());
-  const [dateError, setDateError] = useState(null);
+  const [state, setState] = useState({
+    email: "",
+    guests: 0,
+    date: new Date(),
+  });
+
   const [touched, setTouched] = useState({
     email: false,
     guests: false,
     date: false,
   });
-  const buttonIsEnabled = () => {
-    return Object.values(touched).every((ele) => ele);
-  };
-  const [guests, setGuests] = useState(0);
-  const [guestsError, setGuestsError] = useState(null);
+
   const [errorsObj, setErrorsObj] = useState({
-    email: null,
-    guests: null,
-    date: null,
+    email: false,
+    guests: false,
+    date: false,
   });
 
-  const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState(null);
+  const resetState = () => {
+    setState({
+      email: "",
+      guests: 0,
+      date: new Date(),
+    });
+    setTouched({
+      email: false,
+      guests: false,
+      date: false,
+    });
+  };
 
   const FormSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }),
@@ -40,50 +50,44 @@ export default function booking() {
         invalid_type_error: "That's not a date!",
       })
       .min(new Date()),
-    guests: z.number().gt(0).lt(13),
+    guests: z.number().gte(MIN).lte(MAX),
   });
-  const resetState = () => {
-    setEmail("");
-    setGuests(0);
-    setDate(new Date());
-    setTouched({
-      email: false,
-      guests: false,
-      date: false,
-    });
-  };
 
   const handleSubmit = () => {
-    const errorMsg = getZodErrorMessage(FormSchema.shape.email, email);
-    setEmailError(errorMsg);
-
-    const guestsErrorMsg = getZodErrorMessage(FormSchema.shape.guests, guests);
-    setGuestsError(guestsErrorMsg);
-
-    const dateErrorMsg = getZodErrorMessage(FormSchema.shape.date, date);
-    setDateError(dateErrorMsg);
-    !touched.date && setDateError("Please choose a date and time.");
-
-    //since these are all the same could put all in one error obj reuires them to be on same obj so its computable rather then be part of
-    //aset state name hmm i like this abstraction pattern use one object to use computed properties allowing mroe abstraction
-
-    // then could do somehting like
-    // ["email", "guests", "date"];
-    Object.keys(errorsObj).forEach((key) => {
-      // so i can abstract the difference which is the name and reuse a common more generic form of name rahter than specificName
-      //couldnt this also be like a reducer pattern??
-      const errorMsg = getZodErrorMessage(FormSchema.shape[key], key);
-      console.log("IN here dude", errorMsg);
-
+    Object.entries(state).forEach(([key, value]) => {
+      const errorMsg = getZodErrorMessage(FormSchema.shape[key], value);
       setErrorsObj((prev) => {
         return { ...prev, [key]: errorMsg };
       });
     });
-    if (!FormSchema.safeParse({ email, guests, date }).success) return;
-    resetState();
-    toast.success("Table Registered");
+    !touched.date &&
+      setErrorsObj((prev) => {
+        return { ...prev, date: "Please choose a date and time." };
+      });
+
+    if (FormSchema.safeParse({ ...state }).success) {
+      toast.success(`Table Registered for ${state.guests} on ${state.date}`);
+      resetState();
+    }
   };
 
+  const handleDateChange = (date) => {
+    setState((prev) => {
+      return { ...prev, date: date };
+    });
+    setErrorsObj((prev) => {
+      return { ...prev, date: null };
+    });
+    setTouched((prev) => {
+      return { ...prev, date: true };
+    });
+    const errorMsg = getZodErrorMessage(FormSchema.shape.date, date);
+    setErrorsObj((prev) => {
+      return { ...prev, date: errorMsg };
+    });
+  };
+
+  // UTILITY Fns
   const getZodErrorMessage = (schema, testObj) => {
     const data = schema.safeParse(testObj);
     if (data.success) return null;
@@ -91,18 +95,12 @@ export default function booking() {
     return formatted._errors.join(". ");
   };
 
-  const handleDateChange = (date) => {
-    setDateError(null);
-    setDate(date);
-    setTouched((prev) => {
-      return { ...prev, date: true };
-    });
-    const dateErrorMsg = getZodErrorMessage(FormSchema.shape.date, date);
-    setDateError(dateErrorMsg);
+  const showDisableButtonStyle = function () {
+    return (
+      Object.values(touched).some((hasBeenTouched) => !hasBeenTouched) ||
+      Object.values(errorsObj)?.some((hasError) => hasError)
+    );
   };
-  useEffect(() => {
-    console.log(errorsObj);
-  }, [errorsObj]);
 
   return (
     <div className='booking pt-40 pb-40  z-50 '>
@@ -135,20 +133,27 @@ export default function booking() {
                 id='email'
                 type='text'
                 placeholder='Email'
-                value={email}
+                value={state.email}
                 onChange={(e) => {
-                  setEmailError(null);
-                  setEmail(e.target.value);
+                  setErrorsObj((prev) => {
+                    return { ...prev, email: null };
+                  });
+                  setState((prev) => {
+                    return { ...prev, email: e.target.value };
+                  });
                 }}
                 onBlur={(e) => {
                   const errorMsg = getZodErrorMessage(
                     FormSchema.shape.email,
                     e.target.value
                   );
+
+                  setErrorsObj((prev) => {
+                    return { ...prev, email: errorMsg };
+                  });
                   setTouched((prev) => {
                     return { ...prev, email: true };
                   });
-                  setEmailError(errorMsg);
                 }}
               />
               <p className='text-red-500 text-md italic'>{errorsObj.email}</p>
@@ -165,26 +170,32 @@ export default function booking() {
                 className='shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
                 id='guests'
                 type='number'
-                max={9}
-                min={1}
-                placeholder='1'
-                value={guests}
+                max={MAX}
+                min={MIN}
+                placeholder='0'
+                value={state.guests}
                 onChange={(e) => {
-                  setGuestsError(null);
-                  setGuests(+e.target.value);
+                  setErrorsObj((prev) => {
+                    return { ...prev, guests: null };
+                  });
+                  setState((prev) => {
+                    return { ...prev, guests: +e.target.value };
+                  });
                 }}
                 onBlur={(e) => {
                   const errorMsg = getZodErrorMessage(
                     FormSchema.shape.guests,
                     +e.target.value
                   );
+                  setErrorsObj((prev) => {
+                    return { ...prev, guests: errorMsg };
+                  });
                   setTouched((prev) => {
                     return { ...prev, guests: true };
                   });
-                  setGuestsError(errorMsg);
                 }}
               />
-              {guestsError && (
+              {errorsObj.guests && (
                 <p className='text-red-500 text-md italic'>
                   {errorsObj.guests}
                 </p>
@@ -198,7 +209,7 @@ export default function booking() {
                 Date
               </label>
               <DatePicker
-                selected={date}
+                selected={state.date}
                 onChange={handleDateChange}
                 showTimeSelect
                 dateFormat='Pp'
@@ -209,15 +220,11 @@ export default function booking() {
             <div className='flex items-center justify-between z-50'>
               <button
                 className={`bg-red-500 hover:bg-red-700 text-white text-xl font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline ${
-                  (emailError ||
-                    guestsError ||
-                    dateError ||
-                    !buttonIsEnabled()) &&
+                  showDisableButtonStyle() &&
                   "cursor-pointer bg-gray-400 hover:bg-gray-400"
                 }`}
                 type='button'
                 onClick={handleSubmit}
-                disabled={emailError || guestsError || dateError}
               >
                 Register
               </button>
