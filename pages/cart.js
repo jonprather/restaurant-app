@@ -1,12 +1,9 @@
-// TODO style cart
-//TODO add functionality...
-import commerce from "../lib/commerce";
 import CartContainer from "../components/CartContainer";
 import useCart from "@/components/hooks/useCart";
 import { useIsFetching } from "react-query";
-import Loading from "@/components/atoms/Loading";
 import useDeleteFromCart from "@/components/hooks/useDeleteFromCart";
 import useUpdateQuantity from "@/components/hooks/useUpdateQuantity";
+import Loading from "@/components/atoms/Loading";
 
 //TODO add min heights for loading states for content shifting
 function CartItem({ id, name, quantity, line_total, price, image }) {
@@ -23,7 +20,7 @@ function CartItem({ id, name, quantity, line_total, price, image }) {
     quantity > 1
       ? handleQuantityUpdate({ id, quantity: quantity - 1 })
       : deleteItem(id);
-    // TODO fixme- it says 'removed undefined' when this is called here
+    // TODO fixme- it says 'removed item' when this is called here would be better with name ( it was undefined how to fix)
   };
   const incrementQuantity = () => {
     handleQuantityUpdate({ id, quantity: quantity + 1 });
@@ -44,31 +41,39 @@ function CartItem({ id, name, quantity, line_total, price, image }) {
 }
 
 export default function CartPage() {
-  const cartData = useCart();
+  const { data: cartData, isLoading } = useCart();
   const isEmpty = cartData?.line_items?.length === 0;
   const isFetching = useIsFetching();
   //why is the stale data not showing
   // hmm when switching pages that cache key is not stored its gone...
   //s,aybe the SSG?
 
-  //TODO fix the loadign spinner hanging off bottom of empty cart UI when cart loading
+  //TODO
   //so also the empty cart look is bad pu tthis back in or something better would be good
   // if had the stale data but idk yet
   // if (isEmpty) {
-  //   // TODO this triggers after is fetching anyway
-  //   return (
-  //     <h3 className='p-40 font-medium capitalize text-4xl text-center min-h-screen'>
-  //       Your cart is empty
-  //     </h3>
-  //   );
-  // }
 
-  // if (!cartData) return <Loading color='black' />;
   return (
-    <main className='max-w-6xl sm:w-10/12 mx-auto mt-40 mb-40 pb-16 pt-16 shadow-lg rounded-lg relative'>
+    <main
+      className={`max-w-6xl sm:w-10/12 mx-auto mt-40 mb-40 pb-16 pt-16 shadow-lg rounded-lg relative ${
+        isLoading && " pb-64"
+      }`}
+    >
       <h1 className='text-4xl uppercase font-medium pl-10 pb-8'>Cart</h1>
 
       <hr className='hr-light mr-6 ml-6' />
+
+      {/* TODO fix this it janks out when this way for fetching bc takes up space
+but fi set to absolute it doesnt fit */}
+
+      <div
+        className={`absolute  left-2/4 -translate-x-2/4  ${
+          isLoading && "pt-4"
+        }`}
+      >
+        <Loading />
+      </div>
+
       <div className='mx-auto w-60 pt-20 left-2/4 -translate-x-2/4 absolute'></div>
       <div className=''>
         {cartData?.line_items?.map((item) => (

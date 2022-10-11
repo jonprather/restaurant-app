@@ -17,14 +17,24 @@ export default function Loading({
   const isFetching = useIsFetching();
   if (isLoading) {
     return (
-      <PuffLoader color={color} loading={isLoading} css={override} size={150} />
+      <PuffLoader
+        color={color}
+        loading={isLoading}
+        css={override}
+        size={150}
+        className='absolute left-2/4 -translate-x-2/4'
+      />
     );
   }
   return (
-    <PuffLoader color={color} loading={isFetching} css={override} size={150} />
+    <PuffLoader
+      color={color}
+      loading={isFetching}
+      cssOverride={override}
+      size={150}
+    />
   );
 }
 {
   /* <PuffLoader color={color} loading={isFetching} css={override} size={150} /> */
 }
-// TODO this is jank falling in grid not in center
