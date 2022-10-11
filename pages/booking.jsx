@@ -6,6 +6,7 @@ import { z } from "zod";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { getZodErrorMessage } from "@/lib/zodHelpers";
 
 const MAX = 13;
 const MIN = 1;
@@ -85,14 +86,6 @@ export default function booking() {
     setErrorsObj((prev) => {
       return { ...prev, date: errorMsg };
     });
-  };
-
-  // UTILITY Fns
-  const getZodErrorMessage = (schema, testObj) => {
-    const data = schema.safeParse(testObj);
-    if (data.success) return null;
-    const formatted = data.error.format();
-    return formatted._errors.join(". ");
   };
 
   const showDisableButtonStyle = function () {
