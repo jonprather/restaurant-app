@@ -51,11 +51,14 @@ export default function Nav() {
           <a href='/menu'>Menu</a>
         </span>
         <span>
-          {" "}
-          <a href='#popular-products'>Our Specials</a>{" "}
+          <a href='/booking'>Reservations</a>
         </span>
         <span>
-          <a href='#about'> About Us </a>{" "}
+          {" "}
+          <a href='/#popular-products'>Our Specials</a>{" "}
+        </span>
+        <span>
+          <a href='/#about'> About Us </a>{" "}
         </span>
         <span>
           <a href='#footer'>Our Locations</a>
@@ -103,9 +106,11 @@ export default function Nav() {
           role='navigation'
           aria-label='Toggle Open'
         >
-          {/* TODO these with # only work if on home page make them work regardless */}
           <span>
             <a href='/menu'>Menu</a>
+          </span>
+          <span>
+            <a href='/booking'>Reservations</a>
           </span>
           <span>
             <a href='/#popular-products'>Our Specials</a>
@@ -114,7 +119,7 @@ export default function Nav() {
             <a href='/#about'> About Us </a>
           </span>
           <span>
-            <a href='/#footer'>Our Locations</a>
+            <a href='#footer'>Our Locations</a>
           </span>
           <a href='/cart'>
             {/* <svg
