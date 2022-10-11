@@ -4,7 +4,7 @@ import commerce from "@/lib/commerce";
 import { useRouter } from "next/router";
 import { useCategoryStore } from "@/store/index.js";
 
-export default function useProducts(initialSSGProps) {
+export default function useProducts() {
   const router = useRouter();
   const activeCategory = useCategoryStore((state) => state.activeCategory);
 
@@ -30,7 +30,6 @@ export default function useProducts(initialSSGProps) {
     //change RQ defualt settings esp for cart to update more often ie on refresh refocus
   );
   const { data: products = [] } = useQuery(["products"], getProducts, {
-    initialData: initialSSGProps, //im not sure about this
     select: filterMenuItems,
   });
 

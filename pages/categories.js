@@ -12,8 +12,7 @@ export async function getStaticProps() {
     },
   };
 }
-// TODO fix categories to be mor ehelpful and reflective of categories
-// based on styles or types like entree vs dessert vs appetizer
+
 export default function CategoriesPage({ categories }) {
   return (
     <>

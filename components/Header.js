@@ -30,11 +30,11 @@ export default function Header() {
           poppadums along with mint and lemon.
         </p>
         <div className='header-button-box'>
-          <div className='header-button-wrapper'>
-            <div className='btn-wrapper--1'>
+          <div className='header-button-wrapper '>
+            <div className='btn-wrapper--1 '>
               <button
                 onClick={() => addToCart("prod_8XO3wpMZjNoYAz")}
-                className=' btn'
+                className=' btn  '
               >
                 {" "}
                 Add To Cart

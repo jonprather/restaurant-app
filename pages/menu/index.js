@@ -3,19 +3,27 @@ import React from "react";
 import commerce from "../../lib/commerce";
 
 import MenuPageTemplate from "../../components/MenuPageTemplate";
+import { dehydrate, QueryClient, useQuery } from "react-query";
 
 export async function getStaticProps() {
   let { data: categories } = await commerce.categories.list();
-  const { data: products } = await commerce.products.list();
+
+  const queryClient = new QueryClient();
+  const getProducts = async () => {
+    const data = await commerce.products.list();
+    return data;
+  };
+
+  await queryClient.prefetchQuery(["products"], getProducts);
 
   return {
     props: {
       categories,
-      products,
+      dehydratedState: dehydrate(queryClient),
     },
   };
 }
 
-export default function IndexPage({ merchant, categories = [], products }) {
-  return <MenuPageTemplate categories={categories} products={products} />;
+export default function IndexPage({ categories = [] }) {
+  return <MenuPageTemplate categories={categories} />;
 }

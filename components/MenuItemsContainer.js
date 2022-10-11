@@ -2,8 +2,8 @@ import React from "react";
 import MenuItem from "./MenuItem";
 import useProducts from "@/components/hooks/useProducts";
 
-export default function MenuItemsContainer({ products }) {
-  const updatedProducts = useProducts(products);
+export default function MenuItemsContainer() {
+  const updatedProducts = useProducts();
 
   return (
     <div class='menu-container-wrapper'>

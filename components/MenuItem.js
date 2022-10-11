@@ -7,13 +7,7 @@ import useAddToCart from "@/components/hooks/useAddToCart";
 import { Modal } from "@/components/organisms/Modal";
 
 // TODO add some effects on transition to menu perhaps and buttons in general
-//TODO could ...abrev the extra text then make it either expand or go to another page
-//TODO text overflows and there is a fixed hieght looks bad either chop text or make it extentible or modal or something
-//  on main page can probably just cut it then on menu page can make the card extendidible or bigger or some other solution
-// TODO also not items are proper subsets so some things are only in ALL ie vegies are not meats , also egg adn pasta
-// TODO make it so the icons are flex end aligned to bottom bc right now they are dependent on what comes above and looks bad
-//
-//TODO add a nice modal on click for menu item details
+
 export default function MenuItem({ name, description, price, image, id }) {
   let [imgURL, setImgURL] = React.useState(null);
   const [isOpen, setOpen] = React.useState(false);
@@ -43,7 +37,7 @@ export default function MenuItem({ name, description, price, image, id }) {
   }
   return (
     <div
-      aria-role={"button"}
+      role={"button"}
       class='popular-products-container__card cursor-pointer flex flex-col justify-between'
       onClick={() => setOpen(true)}
     >
@@ -109,6 +103,9 @@ export default function MenuItem({ name, description, price, image, id }) {
         <p class='popular-products-container__card-footer-price'>
           {price?.formatted_with_symbol}
         </p>
+        {/* TODO could add a condition if item is in cart then goto cart link appears
+        //can check if is in cart by comparing id to ids in cart 
+         */}
         <ButtonWithIcon
           eventHandler={addItem}
           text={"add to cart"}

@@ -5,30 +5,43 @@ import PopularProducts from "@/components/organisms/PopularProducts";
 import Testomonials from "@/components/organisms/Testomonials";
 import Newsletter from "@/components/organisms//Newsletter";
 import commerce from "@/lib/commerce";
-
-// shit lags wtf how do i fix it lagging on dom updates...
+import { dehydrate, QueryClient, useQuery } from "react-query";
 export async function getStaticProps() {
-  const merchant = await commerce.merchants.about();
-  const { data: categories } = await commerce.categories.list();
-  const { data: products } = await commerce.products.list();
+  try {
+    const { data: categories } = await commerce.categories.list();
 
-  return {
-    props: {
-      merchant,
-      categories,
-      products,
-    },
-    // time: 1000,////????
-  };
+    const queryClient = new QueryClient();
+    // throw new Error();
+    const getProducts = async () => {
+      const data = await commerce.products.list();
+      return data;
+    };
+    await queryClient.prefetchQuery(["products"], getProducts);
+
+    return {
+      props: {
+        categories,
+        dehydratedState: dehydrate(queryClient),
+      },
+      revalidate: 60,
+
+      // time: 1000,////????
+    };
+  } catch (e) {
+    console.log(e);
+    return {
+      redirect: {
+        destination: "/",
+        statusCode: 307,
+      },
+    };
+  }
 }
-
-export default function IndexPage({ products }) {
-  // { merchant, categories, products }
-
+export default function IndexPage() {
   return (
     <>
       <Header />
-      <PopularProducts products={products} />
+      <PopularProducts />
       <About />
       <Testomonials />
       <Newsletter />

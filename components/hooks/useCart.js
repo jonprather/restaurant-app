@@ -11,7 +11,7 @@ export default function useCart() {
   // ie bc increment and decrement just change quantity
   //delete changes the whole cart in a sense bc removes an item
   //well regardless can still have one for fetching the whole cart
-  const { data } = useQuery(["cart"], getCart);
+  const { data, isLoading } = useQuery(["cart"], getCart);
 
-  return data;
+  return { data, isLoading };
 }

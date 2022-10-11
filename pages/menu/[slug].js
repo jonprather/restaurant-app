@@ -1,21 +1,24 @@
 import React from "react";
 import commerce from "../../lib/commerce";
 import MenuPageTemplate from "../../components/MenuPageTemplate";
+import { dehydrate, QueryClient, useQuery } from "react-query";
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const { data: categories } = await commerce.categories.list();
-  //here is the main difference between index and slug
-  //this gets data based on filtering by slug
-  let { data: products } = await commerce.products.list();
-  // {
-  // category_slug: slug,
-  // }  removed this
-  if (!products) products = null;
+
+  const queryClient = new QueryClient();
+  const getProducts = async () => {
+    const data = await commerce.products.list();
+    return data;
+  };
+
+  await queryClient.prefetchQuery(["products"], getProducts);
+
   return {
     props: {
       categories,
-      products,
+      dehydratedState: dehydrate(queryClient),
     },
   };
 }
@@ -29,10 +32,11 @@ export async function getStaticPaths() {
         slug: category.slug,
       },
     })),
+
     fallback: false,
   };
 }
 
-export default function MenuCategoryPage({ categories, products = [] }) {
-  return <MenuPageTemplate categories={categories} products={products} />;
+export default function MenuCategoryPage({ categories }) {
+  return <MenuPageTemplate categories={categories} />;
 }

@@ -3,8 +3,8 @@ import MenuItem from "@/components/MenuItem";
 import Loading from "@/components/atoms/Loading";
 import useProducts from "@/components/hooks/useProducts";
 
-export default function popularProducts({ products }) {
-  const updatedProducts = useProducts(products);
+export default function popularProducts() {
+  const updatedProducts = useProducts();
 
   return (
     <main class='popular-products' id='popular-products'>

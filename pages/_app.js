@@ -66,7 +66,7 @@ export default function MyApp({ Component, pageProps }) {
         <Hydrate state={pageProps.dehydratedState}>
           <Layout title='Yannal'>
             <Component {...pageProps} />
-            <ToastContainer position='bottom-left' />
+            <ToastContainer position='top-left' />
           </Layout>
           <ReactQueryDevtools />
         </Hydrate>
