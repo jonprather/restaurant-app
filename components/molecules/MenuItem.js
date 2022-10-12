@@ -38,42 +38,42 @@ export default function MenuItem({ name, description, price, image, id }) {
   return (
     <div
       role={"button"}
-      class='popular-products-container__card cursor-pointer flex flex-col justify-between'
+      className='popular-products-container__card cursor-pointer flex flex-col justify-between'
       onClick={() => setOpen(true)}
     >
-      <div class='popular-products-container__card-image'>
+      <div className='popular-products-container__card-image'>
         <img src={image?.url} alt='menu item' />
       </div>
-      <div class='popular-products-container__card-body'>
-        <div class='popular-products-container__card-body-rating flex'>
+      <div className='popular-products-container__card-body'>
+        <div className='popular-products-container__card-body-rating flex'>
           <Stars starsGiven={5} />
         </div>
-        <div class='popular-products-container__card-body-text'>
-          <h4 class='popular-products-container__card-body-text--title'>
+        <div className='popular-products-container__card-body-text'>
+          <h4 className='popular-products-container__card-body-text--title'>
             {name}
           </h4>
-          <p class='popular-products-container__card-body-text--paragraph'>
+          <div className='popular-products-container__card-body-text--paragraph'>
             {trimmedDescription}
             <Modal isOpen={isOpen} setOpen={setOpen}>
-              <div class='popular-products-container__card--modal p-4'>
-                <div class='popular-products-container__card-image'>
+              <div className='popular-products-container__card--modal p-4'>
+                <div className='popular-products-container__card-image'>
                   <img src={image?.url} alt='menu item' />
                 </div>
-                <div class='popular-products-container__card-body'>
-                  <div class='popular-products-container__card-body-rating flex'>
+                <div className='popular-products-container__card-body'>
+                  <div className='popular-products-container__card-body-rating flex'>
                     <Stars starsGiven={5} />
                   </div>
-                  <div class='popular-products-container__card-body-text'>
-                    <h4 class='popular-products-container__card-body-text--title '>
+                  <div className='popular-products-container__card-body-text'>
+                    <h4 className='popular-products-container__card-body-text--title '>
                       {name}
                     </h4>
-                    <p class='popular-products-container__card-body-text--paragraph '>
+                    <p className='popular-products-container__card-body-text--paragraph '>
                       {description}
                     </p>
                   </div>
                 </div>
-                <div class='popular-products-container__card-footer pt-5'>
-                  <p class=' text-4xl text-white'>
+                <div className='popular-products-container__card-footer pt-5'>
+                  <p className=' text-4xl text-white'>
                     {price?.formatted_with_symbol}
                   </p>
                   <ButtonWithIcon
@@ -89,7 +89,7 @@ export default function MenuItem({ name, description, price, image, id }) {
                 </div>
               </div>
             </Modal>
-          </p>
+          </div>
 
           {/* content should be like this card item itself just larger bigger description right?
               so what do i do there? hmm perhaps not maybe make a basic design similar but 
@@ -99,8 +99,8 @@ export default function MenuItem({ name, description, price, image, id }) {
         </div>
       </div>
 
-      <div class='popular-products-container__card-footer'>
-        <p class='popular-products-container__card-footer-price'>
+      <div className='popular-products-container__card-footer'>
+        <p className='popular-products-container__card-footer-price'>
           {price?.formatted_with_symbol}
         </p>
         {/* TODO could add a condition if item is in cart then goto cart link appears

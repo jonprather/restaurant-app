@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Category from "@/components/Category";
+import Category from "@/components/atoms/Category";
 
 export default function CategoryList({ categories: { categories } = [] }) {
   if (!categories) return null;
@@ -10,9 +10,9 @@ export default function CategoryList({ categories: { categories } = [] }) {
   });
 
   return (
-    <ul class='flex gap-4 menu__categories'>
+    <ul className='flex gap-4 menu__categories'>
       {categories?.map((category) => (
-        <Category category={category} />
+        <Category key={category.name} category={category} />
       ))}
     </ul>
   );

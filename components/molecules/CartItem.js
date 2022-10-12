@@ -2,7 +2,7 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { HiOutlineTrash } from "react-icons/hi";
 import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
-export default function CartContainer({
+export default function CartItem({
   name,
   quantity,
   line_total,
@@ -27,7 +27,7 @@ export default function CartContainer({
             <div className='text-3xl '>{line_total}</div>
           </div>
           <div className='cartContainer__item__text-container__quatity-stock'>
-            {/* <div>availablity idk how to access this</div> */}
+            {/* <div>availablity</div> */}
           </div>
           <div className='cartContainer__item__text-container__change-quantity-save'>
             <div className='cartContainer__item__text-container__change-quantity-save__quantity-button font-light'>
@@ -35,7 +35,7 @@ export default function CartContainer({
                 onClick={() => decrementQuantity()}
                 data-action='decrement'
               >
-                <span class='text-gray-500 font-normal'>−</span>
+                <span className='text-gray-500 font-normal'>−</span>
               </button>
               <span className='pr-6 pl-6 font-normal text-gray-600'>
                 {quantity}

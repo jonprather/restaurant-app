@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Content } from "../navModalContent";
+import { Content } from "@/components/molecules/navModalContent";
 import Hamburger from "hamburger-react";
 export const NavModal = ({ children }) => {
   const [isOpen, setOpen] = useState(false);
@@ -7,7 +7,7 @@ export const NavModal = ({ children }) => {
   return (
     <div className='nav__hamburger'>
       <button onClick={() => setOpen(true)}>
-        <i class='fa fa-bars nav__hamburger__icon fa-lg'>
+        <i className='fa fa-bars nav__hamburger__icon fa-lg'>
           <Hamburger />
         </i>
       </button>

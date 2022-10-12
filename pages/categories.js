@@ -1,7 +1,7 @@
 import React from "react";
 
 import commerce from "../lib/commerce";
-import CategoryList from "../components/CategoryList";
+import CategoryList from "../components/molecules/CategoryList";
 
 export async function getStaticProps() {
   const { data: categories } = await commerce.categories.list();

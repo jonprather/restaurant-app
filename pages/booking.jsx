@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import SectionHeader from "@/components/Sectionheader";
+import SectionHeader from "@/components/molecules/SectionHeader";
 import { toast } from "react-toastify";
 import { z } from "zod";
 
@@ -117,7 +117,7 @@ export default function booking() {
             <div className='mb-4'>
               <label
                 className='block text-gray-700 text-lg font-bold mb-2'
-                for='email'
+                htmlFor='email'
               >
                 Email
               </label>
@@ -155,7 +155,7 @@ export default function booking() {
             <div className='mb-4 z-50'>
               <label
                 className='block text-gray-700 text-lg font-bold mb-2'
-                for='guests'
+                htmlFor='guests'
               >
                 Guests
               </label>
@@ -197,7 +197,7 @@ export default function booking() {
             <div className='mb-6 z-50'>
               <label
                 className='block text-gray-700 text-lg font-bold mb-2'
-                for='Date'
+                htmlFor='Date'
               >
                 Date
               </label>

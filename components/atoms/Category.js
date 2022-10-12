@@ -34,10 +34,11 @@ export default function Category({ category }) {
   }, [router?.query?.slug]);
   return (
     <Link key={category?.slug} href={`/menu/${category?.slug}`} scroll={false}>
-      <a onClick={() => handleClick()}>
-        <li className={` ${isActiveTab ? "menu__categories--tab-active" : ""}`}>
-          {category?.name}
-        </li>
+      <a
+        onClick={() => handleClick()}
+        className={` ${isActiveTab ? "menu__categories--tab-active" : ""}`}
+      >
+        {category?.name}
       </a>
     </Link>
   );

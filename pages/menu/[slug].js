@@ -3,16 +3,13 @@ import commerce from "../../lib/commerce";
 import MenuPageTemplate from "../../components/MenuPageTemplate";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 
-export async function getStaticProps({ params }) {
-  const { slug } = params;
+export async function getStaticProps() {
   const { data: categories } = await commerce.categories.list();
-
   const queryClient = new QueryClient();
   const getProducts = async () => {
     const data = await commerce.products.list();
     return data;
   };
-
   await queryClient.prefetchQuery(["products"], getProducts);
 
   return {

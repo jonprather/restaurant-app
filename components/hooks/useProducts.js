@@ -19,7 +19,7 @@ export default function useProducts() {
       const filteredProducts = vals.filter((ele) => {
         return ele.categories.some(
           (category) =>
-            category.slug.toLowerCase() === activeCategory.toLowerCase()
+            category?.slug?.toLowerCase() === activeCategory?.toLowerCase()
         );
       });
 

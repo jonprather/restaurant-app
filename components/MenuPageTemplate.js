@@ -1,12 +1,12 @@
 import React from "react";
-import MenuCategories from "./menuCategories";
-import SectionHeader from "./Sectionheader";
-import MenuItemsContainer from "./MenuItemsContainer";
-export default function MenuPageTemplate({ merchant, categories = [] }) {
+import MenuCategories from "./organisms/menuCategories";
+import SectionHeader from "@/components/molecules/SectionHeader";
+import MenuItemsContainer from "@/components/organisms/MenuItemsContainer";
+export default function MenuPageTemplate({ categories = [] }) {
   return (
-    <div class='pb-80'>
-      <main id='menu' class='menu__content mt-40'>
-        <SectionHeader heading={"Menu"} subheading={"Delicious Delicacies "} />
+    <div className='pb-80'>
+      <main id='menu' className='menu__content mt-40'>
+        <SectionHeader heading={"Menu"} subheading={"Delicious Delicacies"} />
         <MenuCategories categories={categories} />
         <MenuItemsContainer />
       </main>

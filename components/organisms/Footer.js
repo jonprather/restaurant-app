@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer role='contentinfo' class='footer' id='footer'>
-      <div class='footer__container'>
-        <div class='footer__social'>
+    <footer role='contentinfo' className='footer' id='footer'>
+      <div className='footer__container'>
+        <div className='footer__social'>
           <div>
             <svg
               width='114'
@@ -45,12 +45,12 @@ export default function Footer() {
               />
             </svg>
           </div>
-          <span class='mt-24 material-icons'>facebook</span>
+          <span className='mt-24 material-icons'>facebook</span>
         </div>
-        <div class='footer__contact'>
-          <h1 class='footer-heading'>Contact </h1>
-          <div class='footer__contact-address'>
-            <div class=' footer__contact-address-icon'>
+        <div className='footer__contact'>
+          <h1 className='footer-heading'>Contact </h1>
+          <div className='footer__contact-address'>
+            <div className=' footer__contact-address-icon'>
               <svg
                 width='13'
                 height='17'
@@ -59,25 +59,25 @@ export default function Footer() {
                 xmlns='http://www.w3.org/2000/svg'
               >
                 <path
-                  fill-rule='evenodd'
-                  clip-rule='evenodd'
+                  fillRule='evenodd'
+                  clipRule='evenodd'
                   d='M10.853 8.99939C11.3325 7.88341 11.5907 6.93042 11.5907 6.25596C11.5907 3.30968 9.20224 0.921255 6.25596 0.921255C3.30968 0.921255 0.921255 3.30968 0.921255 6.25596C0.921255 6.93042 1.17944 7.88341 1.65897 8.99939C2.12911 10.0936 2.77473 11.2599 3.46331 12.3323C4.15246 13.4056 4.86918 14.3606 5.47137 15.0363C5.77453 15.3765 6.03074 15.6255 6.22578 15.7815C6.23623 15.7899 6.24629 15.7978 6.25596 15.8053C6.26563 15.7978 6.27569 15.7899 6.28615 15.7815C6.48118 15.6255 6.7374 15.3765 7.04055 15.0363C7.64275 14.3606 8.35947 13.4056 9.04861 12.3323C9.7372 11.2599 10.3828 10.0936 10.853 8.99939ZM6.25596 16.8129C7.42896 16.8129 12.5119 9.71103 12.5119 6.25596C12.5119 2.80089 9.71103 0 6.25596 0C2.80089 0 0 2.80089 0 6.25596C0 9.71103 5.08297 16.8129 6.25596 16.8129Z'
                   fill='white'
                 />
                 <path
-                  fill-rule='evenodd'
-                  clip-rule='evenodd'
+                  fillRule='evenodd'
+                  clipRule='evenodd'
                   d='M6.06041 8.46226C7.17118 8.46226 8.07164 7.56181 8.07164 6.45104C8.07164 5.34027 7.17118 4.43981 6.06041 4.43981C4.94964 4.43981 4.04918 5.34027 4.04918 6.45104C4.04918 7.56181 4.94964 8.46226 6.06041 8.46226ZM6.06041 9.38352C7.67998 9.38352 8.99289 8.0706 8.99289 6.45104C8.99289 4.83147 7.67998 3.51855 6.06041 3.51855C4.44085 3.51855 3.12793 4.83147 3.12793 6.45104C3.12793 8.0706 4.44085 9.38352 6.06041 9.38352Z'
                   fill='white'
                 />
               </svg>
             </div>
-            <p class='footer__contact-address-text'>
+            <p className='footer__contact-address-text'>
               F1 - 320 Jeff Heights, Main Blvd, Gulberg, Lahore, Pakistan
             </p>
           </div>
-          <div class='footer__contact-phone'>
-            <div class='footer__contact-phone-icon'>
+          <div className='footer__contact-phone'>
+            <div className='footer__contact-phone-icon'>
               <svg
                 width='15'
                 height='16'
@@ -86,19 +86,19 @@ export default function Footer() {
                 xmlns='http://www.w3.org/2000/svg'
               >
                 <path
-                  fill-rule='evenodd'
-                  clip-rule='evenodd'
+                  fillRule='evenodd'
+                  clipRule='evenodd'
                   d='M11.2542 0.492222C11.8467 -0.180735 12.9016 -0.160715 13.4682 0.534235L13.504 0.578199C15.2299 2.69534 15.1392 5.75872 13.2909 7.76995L8.22107 13.2868C6.44097 15.2239 3.53839 15.6291 1.29582 14.2537L0.710012 13.8944C-0.135101 13.376 -0.246401 12.1917 0.487345 11.525L1.50779 10.5978C2.34336 9.83853 3.52548 9.59326 4.59413 9.95739C5.41176 10.236 6.31658 9.98598 6.87518 9.32712L9.43527 6.30752C9.77614 5.90548 9.81242 5.32728 9.52448 4.88579C8.98667 4.06114 9.06471 2.97907 9.7153 2.24013L11.2542 0.492222ZM12.6931 1.1661C12.517 0.950035 12.189 0.943812 12.0048 1.15303L10.4658 2.90095C10.1121 3.30274 10.0697 3.89112 10.3621 4.33952C10.8916 5.15147 10.8249 6.21482 10.198 6.95421L7.63794 9.97381C6.81357 10.9461 5.47824 11.3151 4.2716 10.904C3.54747 10.6572 2.74647 10.8234 2.18028 11.3379L1.15984 12.2651C0.919268 12.4837 0.955759 12.872 1.23284 13.0419L1.81865 13.4012C3.65348 14.5266 6.02832 14.195 7.48476 12.6102L12.5546 7.0933C14.0666 5.448 14.1408 2.942 12.7289 1.21006L12.6931 1.1661Z'
                   fill='white'
                 />
               </svg>
             </div>
-            <p class='footer__contact-phone-text'>
+            <p className='footer__contact-phone-text'>
               +92 - 300 - 115 - 222 -444{" "}
             </p>
           </div>
-          <div class='footer__contact-email'>
-            <div class='footer__contact-email-icon'>
+          <div className='footer__contact-email'>
+            <div className='footer__contact-email-icon'>
               <svg
                 width='16'
                 height='11'
@@ -107,33 +107,33 @@ export default function Footer() {
                 xmlns='http://www.w3.org/2000/svg'
               >
                 <path
-                  fill-rule='evenodd'
-                  clip-rule='evenodd'
+                  fillRule='evenodd'
+                  clipRule='evenodd'
                   d='M0.64 0C0.286538 0 0 0.234518 0 0.52381V10.4762C0 10.7655 0.286538 11 0.64 11H15.36C15.7135 11 16 10.7655 16 10.4762V0.52381C16 0.234518 15.7135 0 15.36 0H0.64ZM2 1H14L8 5.31451L2 1ZM9.5 5.5L15 1.5V9.5L9.5 5.5ZM8.5 6L14 10.0134H2L7.5 6C7.79061 6.23867 8.20939 6.23867 8.5 6ZM6.5 5.5L1 1.5V9.5L6.5 5.5Z'
                   fill='white'
                 />
               </svg>
             </div>
-            <p class='footer__contact-email-text'>support@yannal.com</p>
+            <p className='footer__contact-email-text'>support@yannal.com</p>
           </div>
         </div>
-        <div class='footer__support'>
-          <h1 class='footer-heading'>Support </h1>
+        <div className='footer__support'>
+          <h1 className='footer-heading'>Support </h1>
           <p>Faq</p>
           <p>Shipping & Returns</p>
           <p>Contact Us</p>
           <p>Our Partners</p>
         </div>
-        <div class='footer__info'>
-          <h1 class='footer-heading'>Info </h1>
+        <div className='footer__info'>
+          <h1 className='footer-heading'>Info </h1>
           <p>Dates</p>
           <p>Parties</p>
           <p>Birthdays</p>
           <p>Menu</p>
         </div>
       </div>
-      <div class='footer__copyright'>
-        <p class='text-center text-gray-100 text-xs'>
+      <div className='footer__copyright'>
+        <p className='text-center text-gray-100 text-xs'>
           &copy;2022 JP Corp. All rights reserved.
         </p>
       </div>

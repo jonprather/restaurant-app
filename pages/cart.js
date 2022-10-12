@@ -1,4 +1,4 @@
-import CartContainer from "../components/CartContainer";
+import CartItem from "@/components/molecules/CartItem";
 import useCart from "@/components/hooks/useCart";
 import { useIsFetching } from "react-query";
 import useDeleteFromCart from "@/components/hooks/useDeleteFromCart";
@@ -6,7 +6,7 @@ import useUpdateQuantity from "@/components/hooks/useUpdateQuantity";
 import Loading from "@/components/atoms/Loading";
 
 //TODO add min heights for loading states for content shifting
-function CartItem({ id, name, quantity, line_total, price, image }) {
+function Cart({ id, name, quantity, line_total, price, image }) {
   const handleQuantityUpdate = useUpdateQuantity();
 
   const removeItem = useDeleteFromCart();
@@ -27,7 +27,7 @@ function CartItem({ id, name, quantity, line_total, price, image }) {
   };
 
   return (
-    <CartContainer
+    <CartItem
       name={name}
       price={price.formatted_with_symbol}
       image={image?.url}
@@ -77,7 +77,7 @@ but fi set to absolute it doesnt fit */}
       <div className='mx-auto w-60 pt-20 left-2/4 -translate-x-2/4 absolute'></div>
       <div className=''>
         {cartData?.line_items?.map((item) => (
-          <CartItem key={item.id} {...item} />
+          <Cart key={item.id} {...item} />
         ))}
       </div>
 
@@ -90,8 +90,8 @@ but fi set to absolute it doesnt fit */}
         </span>
       </h2>
       {/* TODO add nice looking button here like on home page */}
-      <div class='btn-wrapper--1 w-0 mx-auto mt-20'>
-        {cartData && <button class='btn capitalize'>Checkout</button>}
+      <div className='btn-wrapper--1 w-0 mx-auto mt-20'>
+        {cartData && <button className='btn capitalize'>Checkout</button>}
       </div>
     </main>
   );

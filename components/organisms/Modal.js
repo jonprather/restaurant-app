@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Content } from "../navModalContent";
+import { Content } from "@/components/molecules/navModalContent";
 import Hamburger from "hamburger-react";
 import { FaRegWindowClose } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
