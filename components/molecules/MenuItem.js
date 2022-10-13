@@ -7,7 +7,7 @@ import useAddToCart from "@/components/hooks/useAddToCart";
 import { Modal } from "@/components/organisms/Modal";
 
 // TODO add some effects on transition to menu perhaps and buttons in general
-
+// TODO kebab image is jank on mobile like clip path doesnt center right or sizing is wrong
 export default function MenuItem({ name, description, price, image, id }) {
   let [imgURL, setImgURL] = React.useState(null);
   const [isOpen, setOpen] = React.useState(false);

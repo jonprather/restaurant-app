@@ -62,7 +62,7 @@ export default function CartPage() {
         }`}
       >
         {/* TODO fix jank with the sizing left and right amid diff size stuff.... */}
-        <h1 className='text-4xl capitalize font-normal pl-20 '>Cart</h1>
+        <h1 className='text-4xl capitalize font-normal pl-10 '>Cart</h1>
 
         <hr className='hr-light mr-6 ml-6 mt-6' />
 
@@ -91,7 +91,7 @@ but fi set to absolute it doesnt fit */}
         </h2>
         <hr className='hr-light mt-6 hidden md:block' />
         <h3 className='flex justify-between flex-row text-3xl mt-10'>
-          <p className='capitalize font-normal md:mr-28'>
+          <p className=' capitalize font-normal md:mr-28'>
             {cartData?.subtotal?.formatted_with_symbol && "Subtotal:"}
           </p>
           <p className='font-medium'>

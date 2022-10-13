@@ -123,6 +123,7 @@ export default function Nav() {
             <a href='#footer'>Our Locations</a>
           </span>
           <a href='/cart'>
+            {/* TODO add the number of items in the cart here */}
             {/* <svg
               width='24'
               height='24'

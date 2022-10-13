@@ -37,6 +37,7 @@ export async function getStaticProps() {
     };
   }
 }
+// TODO go through and check for sematic html usage
 export default function IndexPage() {
   return (
     <>

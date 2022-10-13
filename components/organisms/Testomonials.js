@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Stars from "../molecules/Stars";
+import SectionHeader from "@/components/molecules/SectionHeader";
 const text1 = (
   <>
     <span className=''>“</span>Him rendered may attended concerns jennings
@@ -53,17 +54,36 @@ export default function Testomonials() {
   return (
     <>
       <section className='testomonials container'>
-        <div className='popular-products-heading-container'>
-          <h2 className='popular-products-heading-container-subheading heading-small--black'>
-            Testomonials
-          </h2>
-          <h1 className='heading heading-3'>What They're Saying</h1>
-          {/* {{-- <div className="testomonials__shape "><svg width="186" height="23" viewBox="0 0 186 23" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.95825 22C16.352 14.9191 117.179 -13.9102 184.944 10.8728" stroke="#EA0000" stroke-width="2"
-                    stroke-linecap="round" />
+        <SectionHeader
+          heading={"Testomonials"}
+          subheading={"What They're Saying"}
+          headingClassName={"heading-3"}
+          containerClassname={"mb-44"}
+        >
+          {/* TODO fix this accent item */}
+          {/* <div className='testomonials__shape relative '>
+            <svg
+              width='186'
+              height='23'
+              viewBox='0 0 186 23'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              className='absolute  top-0 right-1/4 '
+            >
+              <path
+                d='M1.95825 22C16.352 14.9191 117.179 -13.9102 184.944 10.8728'
+                stroke='#EA0000'
+                stroke-width='2'
+                stroke-linecap='round'
+              />
             </svg>
-        </div> --}} */}
+          </div> */}
+        </SectionHeader>
+        {/* bg around53px */}
+        <div>
+          {/* <h2 className='heading-small--black'>Testomonials</h2>
+          <h1 className=' heading-3'>What They're Saying</h1> */}
+
           <div className='testomonials__body'>
             {reviews.map((review) => {
               return <Testomonial key={review.name} {...review} />;

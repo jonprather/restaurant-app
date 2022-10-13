@@ -98,13 +98,16 @@ export default function booking() {
   return (
     <div className='booking pt-40 pb-40  z-50 '>
       <div className='booking__container  '>
-        {/* TODO 
-       // add to navs so to have access and fix the links to work on any page
-       //so router .push perhaps
-
+        {/*
        TODO fix styling for a hero or bg image to look nice - 
+       also form look too small
      */}
-        <SectionHeader heading={"Reservations"} subheading={"get a table"} />
+        <SectionHeader
+          heading={"Reservations"}
+          subheading={"get a table"}
+          headingClassName={"heading-3"}
+          containerClassname={"mb-36"}
+        />
         <div className='booking__hero--small'>
           <img
             className=''
@@ -112,17 +115,17 @@ export default function booking() {
             alt='kebab menu item'
           />
         </div>
-        <div className='w-full max-w-lg  mb-40 mx-auto z-50'>
+        <div className='w-full  max-w-xl  mb-40 mx-auto z-50'>
           <form className='bg-white shadow-lg rounded px-8 py-8 mb-4 z-50'>
             <div className='mb-4'>
               <label
-                className='block text-gray-700 text-lg font-bold mb-2'
+                className='block text-gray-700 text-xl font-bold mb-2'
                 htmlFor='email'
               >
                 Email
               </label>
               <input
-                className='shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border rounded w-full py-4 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 id='email'
                 type='text'
                 placeholder='Email'
@@ -149,18 +152,18 @@ export default function booking() {
                   });
                 }}
               />
-              <p className='text-red-500 text-md italic'>{errorsObj.email}</p>
+              <p className='text-red-500 text-lg italic '>{errorsObj.email}</p>
             </div>
 
             <div className='mb-4 z-50'>
               <label
-                className='block text-gray-700 text-lg font-bold mb-2'
+                className='block text-gray-700 text-xl font-bold mb-2'
                 htmlFor='guests'
               >
                 Guests
               </label>
               <input
-                className='shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none text-xl border rounded w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
                 id='guests'
                 type='number'
                 max={MAX}
@@ -189,14 +192,14 @@ export default function booking() {
                 }}
               />
               {errorsObj.guests && (
-                <p className='text-red-500 text-md italic'>
+                <p className='text-red-500 text-lg italic '>
                   {errorsObj.guests}
                 </p>
               )}
             </div>
             <div className='mb-6 z-50'>
               <label
-                className='block text-gray-700 text-lg font-bold mb-2'
+                className='block text-gray-700 text-xl font-bold mb-2'
                 htmlFor='Date'
               >
                 Date
@@ -206,9 +209,12 @@ export default function booking() {
                 onChange={handleDateChange}
                 showTimeSelect
                 dateFormat='Pp'
+                className='text-2xl'
               />
 
-              <p className='text-red-500 text-md italic'>{errorsObj.date}</p>
+              <p className='text-red-500 text-lg italic pt-3'>
+                {errorsObj.date}
+              </p>
             </div>
             <div className='flex items-center justify-between z-50'>
               <button
