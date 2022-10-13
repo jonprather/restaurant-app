@@ -1,6 +1,15 @@
 .about {
   z-index: 10;
   position: relative;
+
+  margin: 0 auto;
+  padding-bottom: 10.4rem;
+  @media only screen and (min-width: $bp-small) {
+    // padding-top: 5.4rem;
+  }
+  @media only screen and (min-width: $bp-large) {
+    padding-top: 10.4rem;
+  }
   &::after {
     content: "";
     width: 100%;
@@ -14,19 +23,6 @@
     // box-sizing: content-box;
     // padding:10.4rem 0;
   }
-  margin: 0 auto;
-  padding-bottom: 10.4rem;
-  padding-top: 10.4rem;
-  // another 10.4 on next
-  // background: url('/images/background.jpg') no-repeat;
-  // -webkit-background-position: center;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;//87.9rem,89.1rem ;
-  // // background-origin: content-box;
-
-  // could make the img on side disapper for smallest and instead use a bg image the blurry one
   &__container {
     display: flex;
     flex-direction: column;
@@ -49,7 +45,7 @@
 
       & img {
         // border-radius: 2.4rem;
-        opacity: 0.95;
+        opacity: 0.85;
         @media only screen and (min-width: $bp-large) {
           margin-left: 10.2rem;
           border-radius: 0.4rem;

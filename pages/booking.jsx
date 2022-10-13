@@ -116,16 +116,16 @@ export default function booking() {
           />
         </div>
         <div className='w-full  max-w-xl  mb-40 mx-auto z-50'>
-          <form className='bg-white shadow-lg rounded px-8 py-8 mb-4 z-50'>
+          <form className='bg-white shadow-lg rounded px-12 py-12 mb-4 z-50'>
             <div className='mb-4'>
               <label
-                className='block text-gray-700 text-xl font-bold mb-2'
+                className='block text-gray-700 text-2xl font-bold mb-2'
                 htmlFor='email'
               >
                 Email
               </label>
               <input
-                className='shadow appearance-none border rounded w-full py-4 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border text-2xl rounded w-full py-4 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 id='email'
                 type='text'
                 placeholder='Email'
@@ -157,13 +157,13 @@ export default function booking() {
 
             <div className='mb-4 z-50'>
               <label
-                className='block text-gray-700 text-xl font-bold mb-2'
+                className='block text-gray-700 text-2xl font-bold mb-2'
                 htmlFor='guests'
               >
                 Guests
               </label>
               <input
-                className='shadow appearance-none text-xl border rounded w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none text-2xl border rounded w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
                 id='guests'
                 type='number'
                 max={MAX}
@@ -199,7 +199,7 @@ export default function booking() {
             </div>
             <div className='mb-6 z-50'>
               <label
-                className='block text-gray-700 text-xl font-bold mb-2'
+                className='block text-gray-700 text-2xl font-bold mb-2'
                 htmlFor='Date'
               >
                 Date
@@ -218,7 +218,7 @@ export default function booking() {
             </div>
             <div className='flex items-center justify-between z-50'>
               <button
-                className={`bg-red-500 hover:bg-red-700 text-white text-xl font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline ${
+                className={` bg-red-500 hover:bg-red-700 text-white text-3xl font-bold py-6 px-10 rounded focus:outline-none focus:shadow-outline ${
                   showDisableButtonStyle() &&
                   "cursor-pointer bg-gray-400 hover:bg-gray-400"
                 }`}

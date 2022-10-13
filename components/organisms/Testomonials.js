@@ -58,7 +58,7 @@ export default function Testomonials() {
           heading={"Testomonials"}
           subheading={"What They're Saying"}
           headingClassName={"heading-3"}
-          containerClassname={"mb-44"}
+          containerClassname={"mb-40"}
         >
           {/* TODO fix this accent item */}
           {/* <div className='testomonials__shape relative '>
