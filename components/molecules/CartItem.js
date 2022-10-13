@@ -14,9 +14,9 @@ export default function CartItem({
 }) {
   return (
     <>
-      <div className='cartContainer__item pt-12 pb-12 pr-10 pl-10'>
-        <div className='cartContainer__item__image-container mr-10 max-w-xs w-60 h-auto cart__card-image'>
-          <img src={image} alt='Menu Item' />
+      <div className='cartContainer__item  pt-12 pb-12 pr-10 pl-10 '>
+        <div className='cartContainer__item__image-container mr-10 max-w-xs w-60  cart__card-image'>
+          <img src={image} alt='Menu Item' className=' w-96' />
         </div>
         <div className='cartContainer__item__text-container'>
           <div className='cartContainer__item__text-container__name-price'>
