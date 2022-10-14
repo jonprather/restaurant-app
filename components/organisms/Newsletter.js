@@ -80,7 +80,7 @@ export default function Newsletter() {
           <button
             onClick={handleSubmit}
             type='submit'
-            className='newsletter__input-container-button'
+            className='newsletter__input-container-button active:translate-y-1'
           >
             Subscribe
           </button>
