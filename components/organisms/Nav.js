@@ -1,9 +1,20 @@
 import React from "react";
 import { NavModal } from "@/components/organisms/navModal";
+import useCart from "@/components/hooks/useCart";
+
 export default function Nav() {
+  const { data: cartData, isLoading } = useCart();
+  // how to make sure this data updates faster for nav bc its stale
   // TODO finish bug fixes in console for menu then move to index and bookings etc
+
+  const showCartAmount = () => {
+    if (isLoading) {
+      return "...";
+    }
+    return cartData?.total_items ?? 0;
+  };
   return (
-    <nav role='navigation' className='nav'>
+    <nav role='navigation' className='nav  pb-20 my-auto'>
       <div className='nav-brand'>
         <span>
           <a href='/'>
@@ -47,26 +58,26 @@ export default function Nav() {
           </a>
         </span>
       </div>
-      <div className='nav-menu'>
-        <span>
+      <div className='nav-menu '>
+        <span className='  my-auto'>
           <a href='/menu/all'>Menu</a>
         </span>
-        <span>
+        <span className='  my-auto '>
           <a href='/booking'>Reservations</a>
         </span>
-        <span>
+        <span className='  my-auto '>
           {" "}
-          <a href='/#popular-products'>Our Specials</a>{" "}
+          <a href='/#popular-products my-auto'>Our Specials</a>{" "}
         </span>
-        <span>
+        <span className='  my-auto'>
           <a href='/#about'> About Us </a>{" "}
         </span>
-        <span>
+        <span className='  my-auto'>
           <a href='#footer'>Our Locations</a>
         </span>{" "}
       </div>
-      <div className='nav-icons'>
-        <a href='/cart'>
+      <div className='nav-icons  pl-4 pr-4 pt-3 pb-3 flex flex-col justify-center rounded-2xl bg-white'>
+        <a href='/cart' className='flex '>
           <svg
             width='24'
             height='24'
@@ -99,6 +110,11 @@ export default function Nav() {
               fill='#2A333E'
             />
           </svg>
+          {/* TODO finish cart styling another option is jus tto show a colored dot for itsm trather than count... */}
+          <span className='   pt-1 pb-1 my-auto w-36 nav-menu'>
+            {" "}
+            Cart: {showCartAmount()}
+          </span>
         </a>
       </div>
       <NavModal>
@@ -156,7 +172,10 @@ export default function Nav() {
                 fill='#fff'
               />
             </svg> */}
-            Cart
+            Cart:{" "}
+            <span className=' w-8  align-middle text-gray-100'>
+              {showCartAmount()}
+            </span>
           </a>
         </div>
       </NavModal>
