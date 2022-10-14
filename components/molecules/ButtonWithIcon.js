@@ -8,7 +8,13 @@ export default function ButtonWithIcon({
 }) {
   //   const Icond = Icon();
   return (
-    <button onClick={eventHandler} className='flex'>
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        eventHandler();
+      }}
+      className='flex active:translate-y-1'
+    >
       <Icon />
 
       <span className={`text-2xl font-normal ${styles}`}>{text}</span>
