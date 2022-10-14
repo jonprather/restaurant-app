@@ -55,7 +55,7 @@ export default function CartPage() {
   // TODO finish writing styles for mobile view
   // make sure desktop and above works too
   return (
-    <div className='    md:flex mt-40 mb-40 pb-16 pt-16   md:flex-row  justify-between md:pl-36 md:pr-36'>
+    <div className='    md:flex mt-40 mb-80 pb-16 pt-16   md:flex-row  justify-between md:pl-36 md:pr-36'>
       <main
         className={`max-w-6xl mx-auto md:mx-0  sm:w-3/4 rounded-lg relative ${
           isLoading && " pb-64"
@@ -90,22 +90,23 @@ but fi set to absolute it doesnt fit */}
           Your Order:
         </h2>
         <hr className='hr-light mt-6 hidden md:block' />
+
         <h3 className='flex justify-between flex-row text-3xl mt-10'>
           <p className=' capitalize font-normal md:mr-28'>
             {cartData?.subtotal?.formatted_with_symbol && "Subtotal:"}
           </p>
           <p className='font-medium'>
-            {cartData?.subtotal?.formatted_with_symbol}{" "}
+            {cartData?.subtotal?.formatted_with_symbol || ""}{" "}
           </p>
         </h3>
         {/* TODO add nice looking button here like on home page */}
-        <div className='btn-wrapper--1   mt-24'>
-          {/* TODO so on mobile it should float at top with subtotal or button and be pretty wide
-        on desktop float to right and be with subtotaal
-       */}
-
-          {cartData && <button className='btn capitalize'>Checkout</button>}
-        </div>
+        {cartData?.total_items ? (
+          <div className='btn-wrapper--1 mt-24'>
+            <button className='btn capitalize'>Checkout</button>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
