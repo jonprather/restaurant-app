@@ -24,6 +24,7 @@ export default function useUpdateQuantity() {
         (item) => item.id === lineItem.id
       );
       //so its mutating the reference but since its a top level property and I copied the obj its cool
+      let isSubtract = itemToUpdate.quantity > lineItem.quantity;
       itemToUpdate.quantity = lineItem.quantity;
 
       const rawPrice = (itemToUpdate.price.raw * itemToUpdate.quantity).toFixed(
@@ -41,7 +42,8 @@ export default function useUpdateQuantity() {
 
       const subTotalPriceFormat = createFormattedPriceObj(sum);
       updatedCartData.subtotal = subTotalPriceFormat;
-
+      updatedCartData.total_items =
+        updatedCartData.total_items + (isSubtract ? -1 : +1);
       queryClient.setQueryData(["cart"], updatedCartData);
       return { previous, updatedCartData };
     },
