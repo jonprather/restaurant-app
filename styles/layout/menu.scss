@@ -65,10 +65,12 @@
     }
 
     &__card {
+      position: relative;
       height: 38.5rem;
       width: 37rem;
       border-radius: 2.4rem;
       border: 1.2px solid #efefef;
+      z-index: 1;
 
       &-image {
         width: 20rem;

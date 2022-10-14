@@ -23,8 +23,9 @@ export default function Loading({
         css={override}
         size={150}
         //TODO can try passing rem here instead to make it fit better in the cart container on mobile
-        className='absolute left-2/4 -translate-x-2/4'
+        className='absolute left-2/4 -translate-x-2/4 z-50'
       />
+      // TODO it shows behind the card element ie menu item
     );
   }
   return (
