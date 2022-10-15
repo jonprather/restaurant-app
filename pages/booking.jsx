@@ -98,10 +98,6 @@ export default function booking() {
   return (
     <div className='booking pt-40 pb-40  z-50 '>
       <div className='booking__container  '>
-        {/*
-       TODO fix styling for a hero or bg image to look nice - 
-       also form look too small
-     */}
         <SectionHeader
           heading={"Reservations"}
           subheading={"get a table"}

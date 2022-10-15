@@ -13,12 +13,7 @@ import Head from "next/head";
 import "react-toastify/dist/ReactToastify.css";
 
 const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
-// The inital data appraoch seems fine
-//jus tneed to pass the initail data when calling such data
-// with dehydration approach there is a enw queryclient for each page
-//so thus cant hold data between pages right?
-//or will that other client have it...
-//TODO settle on one pattern here im mixing inital data and dehydrated patterns
+
 //TODO handle the nested errors when comes back from BE liek when was a bad req
 // it had nested errors and i showed obj obj
 export default function MyApp({ Component, pageProps }) {
