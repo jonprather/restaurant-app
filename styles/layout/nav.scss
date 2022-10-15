@@ -1,15 +1,9 @@
 .nav {
-  // TODO
-  //also would be cool to do it to whole page conditionally on modal being open
   display: flex;
   justify-content: space-between;
   padding: 5.2rem 4rem 0rem 4rem;
   @media screen and (min-width: 860px) {
     padding: 5.2rem 5.822rem 0rem 5.822rem;
-    // was 0 on bottoms looks bad if have a colored nav jus tfor the bg white for the cart thing but would have to make paddign fit
-    //evently both sides so maybe make less idk or bail on the cart widget leave plain
-    //and not ei did the margin myauto stuff so the nav items migh tnot be the same form teh top and bottom stuff anymore
-    //i think bail sounds good
   }
 
   &--bg-color {

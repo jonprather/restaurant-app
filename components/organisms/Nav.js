@@ -57,20 +57,20 @@ export default function Nav() {
         </span>
       </div>
       <div className='nav-menu '>
-        <span className='  my-auto'>
+        <span className='my-auto'>
           <a href='/menu/all'>Menu</a>
         </span>
-        <span className='  my-auto '>
+        <span className='my-auto '>
           <a href='/booking'>Reservations</a>
         </span>
-        <span className='  my-auto '>
+        <span className='my-auto '>
           {" "}
-          <a href='/#popular-products my-auto'>Our Specials</a>{" "}
+          <a href='/#popular-products'>Our Specials</a>{" "}
         </span>
-        <span className='  my-auto'>
+        <span className='my-auto'>
           <a href='/#about'> About Us </a>{" "}
         </span>
-        <span className='  my-auto'>
+        <span className='my-auto'>
           <a href='#footer'>Our Locations</a>
         </span>{" "}
       </div>
