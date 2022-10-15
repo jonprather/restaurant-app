@@ -20,7 +20,7 @@ export default function Header() {
         <div className='header__hero--small'>
           <img
             className=''
-            src='/images/hero-small.jpg'
+            src='/images/hero-cropped.png'
             alt='kebab menu item'
           />
         </div>
