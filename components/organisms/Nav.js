@@ -4,8 +4,6 @@ import useCart from "@/components/hooks/useCart";
 
 export default function Nav() {
   const { data: cartData, isLoading } = useCart();
-  // how to make sure this data updates faster for nav bc its stale
-  // TODO finish bug fixes in console for menu then move to index and bookings etc
 
   const showCartAmount = () => {
     if (isLoading) {
@@ -110,8 +108,7 @@ export default function Nav() {
               fill='#2A333E'
             />
           </svg>
-          {/* TODO finish cart styling another option is jus tto show a colored dot for itsm trather than count... */}
-          <span className='   pt-1 pb-1 my-auto w-36 nav-menu'>
+          <span className='pt-1 pb-1 my-auto w-36 nav-menu'>
             {" "}
             Cart: {showCartAmount()}
           </span>
@@ -138,14 +135,14 @@ export default function Nav() {
           <span>
             <a href='#footer'>Our Locations</a>
           </span>
-          <a href='/cart'>
-            {/* TODO add the number of items in the cart here */}
-            {/* <svg
-              width='24'
-              height='24'
+          <a href='/cart' className='flex justify-center'>
+            <svg
+              width='16'
+              height='16'
               viewBox='0 0 24 24'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
+              className='mr-3'
             >
               <path
                 fillRule='evenodd'
@@ -171,10 +168,10 @@ export default function Nav() {
                 d='M16 11.25C16.4142 11.25 16.75 11.5858 16.75 12V16C16.75 16.4142 16.4142 16.75 16 16.75C15.5858 16.75 15.25 16.4142 15.25 16V12C15.25 11.5858 15.5858 11.25 16 11.25Z'
                 fill='#fff'
               />
-            </svg> */}
-            Cart:{" "}
-            <span className=' w-8  align-middle text-gray-100'>
-              {showCartAmount()}
+            </svg>
+
+            <span className='  my-auto  align-middle text-gray-100'>
+              Cart: {showCartAmount()}
             </span>
           </a>
         </div>
