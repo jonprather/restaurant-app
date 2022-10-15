@@ -4,7 +4,7 @@ import { useIsFetching } from "react-query";
 import useDeleteFromCart from "@/components/hooks/useDeleteFromCart";
 import useUpdateQuantity from "@/components/hooks/useUpdateQuantity";
 import Loading from "@/components/atoms/Loading";
-
+import { useRouter } from "next/router";
 //TODO add min heights for loading states for content shifting
 function Cart({ id, name, quantity, line_total, price, image }) {
   const handleQuantityUpdate = useUpdateQuantity();
@@ -41,6 +41,7 @@ function Cart({ id, name, quantity, line_total, price, image }) {
 }
 
 export default function CartPage() {
+  const router = useRouter();
   const { data: cartData, isLoading } = useCart();
   const isEmpty = cartData?.line_items?.length === 0;
   const isFetching = useIsFetching();
@@ -102,7 +103,12 @@ but fi set to absolute it doesnt fit */}
         {/* TODO add nice looking button here like on home page */}
         {cartData?.total_items ? (
           <div className='btn-wrapper--1 mt-24'>
-            <button className='btn capitalize'>Checkout</button>
+            <button
+              onClick={() => router.push(cartData.hosted_checkout_url)}
+              className='btn capitalize'
+            >
+              Checkout
+            </button>
           </div>
         ) : (
           ""

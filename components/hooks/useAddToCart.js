@@ -3,6 +3,19 @@ import { useMutation } from "react-query";
 import commerce from "@/lib/commerce";
 import { toast } from "react-toastify";
 import { useQueryClient } from "react-query";
+
+const GoToCartLink = (product) => {
+  `Added ${product.product_name}!`;
+  return (
+    <div className='text-2xl p-2 '>
+      <span className='text-2xl'>{`Added ${product.product_name}!`}</span>
+      <a href='/cart' className='p-4 font-medium text-green-800 '>
+        {" "}
+        (Go To Cart?)
+      </a>
+    </div>
+  );
+};
 export default function useAddToCart() {
   const queryClient = useQueryClient();
   async function addItem(id) {
@@ -18,9 +31,12 @@ export default function useAddToCart() {
 
   const { mutate } = useMutation(addItem, {
     onSuccess: async (product) => {
-      toast.success(`Added ${product.product_name}!`, {
-        toastId: "added" + product.product_id,
-      });
+      toast.success(() => GoToCartLink(product));
+      //   `Added ${product.product_name}! ${(<a href='/cart'>Go TO cart </a>)}`,
+      //   {
+      //     toastId: "added" + product.product_id,
+      //   }
+      // );
       queryClient.invalidateQueries(["cart"]);
     },
     onMutate: async (cartItem) => {
