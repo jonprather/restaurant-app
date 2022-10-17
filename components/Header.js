@@ -1,12 +1,12 @@
 import React from "react";
 import useAddToCart from "@/components/hooks/useAddToCart";
-
+import Image from "next/image";
+import ImageF from "next/future/image";
+import Hero from "../public/images/hero-cropped.png";
 export default function Header() {
   const addToCart = useAddToCart();
   return (
-    <header className='header'>
-      <div className='header__hero'></div>
-
+    <header className='header relative'>
       <div className='header-hero-description pl-8 md:pl-0'>
         <div className='header-brand'>
           <div>
@@ -17,13 +17,23 @@ export default function Header() {
             <span className='header-brand-price--sign'> $</span> 14.97{" "}
           </span>
         </div>
-        <div className='header__hero--small'>
-          <img
+        <div className='header__hero'>
+          <Image
+            src={Hero}
+            alt='Picture of Kebabs'
+            // width={500} automatically provided
+            // height={500} automatically provided
+            // blurDataURL="data:..." automatically provided
+            // placeholder='blur' // Optional blur-up while loading
+            className='header__hero__img'
+          />
+          {/* <img
             className=''
             src='/images/hero-cropped.png'
             alt='kebab menu item'
-          />
+          /> */}
         </div>
+
         <p className='header-paragraph'>
           Restaurant style Yogurt Mint Sauce is delicious dip which is quick and
           easy to ... This is a standard Indian mint chutney served with

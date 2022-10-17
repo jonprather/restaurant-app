@@ -3,96 +3,49 @@
   position: relative;
   width: 100%;
   margin-top: 6rem;
-  z-index: 10;
-  &__hero {
-    position: absolute;
 
-    top: -100px;
-    // left: 50%;
-    width: 100%;
-    height: fit-content;
-
-    // overflow: visible;
-    z-index: -1;
-
-    &--small {
-      // position: relative;
-      object-fit: contain;
-      @media only screen and (min-width: $bp-medium) {
-        display: none;
-      }
-      & > img {
-        // position: relative;
-        // right: 0rem;
-        overflow: hidden;
-        z-index: 0;
-        display: block;
-        object-fit: cover;
-        max-width: 100%;
-        margin-top: -2rem;
-        @media only screen and (min-width: $bp-smallest) {
-          max-width: 65%;
-        }
-        @media only screen and (min-width: $bp-small) {
-          // right: 40rem;
-
-          max-width: 75%;
-        }
-        @media only screen and (min-width: $bp-medium) {
-          // right: 40rem;
-          margin-top: 0rem;
-        }
-
-        // TODO reconsider the spacing on mid size 500-800px for the header text and buttosn seems a bit cramped on left
-        //when the hero is on top rather than on the right
-      }
-    }
-
-    @media only screen and (min-width: $bp-medium) {
-      background: url("/images/hero-large.jpg") no-repeat;
-      -webkit-background-position: center;
-      // -webkit-background-size: cover;
-      // -moz-background-size: cover;
-      // -o-background-size: cover;
-      background-size: cover; //87.9rem,89.1rem ;
-      background-position: center;
-      // for smaller screens need to adjust how the image works so doesnt overlap so much
-    }
-
-    // background-image: url("/images/hero-small.jpg");
-    // background-size: cover;
-
-    // background-repeat: no-repeat;
-    // background-position: center;
-    @media only screen and (min-width: $bp-small) {
-      // background-image: url("/images/hero-small.jpg");
-    }
-    @media only screen and (min-width: $bp-medium) {
-      // background-image: url("/images/hero-medium.jpg");
-    }
-
-    &::after {
-      @media only screen and (min-width: $bp-medium) {
-        display: block;
-        content: "";
-        padding-top: 56.25%;
-      }
-    }
-  }
-}
-
-.header {
+  z-index: 100;
   margin-bottom: 11.4rem;
   // overflow: hidden;
   z-index: 1000;
+  &__hero {
+    // position: relative;
+    // object-fit: cover;
+    // as screen size decrease lower hieght a bit and perhaps size and left position
+    //so down and to the left
+    // width: 72rem;
+    max-width: 60rem;
+    margin-top: -2rem;
+    @media only screen and (min-width: $bp-smallest) {
+      margin-top: 0rem;
+
+      // display: none;
+      position: absolute;
+      // transform: rotatey(40%);
+      z-index: 0;
+      top: -12rem;
+      left: 60%;
+      width: 72rem;
+      max-width: 72rem;
+    }
+    @media only screen and (min-width: $bp-small) {
+      left: 55%;
+    }
+
+    @media only screen and (min-width: $bp-medium) {
+      top: -12rem;
+      left: 52%;
+    }
+    @media only screen and (min-width: $bp-large) {
+      left: 50%;
+      width: 80rem;
+      max-width: 80rem;
+    }
+  }
 
   &-hero-description {
     z-index: 1000;
-
-    // margin-left: 10rem;
-
     max-width: 90%;
-    // margin: 0 auto;
     margin-top: 15rem;
     margin: 0 auto;
     @media only screen and (min-width: $bp-small) {
@@ -100,14 +53,8 @@
       margin-top: 15rem;
       padding: 0 0;
       max-width: 100%;
-
       margin-left: 11.4rem;
     }
-
-    //     @media only screen and (min-width: $bp-smallest) {
-
-    //         flex:1 1 50%;
-    //   }
   }
 
   &-kebabs {
@@ -116,19 +63,13 @@
     margin-top: 4.3rem;
     z-index: 1000;
     text-transform: lowercase;
-    // so make sure it loads the correct font need to go over all of this i missed alot from the og design
-    //and check margins finishing touches... for a few days will help alot then
   }
   &-brand {
     z-index: 1000;
-
     position: relative;
-
     &-price {
       z-index: 1000;
-
       font-family: $font-primary;
-      // font-size: 4rem;
       font-weight: 700;
       color: #6a4219;
       display: flex;
@@ -139,7 +80,6 @@
       letter-spacing: -2.5;
 
       @media only screen and (min-width: $bp-smallest) {
-        // max-width: 60ch;
         transform: rotate(-90deg);
         position: absolute;
         top: 5rem; //50 450
@@ -149,13 +89,11 @@
       }
       &--sign {
         z-index: 1000;
-
         font-size: 0.75em;
       }
     }
     &-pagination {
       z-index: 1000;
-
       position: absolute;
       top: 155;
       left: -100;
@@ -163,13 +101,12 @@
   }
 
   &-paragraph {
+    position: relative;
     z-index: 1000;
-
     margin-top: 3.2rem;
     margin-bottom: 6.7rem;
     font-size: 2rem;
     width: 47.6rem;
-
     font-weight: 500;
     @media only screen and (max-width: 400px) {
       max-width: 30ch;
@@ -180,7 +117,6 @@
     }
     @media only screen and (min-width: $bp-small) {
       max-width: 60ch;
-      width: 57.6rem;
     }
     @media only screen and (min-width: $bp-medium) {
       max-width: 60ch;
@@ -191,19 +127,16 @@
 
   &-info {
     z-index: 1000;
-
+    position: relative;
     display: flex;
     gap: 8.2rem;
-
     &-meal {
       z-index: 1000;
-
       font-size: 2.6rem;
       font-weight: 700;
     }
     &-time {
       z-index: 1000;
-
       font-size: 2rem;
       font-weight: 700;
       opacity: 40%;
