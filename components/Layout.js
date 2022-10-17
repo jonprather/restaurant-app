@@ -17,7 +17,6 @@ export default function Layout({ title, keywords, description, children }) {
       <div className='layout'>
         <Nav />
         {children}
-        <Footer />
       </div>
     </>
   );

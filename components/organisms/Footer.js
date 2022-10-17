@@ -1,8 +1,20 @@
-export default function Footer() {
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+
+import { FaLinkedinIn } from "react-icons/fa";
+
+// TODO the mix of TW and scss for margins pt is confusing maybe merge them or only do in one or the other
+
+export default function Footer({ classNames = "pt-20 md:pt-40" }) {
   return (
-    <footer role='contentinfo' className='footer' id='footer'>
-      <div className='footer__container'>
-        <div className='footer__social'>
+    <footer
+      role='contentinfo'
+      className={`footer ${classNames} pt`}
+      id='footer'
+    >
+      <div className='footer__container pt-32 md:pt-0 pt-'>
+        <div className='footer__social md:mt-20'>
           <div>
             <svg
               width='114'
@@ -45,7 +57,12 @@ export default function Footer() {
               />
             </svg>
           </div>
-          <span className='mt-24 material-icons'>facebook</span>
+          <span className='mt-16 text-3xl lg:text-2xl text-white flex'>
+            <FaFacebookF className='mt-10 mr-4' />
+            <FaTwitter className=' mt-10 mr-4' />
+            <FaInstagram className=' mt-10 mr-4' />
+            <FaLinkedinIn className='mt-10' />
+          </span>
         </div>
         <div className='footer__contact'>
           <h1 className='footer-heading'>Contact </h1>

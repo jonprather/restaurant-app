@@ -115,6 +115,9 @@
 
     margin-top: 4.3rem;
     z-index: 1000;
+    text-transform: lowercase;
+    // so make sure it loads the correct font need to go over all of this i missed alot from the og design
+    //and check margins finishing touches... for a few days will help alot then
   }
   &-brand {
     z-index: 1000;
@@ -166,16 +169,14 @@
     margin-bottom: 6.7rem;
     font-size: 2rem;
     width: 47.6rem;
-    // width: 57.6rem;
 
-    height: 13.6rem;
     font-weight: 500;
     @media only screen and (max-width: 400px) {
       max-width: 30ch;
     }
     @media only screen and (min-width: $bp-smallest) {
       max-width: 40ch;
-      margin-bottom: 4.7rem;
+      margin-bottom: 6.7rem;
     }
     @media only screen and (min-width: $bp-small) {
       max-width: 60ch;
@@ -184,6 +185,7 @@
     @media only screen and (min-width: $bp-medium) {
       max-width: 60ch;
       width: 47.6rem;
+      margin-bottom: 8.7rem;
     }
   }
 

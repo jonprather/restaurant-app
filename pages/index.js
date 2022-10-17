@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import About from "@/components/organisms/About";
 import PopularProducts from "@/components/organisms/PopularProducts";
 import Testomonials from "@/components/organisms/Testomonials";
+import Footer from "@/components/organisms/Footer";
 import Newsletter from "@/components/organisms//Newsletter";
 import commerce from "@/lib/commerce";
 import { dehydrate, QueryClient, useQuery } from "react-query";
@@ -46,6 +47,7 @@ export default function IndexPage() {
       <About />
       <Testomonials />
       <Newsletter />
+      <Footer classNames='pt-52' />
     </>
   );
 }
