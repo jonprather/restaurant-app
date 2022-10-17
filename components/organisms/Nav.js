@@ -9,10 +9,13 @@ export default function Nav() {
     if (isLoading) {
       return "...";
     }
-    return cartData?.total_items ?? 0;
+    if (cartData && cartData?.total_items) {
+      return cartData?.total_items;
+    }
+    return 0;
   };
   return (
-    <nav role='navigation' className='nav  pb-20 my-auto'>
+    <nav role='navigation' className='nav z-50 relative  pb-20 my-auto'>
       <div className='nav-brand'>
         <span>
           <a href='/'>

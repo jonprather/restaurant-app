@@ -57,7 +57,7 @@ export default function Footer({ classNames = "pt-20 md:pt-40" }) {
               />
             </svg>
           </div>
-          <span className='mt-16 text-3xl lg:text-2xl text-white flex'>
+          <span className='mt-16  text-3xl text-white flex'>
             <FaFacebookF className='mt-10 mr-4' />
             <FaTwitter className=' mt-10 mr-4' />
             <FaInstagram className=' mt-10 mr-4' />

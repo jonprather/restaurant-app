@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import ImageF from "next/future/image";
-import Hero from "@/public/images/about-us.jpg";
+import Hero from "../../public/images/about-us.jpg";
 export default function About() {
   return (
     <section id='about' className='about'>

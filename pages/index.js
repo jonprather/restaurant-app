@@ -51,3 +51,8 @@ export default function IndexPage() {
     </>
   );
 }
+
+// TODO try next.js image components or smaller files to manage the page load
+// at least could make images smaller i have them way too big and too high def
+
+// tune performance overall get better lighthouse score so also seo and accesibility

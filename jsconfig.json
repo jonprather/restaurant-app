@@ -9,7 +9,8 @@
       "@/context/*": ["context/*"],
       "@/util/*": ["util/*"],
       "@/lib/*": ["lib/*"],
-      "@/store/*": ["store/*"]
+      "@/store/*": ["store/*"],
+      "@/public/*": ["public/*"]
     }
   }
 }
