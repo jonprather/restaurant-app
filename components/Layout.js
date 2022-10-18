@@ -4,7 +4,12 @@ import Footer from "@/components/organisms/Footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-export default function Layout({ title, keywords, description, children }) {
+export default function Layout({
+  title = "Yannal",
+  keywords = "food, online, kebabs",
+  description = "Ecommerce Restaurant",
+  children,
+}) {
   const router = useRouter();
 
   return (

@@ -7,6 +7,8 @@ import Footer from "@/components/organisms/Footer";
 import Newsletter from "@/components/organisms//Newsletter";
 import commerce from "@/lib/commerce";
 import { dehydrate, QueryClient, useQuery } from "react-query";
+import Layout from "@/components/Layout";
+
 export async function getStaticProps() {
   try {
     const { data: categories } = await commerce.categories.list();
@@ -41,14 +43,17 @@ export async function getStaticProps() {
 // TODO go through and check for sematic html usage
 export default function IndexPage() {
   return (
-    <>
+    <Layout
+      title='Yannal Home Page'
+      description={"Landing page for Yannal Middle eastern restaurant."}
+    >
       <Header />
       <PopularProducts />
       <About />
       <Testomonials />
       <Newsletter />
       <Footer classNames='pt-52' />
-    </>
+    </Layout>
   );
 }
 

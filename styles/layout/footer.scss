@@ -15,24 +15,35 @@
   .footer,
   div > p {
     font-family: Poppins;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2.5rem;
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 2.1rem;
+
+    @media only screen and (min-width: $bp-largest) {
+      font-size: 1.6rem;
+    }
   }
 
   &-heading {
     font-family: Poppins;
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     font-style: normal;
     font-weight: 700;
     line-height: 3.3rem;
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 3.2rem;
+
+    @media only screen and (min-width: $bp-small) {
+      font-size: 2.2rem;
+    }
+    & > p {
+      font-size: 2.2rem;
+    }
   }
 
   &__container {

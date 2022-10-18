@@ -10,10 +10,10 @@ export default function CategoryList({ categories: { categories } = [] }) {
   });
 
   return (
-    <ul className='flex gap-4 menu__categories'>
+    <div className='flex gap-4 menu__categories'>
       {categories?.map((category) => (
         <Category key={category.name} category={category} />
       ))}
-    </ul>
+    </div>
   );
 }

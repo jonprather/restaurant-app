@@ -1,6 +1,7 @@
 .popular-products-heading-container {
   margin-bottom: 5.3rem;
 }
+// TODO remove unDRY parts there is duplicaiton here with menu card
 .popular-products {
   margin: 0 auto;
   max-width: 90%;
@@ -107,14 +108,19 @@
           }
           &--paragraph {
             font-family: inherit;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-style: normal;
             font-weight: 400;
             line-height: 2.6rem;
             letter-spacing: -0.01em;
             text-align: left;
             margin-bottom: 1.6rem;
-            max-width: 52ch;
+            max-width: 27ch;
+
+            @media only screen and (min-width: $bp-large) {
+              font-size: 1.6rem;
+              max-width: 52ch;
+            }
           }
         }
       }

@@ -9,4 +9,8 @@ module.exports = {
   images: {
     domains: ["cdn.chec.io"],
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };

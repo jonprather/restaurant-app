@@ -17,7 +17,7 @@ export default function ButtonWithIcon({
     >
       <Icon />
 
-      <span className={`text-2xl font-normal ${styles}`}>{text}</span>
+      <span className={`text-3xl font-normal ${styles}`}>{text}</span>
     </button>
   );
 }

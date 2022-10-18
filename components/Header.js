@@ -13,7 +13,7 @@ export default function Header() {
             <span className='heading-small'>Now Taking Online Orders </span>
             <h1 className=' header-kebabs heading heading-1'>Kebabs </h1>
           </div>
-          <span className='header-brand-price'>
+          <span className='header-brand-price text-gray-300'>
             <span className='header-brand-price--sign'> $</span> 14.97{" "}
           </span>
         </div>
@@ -62,11 +62,15 @@ export default function Header() {
           <div className=' header-info'>
             <div>
               <p className='capitalize header-info-meal'>Lunch </p>
-              <span className=' header-info-time'>1:00- 3:00pm </span>
+              <span className=' header-info-time text-gray-500'>
+                1:00- 3:00pm{" "}
+              </span>
             </div>
             <div>
               <p className='capitalize header-info-meal'>Dinner </p>
-              <span className=' header-info-time'>7:00-10:00pm </span>
+              <span className=' header-info-time text-gray-500'>
+                7:00-10:00pm{" "}
+              </span>
             </div>
           </div>
         </div>

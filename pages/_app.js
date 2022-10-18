@@ -59,10 +59,8 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Layout title='Yannal'>
-            <Component {...pageProps} />
-            <ToastContainer position='top-left' />
-          </Layout>
+          <Component {...pageProps} />
+          <ToastContainer position='top-left' />
           <ReactQueryDevtools />
         </Hydrate>
       </QueryClientProvider>

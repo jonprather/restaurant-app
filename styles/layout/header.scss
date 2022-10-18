@@ -8,6 +8,13 @@
   margin-bottom: 11.4rem;
   // overflow: hidden;
   z-index: 1000;
+
+  .heading-small {
+    font-size: 1.8rem;
+    @media only screen and (min-width: $bp-smallest) {
+      font-size: 1.6rem;
+    }
+  }
   &__hero {
     // position: relative;
     // object-fit: cover;
@@ -71,9 +78,9 @@
       z-index: 1000;
       font-family: $font-primary;
       font-weight: 700;
-      color: #6a4219;
+      // color: #6a4219;
       display: flex;
-      opacity: 10%;
+      // opacity: 66%;
       margin-top: 1rem;
       font-size: 6.2rem;
       line-height: 10rem;
@@ -139,7 +146,7 @@
       z-index: 1000;
       font-size: 2rem;
       font-weight: 700;
-      opacity: 40%;
+      // opacity: 67%;
     }
   }
 

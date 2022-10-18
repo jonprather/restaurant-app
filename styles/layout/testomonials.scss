@@ -106,17 +106,25 @@
         }
         &-text {
           font-family: Poppins;
-          font-size: 1.5rem;
+          font-size: 1.8rem;
           font-style: normal;
           font-weight: 700;
           line-height: 2.4rem;
           letter-spacing: 0em;
           text-align: left;
 
-          max-width: 36ch;
+          max-width: 33ch;
           @media only screen and (min-width: $bp-small) {
-            // width: fit-content;
-            max-width: 80%;
+            width: fit-content;
+            max-width: 36ch;
+
+            font-size: 1.5rem;
+          }
+          @media only screen and (min-width: $bp-small) {
+            width: fit-content;
+            max-width: 40ch;
+
+            font-size: 1.5rem;
           }
         }
       }

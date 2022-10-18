@@ -5,12 +5,12 @@ export const NavModal = ({ children }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <div className='nav__hamburger'>
-      <button onClick={() => setOpen(true)}>
-        <i className='fa fa-bars nav__hamburger__icon fa-lg'>
-          <Hamburger />
-        </i>
-      </button>
+    <button
+      className='nav__hamburger fa fa-bars nav__hamburger__icon fa-lg w-min'
+      onClick={() => setOpen(true)}
+      aria-label='Hamburger Menu button'
+    >
+      <Hamburger aria-label='Hamburger Menu Icon' />
       {isOpen && (
         <Content
           onClose={() => {
@@ -20,6 +20,6 @@ export const NavModal = ({ children }) => {
           {children}
         </Content>
       )}
-    </div>
+    </button>
   );
 };

@@ -7,7 +7,7 @@ import Footer from "@/components/organisms/Footer";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { getZodErrorMessage } from "@/lib/zodHelpers";
-
+import Layout from "@/components/Layout";
 const MAX = 13;
 const MIN = 1;
 
@@ -96,7 +96,10 @@ export default function booking() {
   };
 
   return (
-    <>
+    <Layout
+      title='Reservations Yannal'
+      description={" Reservation form for Yannal Middle eastern restaurant"}
+    >
       <div className='booking pt-40 pb-40  z-50 '>
         <div className='booking__container  '>
           <SectionHeader
@@ -199,7 +202,7 @@ export default function booking() {
               <div className='mb-6 z-50'>
                 <label
                   className='block text-gray-700 text-2xl font-bold mb-2'
-                  htmlFor='Date'
+                  htmlFor='date'
                 >
                   Date
                 </label>
@@ -209,6 +212,7 @@ export default function booking() {
                   showTimeSelect
                   dateFormat='Pp'
                   className='text-2xl'
+                  id='date'
                 />
 
                 <p className='text-red-500 text-lg italic pt-3'>
@@ -219,7 +223,7 @@ export default function booking() {
                 <button
                   className={` bg-red-500 hover:bg-red-700 text-white text-3xl font-bold py-6 px-10 rounded focus:outline-none focus:shadow-outline ${
                     showDisableButtonStyle() &&
-                    "cursor-pointer bg-gray-400 hover:bg-gray-400"
+                    "cursor-pointer bg-gray-500 hover:bg-gray-500"
                   }`}
                   type='button'
                   onClick={handleSubmit}
@@ -232,6 +236,6 @@ export default function booking() {
         </div>
       </div>
       <Footer />
-    </>
+    </Layout>
   );
 }

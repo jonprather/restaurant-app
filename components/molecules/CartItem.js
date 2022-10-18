@@ -21,10 +21,12 @@ export default function CartItem({
         <div className='cartContainer__item__text-container'>
           <div className='cartContainer__item__text-container__name-price'>
             <div className=''>
-              <span className='capitalize'>{name}</span>
-              <div className='text-2xl font-normal text-gray-600'>{price}</div>
+              <span className='capitalize text-4xl font-normal'>{name}</span>
+              <div className='text-3xl font-normal mt-1 text-gray-500'>
+                {price}
+              </div>
             </div>
-            <div className='text-3xl '>{line_total}</div>
+            <div className='text-4xl font-normal '>{line_total}</div>
           </div>
           <div className='cartContainer__item__text-container__quatity-stock'>
             {/* <div>availablity</div> */}
@@ -35,7 +37,7 @@ export default function CartItem({
                 onClick={() => decrementQuantity()}
                 data-action='decrement'
               >
-                <span className='text-gray-500 font-normal'>−</span>
+                <span className='text-gray-500 text-3xl font-normal'>−</span>
               </button>
               <span className='pr-6 pl-6 font-normal text-gray-600'>
                 {quantity}
@@ -44,7 +46,7 @@ export default function CartItem({
                 onClick={() => incrementQuantity()}
                 data-action='increment'
               >
-                <span className='text-gray-500 font-normal'>+</span>
+                <span className='text-gray-500 text-3xl font-normal'>+</span>
               </button>
             </div>
             <div className='cartContainer__item__text-container__change-quantity-save__save-button'>
@@ -58,8 +60,8 @@ export default function CartItem({
                 }}
               />
               {/* <button onClick={() => removeItem()}>
-                <FaTrash className='text-3xl font-normal mr-6 text-gray-400' />{" "}
-                <span className='text-2xl font-normal text-gray-500'>
+                <FaTrash className='text-4xl font-normal mr-6 text-gray-400' />{" "}
+                <span className=' font-normal text-gray-500'>
                   Delete
                 </span>
               </button> */}

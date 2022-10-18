@@ -21,5 +21,12 @@ export async function getStaticProps() {
 }
 
 export default function IndexPage({ categories }) {
-  return <MenuPageTemplate categories={categories} />;
+  return (
+    <Layout
+      title='Yannal'
+      description={"Yannal menu items. Middle eastern delicacies."}
+    >
+      <MenuPageTemplate categories={categories} />
+    </Layout>
+  );
 }

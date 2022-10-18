@@ -75,7 +75,7 @@
     &__icon {
       // color: white;
       font-size: 4rem;
-
+      max-width: fit-content;
       color: black;
     }
     @media only screen and (min-width: 860px) {
@@ -93,7 +93,7 @@
       display: inline-block;
     }
     &-menu {
-      background-color: #f5f3f3;
+      // background-color: #f5f3f3;
       border-radius: 2.4rem;
       border: 1.2px solid #efefef;
       position: absolute;
@@ -144,6 +144,7 @@
 
   border-radius: 6px;
   color: white;
+  font-size: 1.8rem;
   backdrop-filter: blur(15px);
 
   & > button {

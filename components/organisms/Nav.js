@@ -18,7 +18,7 @@ export default function Nav() {
     <nav role='navigation' className='nav z-50 relative  pb-20 my-auto'>
       <div className='nav-brand'>
         <span>
-          <a href='/'>
+          <a href='/' aria-label='Home Page'>
             <svg
               width='114'
               height='35'

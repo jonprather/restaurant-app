@@ -49,9 +49,9 @@ export default function MenuItem({ name, description, price, image, id }) {
           <Stars starsGiven={5} />
         </div>
         <div className='popular-products-container__card-body-text'>
-          <h4 className='popular-products-container__card-body-text--title'>
+          <h1 className='popular-products-container__card-body-text--title'>
             {name}
-          </h4>
+          </h1>
           <div className='popular-products-container__card-body-text--paragraph'>
             {trimmedDescription}
             <Modal isOpen={isOpen} setOpen={setOpen}>

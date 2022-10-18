@@ -2,6 +2,7 @@ import React from "react";
 import commerce from "../../lib/commerce";
 import MenuPageTemplate from "../../components/MenuPageTemplate";
 import { dehydrate, QueryClient, useQuery } from "react-query";
+import Layout from "@/components/Layout";
 
 export async function getStaticProps() {
   const { data: categories } = await commerce.categories.list();
@@ -35,5 +36,12 @@ export async function getStaticPaths() {
 }
 
 export default function MenuCategoryPage({ categories }) {
-  return <MenuPageTemplate categories={categories} />;
+  return (
+    <Layout
+      title='Menu Yannal'
+      description={"Yannal menu items. Middle eastern delicacies."}
+    >
+      <MenuPageTemplate categories={categories} />
+    </Layout>
+  );
 }

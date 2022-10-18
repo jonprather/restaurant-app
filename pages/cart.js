@@ -6,6 +6,8 @@ import useDeleteFromCart from "@/components/hooks/useDeleteFromCart";
 import useUpdateQuantity from "@/components/hooks/useUpdateQuantity";
 import Loading from "@/components/atoms/Loading";
 import { useRouter } from "next/router";
+import Layout from "@/components/Layout";
+
 function Cart({ id, name, quantity, line_total, price, image }) {
   const handleQuantityUpdate = useUpdateQuantity();
 
@@ -47,14 +49,19 @@ export default function CartPage() {
   const isFetching = useIsFetching();
 
   return (
-    <>
-      <div className='    md:flex mt-40 mb-80 pb-16 pt-16   md:flex-row  justify-between md:pl-36 md:pr-36'>
+    <Layout
+      title='Cart Yannal'
+      description={"Cart page for Yannal Middle eastern restaurant."}
+    >
+      <div className='md:flex mt-40 mb-80 pb-16 pt-16 md:flex-row  justify-between md:pl-36 md:pr-36'>
         <main
-          className={`max-w-6xl mx-auto md:mx-0  sm:w-3/4 rounded-lg relative ${
+          className={`max-w-6xl mx-auto md:mx-0 sm:w-3/4 rounded-lg relative ${
             isLoading && " pb-64"
           }`}
         >
-          <h1 className='text-4xl capitalize font-normal pl-10 '>Cart</h1>
+          <h1 className='text-4xl capitalize md:text-5xl   font-light pl-10'>
+            Cart
+          </h1>
 
           <hr className='hr-light mr-6 ml-6 mt-6' />
 
@@ -74,20 +81,20 @@ export default function CartPage() {
           </div>
         </main>
         {/* child two */}
-        <div className='pr-10 rounded-lg pl-10 max-w-6xl mx-auto md:mx-0   max-h-96 md:w-1/4'>
-          <h2 className='text-4xl capitalize font-normal text-left md:block hidden'>
+        <div className='pr-10 rounded-lg pl-10 max-w-6xl mx-auto md:mx-0 max-h-96 md:w-1/4'>
+          <h2 className='text-5xl md:text-5xl capitalize font-light  text-left md:block hidden'>
             Your Order:
           </h2>
           <hr className='hr-light mt-6 hidden md:block' />
 
-          <h3 className='flex justify-between flex-row text-3xl mt-10'>
-            <p className=' capitalize font-normal md:mr-28'>
+          <p className='flex justify-between flex-row text-5xl md:text-4xl  mt-10'>
+            <span className=' capitalize font-normal md:mr-28'>
               {cartData?.subtotal?.formatted_with_symbol && "Subtotal:"}
-            </p>
-            <p className='font-medium'>
+            </span>
+            <span className='font-medium'>
               {cartData?.subtotal?.formatted_with_symbol || ""}{" "}
-            </p>
-          </h3>
+            </span>
+          </p>
 
           {cartData?.total_items ? (
             <div className='btn-wrapper--1 mt-24'>
@@ -105,6 +112,6 @@ export default function CartPage() {
       </div>
 
       <Footer />
-    </>
+    </Layout>
   );
 }

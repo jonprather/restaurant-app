@@ -12,3 +12,6 @@ export default function MenuCategories(categories) {
     </div>
   );
 }
+
+// TODO arange this so that tap targets are bigger maybe make it a grid or flex containers that break to new lines
+// on mobile
