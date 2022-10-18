@@ -22,10 +22,12 @@ export default function About() {
           <h2 className='about__container-textbox-subtitle'>About Us</h2>
           <h1 className='about__container-textbox-title'>Our Story</h1>
           <p className=' about__container-textbox-paragraph'>
-            Discover local, on-demand delivery or Pickup from restaurants,
-            nearby grocery and convenience stores, and more. Meals are generally
-            served and eaten on the premises, but many restaurants also offer
-            take-out and food delivery services.
+            {/* TODO this is a bit plain maybe add some highlights? */}
+            Discover local, <span>on-demand</span> delivery or pickup from
+            restaurants, nearby grocery and convenience stores, and more. Many{" "}
+            restaurants offer <span>take-out</span> and food{" "}
+            <span> delivery </span> services. But Meals are generally served and
+            eaten on the premises.
           </p>
           <p className='about__container-textbox-paragraph'></p>
         </div>
