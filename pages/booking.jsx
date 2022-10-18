@@ -221,7 +221,7 @@ export default function booking() {
               </div>
               <div className='flex items-center justify-between z-50'>
                 <button
-                  className={` bg-red-500 hover:bg-red-700 text-white text-3xl font-bold py-6 px-10 rounded focus:outline-none focus:shadow-outline ${
+                  className={` bg-red-500 hover:bg-red-700 text-white text-3xl font-bold py-6 px-10 rounded-lg focus:outline-none focus:shadow-outline ${
                     showDisableButtonStyle() &&
                     "cursor-pointer bg-gray-500 hover:bg-gray-500"
                   }`}
