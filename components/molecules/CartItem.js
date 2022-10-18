@@ -32,23 +32,23 @@ export default function CartItem({
             {/* <div>availablity</div> */}
           </div>
           <div className='cartContainer__item__text-container__change-quantity-save'>
-            <div className='cartContainer__item__text-container__change-quantity-save__quantity-button font-light shadow-sm p-1'>
+            <div className='cartContainer__item__text-container__change-quantity-save__quantity-button font-light shadow-sm p-2'>
               <button
                 onClick={() => decrementQuantity()}
                 data-action='decrement'
               >
-                <span className='text-gray-500 4xl md:text-3xl font-normal p-5'>
+                <span className='text-gray-500 5xl md:text-4xl font-normal p-6'>
                   −
                 </span>
               </button>
-              <span className='pr-1 pl-1  min-w-[2.5rem] inline-block text-center font-normal text-gray-600'>
+              <span className='pr-1 pl-1 2xl md:text-3xl  min-w-[2.5rem] inline-block text-center font-normal text-gray-600'>
                 {quantity}
               </span>
               <button
                 onClick={() => incrementQuantity()}
                 data-action='increment'
               >
-                <span className='text-gray-500 4xl md:text-3xl font-normal p-5'>
+                <span className='text-gray-500 5xl md:text-4xl font-normal p-6'>
                   +
                 </span>
               </button>
