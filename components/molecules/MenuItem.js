@@ -6,31 +6,35 @@ import Stars from "@/components/molecules/Stars";
 import useAddToCart from "@/components/hooks/useAddToCart";
 import { Modal } from "@/components/organisms/Modal";
 
-// TODO add some effects on transition to menu perhaps and buttons in general
-// TODO kebab image is jank on mobile like clip path doesnt center right or sizing is wrong
+// just a util method so that you dont have to add a period in cms
+const addPeriod = (text) => {
+  text = text.trim();
+  if (text[text.length - 1] !== ".") {
+    text += ".";
+  }
+  return text;
+};
+
 export default function MenuItem({ name, description, price, image, id }) {
-  let [imgURL, setImgURL] = React.useState(null);
   const [isOpen, setOpen] = React.useState(false);
 
-  description = description.slice(3, -4);
-  description = description.slice(0, 1).toUpperCase() + description.slice(1);
+  description = description.replace(/<\/?[^>]+(>|$)/g, "");
+  // removing some of the cms added paragraph tags note this is not a complete solution
+  // if some bolds or underlines then this breaks
 
-  const addPeriod = (text) => {
-    text = text.trim();
-    if (text[text.length - 1] !== ".") {
-      text += ".";
-    }
-    return text;
-  };
   description = addPeriod(description);
 
-  const trimmedDescription =
-    description.split(" ").slice(0, 7).join(" ") + "...";
+  let trimmedDescription = description;
+  const SLICE_LENGTH = 7;
+  //TODO maybe trim based on characters but cut at the right word ie round
+  //so slice position should be dependent on how many characters but dont cut in middle
+  //round down
+  if (description.split(" ").length > SLICE_LENGTH) {
+    trimmedDescription =
+      description.split(" ").slice(0, SLICE_LENGTH).join(" ") + "...";
+  }
 
   const addToCart = useAddToCart();
-  React.useEffect(() => {
-    setImgURL(image?.url);
-  }, [image?.url]);
 
   function addItem() {
     addToCart(id);
