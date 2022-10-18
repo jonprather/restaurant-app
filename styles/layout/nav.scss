@@ -43,9 +43,9 @@
       display: flex;
     }
 
-    & > span {
+    & > span > a {
+      padding-bottom: 0.5rem;
       border-bottom: 3px solid transparent;
-
       &:hover {
         border-bottom: 3px solid $color-primary;
         cursor: pointer;
