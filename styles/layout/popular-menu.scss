@@ -16,10 +16,29 @@
     padding-bottom: 14.4rem;
   }
   &-container {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 2.4rem;
+
+    @media only screen and (min-width: $bp-small) {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      row-gap: 3rem;
+      column-gap: 3rem;
+      justify-content: center;
+    }
+
+    @media only screen and (min-width: $bp-large) {
+      grid-template-columns: repeat(2, auto);
+    }
+    @media only screen and (min-width: $bp-largest) {
+      grid-template-columns: repeat(3, auto);
+      justify-content: unset;
+    }
     &-wrapper {
       display: flex;
       justify-content: center;
-      // DEV CSS PADDING
       margin-bottom: 5.5rem;
     }
     & > div {
@@ -32,29 +51,11 @@
       box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
         var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
-    & > :not(:last-child) {
-      // margin-right:4rem;
-    }
+
     // margin:0 auto; //idk how to get the centered grid itself
     // TODO fix grid with the auto
     // grid-template-columns: repeat(auto-fit,minmax() );
 
-    @media only screen and (min-width: $bp-small) {
-      max-width: 100%;
-      display: grid;
-      grid-template-columns: repeat(1, auto);
-      row-gap: 4rem;
-      column-gap: 3rem;
-      justify-content: center;
-    }
-
-    @media only screen and (min-width: $bp-large) {
-      grid-template-columns: repeat(2, auto);
-    }
-    @media only screen and (min-width: $bp-largest) {
-      grid-template-columns: repeat(3, auto);
-      justify-content: unset;
-    }
     &__card {
       // height: 41.4rem;
       // max-width: 90%;
