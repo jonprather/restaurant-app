@@ -67,7 +67,12 @@ export default function MenuItem({ name, description, price, image, id }) {
                     <h4 className='popular-products-container__card-body-text--title '>
                       {name}
                     </h4>
-                    <p className='popular-products-container__card-body-text--paragraph '>
+                    <p
+                      className={`popular-products-container__card-body-text--paragraph ${
+                        isOpen &&
+                        "popular-products-container__card-body-text--paragraph--wide"
+                      } `}
+                    >
                       {description}
                     </p>
                   </div>

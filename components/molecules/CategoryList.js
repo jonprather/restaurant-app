@@ -10,7 +10,7 @@ export default function CategoryList({ categories: { categories } = [] }) {
   });
 
   return (
-    <div className='flex gap-4 menu__categories'>
+    <div className='menu__categories'>
       {categories?.map((category) => (
         <Category key={category.name} category={category} />
       ))}
