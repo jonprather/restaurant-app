@@ -2,7 +2,7 @@ import React from "react";
 import commerce from "../../lib/commerce";
 import MenuPageTemplate from "../../components/MenuPageTemplate";
 import { dehydrate, QueryClient, useQuery } from "react-query";
-
+import Layout from "@/components/Layout";
 export async function getStaticProps() {
   const { data: categories } = await commerce.categories.list();
   const queryClient = new QueryClient();
