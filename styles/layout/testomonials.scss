@@ -67,8 +67,8 @@
       }
 
       &-container {
-        height: 29.1rem;
-        width: 50.1rem;
+        min-height: 29.1rem;
+        max-width: 50.1rem;
         @media only screen and (min-width: $bp-large) {
           // width: fit-content;
         }

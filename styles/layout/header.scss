@@ -113,21 +113,21 @@
     margin-top: 3.2rem;
     margin-bottom: 6.7rem;
     font-size: 2rem;
-    width: 47.6rem;
+    max-width: 47.6rem;
     font-weight: 500;
     @media only screen and (max-width: 400px) {
       max-width: 30ch;
     }
     @media only screen and (min-width: $bp-smallest) {
-      max-width: 40ch;
+      // max-width: 40ch;
       margin-bottom: 6.7rem;
     }
     @media only screen and (min-width: $bp-small) {
-      max-width: 60ch;
+      // max-width: 60ch;
     }
     @media only screen and (min-width: $bp-medium) {
-      max-width: 60ch;
-      width: 47.6rem;
+      // max-width: 60ch;
+      // width: 47.6rem;
       margin-bottom: 8.7rem;
     }
   }

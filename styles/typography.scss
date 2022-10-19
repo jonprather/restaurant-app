@@ -12,6 +12,10 @@
   @media only screen and (min-width: $bp-smallest) {
     font-size: 18.2rem;
   }
+  @media only screen and (max-width: 307px) {
+    // width: fit-content;
+    font-size: 12.2rem;
+  }
   &--small {
     font-size: 8rem;
     color: $color-primary;
@@ -79,7 +83,11 @@
   padding: 1.9rem 3.2rem;
   cursor: pointer;
   transition: all 0.2s;
-
+  transform: skew(20deg);
+  border-radius: 10px;
+  @media only screen and (max-width: 305px) {
+    transform: skew(0deg);
+  }
   &:focus {
     outline: transparent;
   }
@@ -89,8 +97,6 @@
     // color: $color-primary;
     // transform: translateX(.00rem);
   }
-  transform: skew(20deg);
-  border-radius: 10px;
 
   &-wrapper--1 {
     width: 18.2rem;
@@ -103,6 +109,12 @@
       $color-primary
     );
     border-radius: 1rem;
+    @media only screen and (max-width: 305px) {
+      transform: skew(0deg);
+      width: fit-content;
+      border-left: transparent;
+      background-image: none;
+    }
   }
 
   &-wrapper--2 {
@@ -117,6 +129,12 @@
       transparent
     );
     border-radius: 1rem;
+    @media only screen and (max-width: 305px) {
+      transform: skew(0deg);
+      width: fit-content;
+
+      background-image: none;
+    }
   }
   &-wrapper--3 {
     width: 20rem;
@@ -129,6 +147,12 @@
       $color-primary
     );
     border-radius: 1rem;
+    @media only screen and (max-width: 305px) {
+      transform: skew(0deg);
+      width: fit-content;
+      border-left: transparent;
+      background-image: none;
+    }
   }
 
   &--black {
