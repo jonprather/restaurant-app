@@ -15,16 +15,15 @@ export default function popularProducts() {
         containerClassname={"mb-24"}
       ></SectionHeader>
 
-      <div className='grid-container-wrapper'>
-        <div className='grid-container'>
-          <Loading />
-          {updatedProducts?.slice(0, 3).map((product) => {
-            return <MenuItem key={product.id} {...product} />;
-          })}
-        </div>
+      <div className='grid-container grid-cols-3-2-1 mb-24'>
+        <Loading />
+        {updatedProducts?.slice(0, 3).map((product) => {
+          return <MenuItem key={product.id} {...product} />;
+        })}
       </div>
+
       <div className='popular-products-button-box'>
-        <div className='btn-wrapper--3 '>
+        <div className='btn-wrapper--3'>
           <button className=' btn'>
             {" "}
             <a href='/menu/all'>See All Menu</a>

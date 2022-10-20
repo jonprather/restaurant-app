@@ -1,0 +1,116 @@
+.popular-products {
+  margin: 0 auto;
+
+  &-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 14.4rem;
+  }
+
+  // TODO
+
+  // the card should probably be a component in component dir and
+  //  can prob seprate genreric parts from item specefic
+  // so go through apply 7-1 arch
+  // also seprate layout from content and keep it DRY
+  // if i can also collapse some BEM nesting that would be good too
+  // Just tackled grid containers want to hit cards up next
+  // i am reusing the same classes which is good but maybe can clean up more
+
+  &__card {
+    min-width: 38rem;
+    border-radius: 2.4rem;
+    border: 1.2px solid #efefef;
+
+    @media only screen and (min-width: $bp-smallest) {
+      width: 37rem;
+    }
+    @media only screen and (max-width: 305px) {
+      width: 100%;
+    }
+    &-image {
+      width: 20rem;
+      height: 20rem;
+
+      margin: 0 auto;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      width: 20rem;
+      height: 20rem;
+      clip-path: circle(50%);
+    }
+    &-body {
+      padding-left: 2.8rem;
+      &-rating {
+        height: 2.2rem;
+        margin-bottom: 1rem;
+      }
+      &-text {
+        font-family: $font-primary;
+        &--title {
+          font-family: inherit;
+          font-size: 2rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 3rem;
+          letter-spacing: 0em;
+          text-align: left;
+          margin-bottom: 0.6rem;
+          text-transform: capitalize;
+        }
+        &--paragraph {
+          font-family: inherit;
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 2.6rem;
+          letter-spacing: -0.01em;
+          text-align: left;
+          margin-bottom: 1.6rem;
+          max-width: 30ch;
+
+          &--wide {
+            font-size: 1.6rem;
+            max-width: 43ch;
+            @media only screen and (min-width: $bp-smallest) {
+              font-size: 1.6rem;
+              max-width: 52ch;
+            }
+          }
+          @media only screen and (min-width: $bp-smallest) {
+            font-size: 1.6rem;
+            max-width: 52ch;
+          }
+        }
+      }
+    }
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 3.5rem;
+      padding-left: 2.8rem;
+      margin-bottom: 2rem;
+
+      &-price {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: #2a333e;
+        padding-right: 1rem;
+      }
+      &-favorite {
+        color: $color-primary;
+        font-size: 2.2rem;
+      }
+      &-icons {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
