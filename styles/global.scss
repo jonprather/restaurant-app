@@ -8,10 +8,8 @@
 @import "typography";
 
 @import "layout/about";
-@import "layout/bookings";
 @import "layout/footer";
 @import "layout/header";
-@import "layout/menu";
 @import "layout/nav";
 @import "layout/popular-menu";
 @import "layout/testomonials";
@@ -19,17 +17,3 @@
 
 @import "components/menuCategories";
 @import "components/cartContainer";
-
-// TODO (
-//
-
-// last touches jus tmade margin auto top fix for yannal
-// footer is alos jank so are some of the margins on mobile
-// looking too big not balanced in spots maybe replace with tailwind based stuff idk
-// cart text is pretty small ob mobilez
-// like could be bigger for icons clickability and stuff
-// was thinking about the push down effect from having set a fixed width on header pragrah so the margin isnt consisntent when there is overflow when text overflows....
-// //fixed i had a fixed hight so i changed that then updated the margin
-// yeah maybe look at some more designs for mobile to get a good feel for what it should look like a range of values
-// but im close ...
-// yeah attention to detail on the design...

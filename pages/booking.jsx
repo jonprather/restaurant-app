@@ -108,13 +108,7 @@ export default function booking() {
             headingClassName={"heading-3"}
             containerClassname={"mb-36"}
           />
-          <div className='booking__hero--small'>
-            <img
-              className=''
-              src='/images/hero-small.jpg'
-              alt='kebab menu item'
-            />
-          </div>
+
           <div className='w-full  max-w-xl  mb-40 mx-auto z-50'>
             <form className='bg-white shadow-lg rounded px-12 py-12 mb-4 z-50'>
               <div className='mb-4'>
