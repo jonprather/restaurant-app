@@ -15,8 +15,8 @@ export default function popularProducts() {
         containerClassname={"mb-24"}
       ></SectionHeader>
 
-      <div className='popular-products-container-wrapper'>
-        <div className='popular-products-container'>
+      <div className='grid-container-wrapper'>
+        <div className='grid-container'>
           <Loading />
           {updatedProducts?.slice(0, 3).map((product) => {
             return <MenuItem key={product.id} {...product} />;

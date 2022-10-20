@@ -4,7 +4,7 @@ import CategoryList from "@/components/molecules/CategoryList";
 
 export default function MenuCategories(categories) {
   return (
-    <div className='menu__content-title'>
+    <div className='mb-24'>
       <CategoryList categories={categories} />
     </div>
   );

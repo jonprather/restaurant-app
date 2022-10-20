@@ -6,8 +6,8 @@ export default function MenuItemsContainer() {
   const updatedProducts = useProducts();
   // TODO this is working for /menu (page without slug)
   return (
-    <div className='menu-container-wrapper'>
-      <div className='menu-container'>
+    <div className='grid-container-wrapper pt-10'>
+      <div className='menu-container grid-container'>
         {updatedProducts?.map((product) => {
           return <MenuItem key={product.id} {...product} />;
         })}

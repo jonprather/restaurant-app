@@ -42,46 +42,44 @@ export default function MenuItem({ name, description, price, image, id }) {
   return (
     <div
       role={"button"}
-      className='popular-products-container__card cursor-pointer flex flex-col justify-between'
+      className='popular-products__card cursor-pointer flex flex-col justify-between shadow-lg'
       onClick={() => setOpen(true)}
     >
-      <div className='popular-products-container__card-image'>
+      <div className='popular-products__card-image'>
         <img src={image?.url} alt='menu item' />
       </div>
-      <div className='popular-products-container__card-body'>
-        <div className='popular-products-container__card-body-rating flex'>
+      <div className='popular-products__card-body'>
+        <div className='popular-products__card-body-rating flex'>
           <Stars starsGiven={5} />
         </div>
-        <div className='popular-products-container__card-body-text'>
-          <h1 className='popular-products-container__card-body-text--title'>
-            {name}
-          </h1>
-          <div className='popular-products-container__card-body-text--paragraph'>
+        <div className='popular-products__card-body-text'>
+          <h1 className='popular-products__card-body-text--title'>{name}</h1>
+          <div className='popular-products__card-body-text--paragraph'>
             {trimmedDescription}
             <Modal isOpen={isOpen} setOpen={setOpen}>
-              <div className='popular-products-container__card--modal p-4'>
-                <div className='popular-products-container__card-image'>
+              <div className='popular-products__card--modal p-4'>
+                <div className='popular-products__card-image'>
                   <img src={image?.url} alt='menu item' />
                 </div>
-                <div className='popular-products-container__card-body'>
-                  <div className='popular-products-container__card-body-rating flex'>
+                <div className='popular-products__card-body'>
+                  <div className='popular-products__card-body-rating flex'>
                     <Stars starsGiven={5} />
                   </div>
-                  <div className='popular-products-container__card-body-text'>
-                    <h4 className='popular-products-container__card-body-text--title '>
+                  <div className='popular-products__card-body-text'>
+                    <h4 className='popular-products__card-body-text--title '>
                       {name}
                     </h4>
                     <p
-                      className={`popular-products-container__card-body-text--paragraph ${
+                      className={`popular-products__card-body-text--paragraph ${
                         isOpen &&
-                        "popular-products-container__card-body-text--paragraph--wide"
+                        "popular-products__card-body-text--paragraph--wide"
                       } `}
                     >
                       {description}
                     </p>
                   </div>
                 </div>
-                <div className='popular-products-container__card-footer pt-5'>
+                <div className='popular-products__card-footer pt-5'>
                   <p className=' text-4xl text-white'>
                     {price?.formatted_with_symbol}
                   </p>
@@ -108,8 +106,8 @@ export default function MenuItem({ name, description, price, image, id }) {
         </div>
       </div>
 
-      <div className='popular-products-container__card-footer'>
-        <p className='popular-products-container__card-footer-price'>
+      <div className='popular-products__card-footer'>
+        <p className='popular-products__card-footer-price'>
           {price?.formatted_with_symbol}
         </p>
         {/* TODO could add a condition if item is in cart then goto cart link appears
