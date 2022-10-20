@@ -50,6 +50,7 @@ export default function useDeleteFromCart() {
     },
 
     onSuccess: async (product) => {
+      console.log("PRODUCT", product);
       toast.success(`Removed Item!`, {
         toastId: "Removed" + product.product_id,
       });
@@ -59,4 +60,3 @@ export default function useDeleteFromCart() {
 
   return mutate;
 }
-

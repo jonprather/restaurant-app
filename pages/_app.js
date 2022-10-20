@@ -4,11 +4,8 @@ import { QueryClient, QueryClientProvider, QueryCache } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
 import { Hydrate } from "react-query/hydration";
-// import { StoreProvider } from "../components/Store";
-//need to change the path here
-//instead of the cart prodiver he uses the store it has more types
+
 import "../styles/global.scss";
-import Layout from "../components/Layout";
 import Head from "next/head";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -50,6 +47,9 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='description' content='Kebab Restaurant' />
         <meta name='keywords' content='HTML, CSS, JavaScript, food' />
         <meta name='author' content='Jon' />
+        {/* TODO move this to document for 
+        https://nextjs.org/docs/basic-features/font-optimization
+         */}
         <link
           href='https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@800&family=Poppins:wght@300;400;500;600;700&family=DM+Sans:wght@700&display=swap'
           rel='stylesheet'

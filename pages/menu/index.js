@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import commerce from "../../lib/commerce";
 import MenuPageTemplate from "../../components/MenuPageTemplate";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import Layout from "@/components/Layout";
+import { useRouter } from "next/router";
+import Loading from "@/components/atoms/Loading";
 export async function getStaticProps() {
   try {
     const { data: categories } = await commerce.categories.list();
@@ -31,12 +33,22 @@ export async function getStaticProps() {
 }
 
 export default function IndexPage({ categories }) {
+  const router = useRouter();
+  useEffect(() => {
+    if (router) {
+      router.push("menu/all");
+    }
+  }, [router]);
+
   return (
     <Layout
       title='Yannal'
       description={"Yannal menu items. Middle eastern delicacies."}
     >
-      <MenuPageTemplate categories={categories} />
+      <MenuPageTemplate
+        categories={categories}
+        loader={() => <Loading isLoading />}
+      ></MenuPageTemplate>
     </Layout>
   );
 }
