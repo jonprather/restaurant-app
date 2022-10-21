@@ -13,7 +13,7 @@ export default function Header() {
             <span className='heading-small'>Now Taking Online Orders </span>
             <h1 className=' header-kebabs heading heading-1'>Kebabs </h1>
           </div>
-          <span className='header-brand-price text-gray-300'>
+          <span className='header-brand-price text-gray-500'>
             <span className='header-brand-price--sign'> $</span> 14.97{" "}
           </span>
         </div>
