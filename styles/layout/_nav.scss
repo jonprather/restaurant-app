@@ -39,14 +39,7 @@
     letter-spacing: 0em;
     text-align: left;
     padding: 0 1rem;
-    // @media screen and (min-width: 698px) {
-    //   display: flex;
-    //   gap: 1rem;
-    // }
-    // @media screen and (min-width: $bp-medium) {
-    //   display: flex;
-    //   gap: 2.4rem;
-    // }
+
     @media screen and (min-width: 641px) {
       display: flex;
       gap: 2.2rem;
@@ -74,7 +67,6 @@
   &__hamburger {
     font-family: $font-primary;
     position: relative;
-    height: 8rem;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -88,40 +80,34 @@
       max-width: fit-content;
       color: black;
     }
-  }
-  &-hamburger {
-    display: none;
-    text-align: right;
-    color: $color-black;
-    position: relative;
-    width: 20rem;
-    padding: 4rem 0px;
-    @media screen and (max-width: 641px) {
-      display: inline-block;
-    }
-    &-menu {
-      border-radius: 2.4rem;
-      border: 1.2px solid #efefef;
+
+    &__menu {
       position: absolute;
-      top: 30;
-      left: 50;
+      z-index: 10000;
+
+      top: 2.3rem;
+      right: 0;
+      width: 25rem;
+      padding: 2.8rem 1rem;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 100%;
       gap: 2.5rem;
+
       font-family: Poppins;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-style: normal;
       font-weight: 500;
-      line-height: 2.6rem;
-      letter-spacing: 0em;
       text-align: center;
-      padding: 2.8rem 1rem;
-      z-index: 100;
+
       color: white;
       background-color: $color-black;
       opacity: 0.9;
+
+      border-radius: 6px;
+      border: 1.2px solid #efefef;
+      backdrop-filter: blur(15px);
 
       & > span:hover {
         color: $color-primary;
@@ -129,30 +115,4 @@
       }
     }
   }
-}
-.nav__dropdown {
-  position: absolute;
-  top: 2.3rem;
-  right: 0;
-  width: 25rem;
-  height: fit-content;
-  z-index: 10000;
-  background-color: rgba($color-black, 0.9);
-
-  border-radius: 6px;
-  color: white;
-  font-size: 1.8rem;
-  backdrop-filter: blur(15px);
-
-  & > button {
-    color: white;
-    font-size: 2.4rem;
-  }
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  &__wrapper {
-    position: relative;
-  }
-  // TODO add animation ifor dropdown maybe a slide in
 }

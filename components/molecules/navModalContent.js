@@ -28,7 +28,7 @@ export const Content = ({ onClose, children }) => {
     };
   }, []);
   return (
-    <div className='nav__dropdown__wrapper' ref={ref}>
+    <div className='relative' ref={ref}>
       {children}
     </div>
   );

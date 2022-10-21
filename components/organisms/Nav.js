@@ -116,7 +116,7 @@ export default function Nav() {
       </div>
       <NavModal>
         <div
-          className='nav__dropdown nav-hamburger nav-hamburger-menu'
+          className='nav__dropdown  nav__hamburger__menu'
           role='navigation'
           aria-label='Toggle Open'
         >
