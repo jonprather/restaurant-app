@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useRef } from "react";
-import Link from "next/link";
 
 export const Content = ({ onClose, children }) => {
   const ref = useRef(null);

@@ -39,11 +39,23 @@
     letter-spacing: 0em;
     text-align: left;
     padding: 0 1rem;
-    @media screen and (min-width: 860px) {
+    // @media screen and (min-width: 698px) {
+    //   display: flex;
+    //   gap: 1rem;
+    // }
+    // @media screen and (min-width: $bp-medium) {
+    //   display: flex;
+    //   gap: 2.4rem;
+    // }
+    @media screen and (min-width: 641px) {
       display: flex;
+      gap: 2.2rem;
+    }
+    @media screen and (min-width: 698px) {
+      gap: 4.2rem;
     }
 
-    & > span > a {
+    & > a {
       padding-bottom: 0.5rem;
       border-bottom: 3px solid transparent;
       &:hover {
@@ -55,31 +67,26 @@
   &-icons {
     display: none;
     gap: 2.5rem;
-    @media screen and (min-width: 860px) {
+    @media screen and (min-width: 641px) {
       display: flex;
     }
   }
   &__hamburger {
-    // padding: 4.8rem 7.7rem; //4.8rem;
     font-family: $font-primary;
     position: relative;
     height: 8rem;
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    // margin-right: 4rem;
     align-items: center;
-    // font-size: 5rem;
-    // margin-top: 5rem;
-    // color: white;
+
+    @media only screen and (min-width: 641px) {
+      display: none;
+    }
     &__icon {
-      // color: white;
       font-size: 4rem;
       max-width: fit-content;
       color: black;
-    }
-    @media only screen and (min-width: 860px) {
-      display: none;
     }
   }
   &-hamburger {
@@ -89,28 +96,19 @@
     position: relative;
     width: 20rem;
     padding: 4rem 0px;
-    @media screen and (max-width: 859.9px) {
+    @media screen and (max-width: 641px) {
       display: inline-block;
     }
     &-menu {
-      // background-color: #f5f3f3;
       border-radius: 2.4rem;
       border: 1.2px solid #efefef;
       position: absolute;
       top: 30;
       left: 50;
-      font-family: inherit;
-      font-size: inherit;
-
       display: flex;
       flex-direction: column;
-
       justify-content: center;
-      gap: 1rem;
       width: 100%;
-
-      // from other
-      // display: none;
       gap: 2.5rem;
       font-family: Poppins;
       font-size: 1.7rem;
@@ -139,7 +137,6 @@
   width: 25rem;
   height: fit-content;
   z-index: 10000;
-  // background-color: transparent;
   background-color: rgba($color-black, 0.9);
 
   border-radius: 6px;

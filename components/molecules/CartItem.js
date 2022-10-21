@@ -1,6 +1,5 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
-import { HiOutlineTrash } from "react-icons/hi";
 import ButtonWithIcon from "@/components/molecules/ButtonWithIcon";
 export default function CartItem({
   name,

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Content } from "@/components/molecules/navModalContent";
 import Hamburger from "hamburger-react";
+import { BiMenu } from "react-icons/bi";
 export const NavModal = ({ children }) => {
   const [isOpen, setOpen] = useState(false);
 
@@ -10,7 +11,8 @@ export const NavModal = ({ children }) => {
       onClick={() => setOpen(true)}
       aria-label='Hamburger Menu button'
     >
-      <Hamburger aria-label='Hamburger Menu Icon' />
+      <BiMenu />
+      {/* <Hamburger aria-label='Hamburger Menu Icon' /> */}
       {isOpen && (
         <Content
           onClose={() => {

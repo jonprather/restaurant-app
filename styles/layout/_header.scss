@@ -16,19 +16,17 @@
     }
   }
   &__hero {
-    // position: relative;
-    // object-fit: cover;
-    // as screen size decrease lower hieght a bit and perhaps size and left position
-    //so down and to the left
-    // width: 72rem;
     max-width: 60rem;
     margin-top: -2rem;
+    position: relative;
+    left: -0.8rem;
+    @media only screen and (min-width: 375px) {
+      left: -1.2rem;
+    }
+
     @media only screen and (min-width: $bp-smallest) {
       margin-top: 0rem;
-
-      // display: none;
       position: absolute;
-      // transform: rotatey(40%);
       z-index: 0;
       top: -12rem;
       left: 60%;
