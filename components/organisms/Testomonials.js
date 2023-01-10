@@ -1,37 +1,28 @@
 import Image from "next/image";
 import Stars from "../molecules/Stars";
 import SectionHeader from "@/components/molecules/SectionHeader";
-const text1 = (
+const text2 = (
   <>
-    <span className=''>“</span>Him rendered may attended concerns jennings
-    reserved now.{" "}
-    <span className='font-bold capitalize color-primary'>Sympathize </span>
-    did now preference unpleasing mrs few. Mrs for{" "}
-    <span className='font-bold capitalize color-primary'>hour game</span> room
-    want are fond dare. For detract charmed add talking age. Shy{" "}
-    <span className='font-bold capitalize color-primary'>
-      resolution instrument
-    </span>{" "}
-    unreserved man few mr at discretion reasonable. Age out full gate bed day
-    lose.”
+    <span className=''>“</span>Man, the kebabs at this spot were
+    <span className='font-bold capitalize color-primary'>fire! </span>
+    Seriously, I haven't had a kebab this good in a long time.
+    <span className='font-bold capitalize color-primary'>The flavor,</span> the
+    juiciness, everything was
+    <span className='font-bold capitalize color-primary'>on point.</span> Don't
+    sleep on this spot, it's a must-try for sure.”
   </>
 );
 
-const text2 = (
+const text1 = (
   <>
     {" "}
-    “Out believe has request not how comfort evident. Up{" "}
+    “I just had the most amazing kebabs from this restaurant! They were
+    <span className='font-bold capitalize color-primary'>so juicy</span> and
+    flavourful - I could have eaten them all day! The staff were really
     <span className='font-bold capitalize color-primary'>
-      delight cousins{" "}
+      friendly and helpful
     </span>{" "}
-    we feeling minutes. Genius has looked end piqued spring. Down has rose feel
-    find man. Learning day desirous informed expenses material returned six the.
-    She <span className='font-bold capitalize color-primary'>enabled </span>
-    invited exposed him another.{" "}
-    <span className='font-bold capitalize color-primary'>
-      Reasonably conviction
-    </span>{" "}
-    solicitude me mr at discretion reasonable. Age out full gate bed day lose.”
+    too. 10/10 would recommend.”
   </>
 );
 const reviews = [

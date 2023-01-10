@@ -37,7 +37,11 @@ note: _If you don't want to create an account with Commerce.js, you can use the 
 
 While I appreciated the notrab tutorial on commerce.js with next.js, I wasn't happy with how the data was handled. I ended up re-writing all of the code and extending it for improved performance and user experience.
 
-In particular, I switched from SSR to SSG and from reducers to react query. This enabled me to entirely remove the store and move all the App state logic into react query where it manages syncing to server state.
+In particular, I switched from SSR to SSG (with incremental static regeneration) and from reducers to react query. Using ISR improved the time to first byte while using React Query enabled me to entirely remove the store and move all the App state logic into react query where it manages syncing to server state.
+SSR improved the time to first byte while React Query enabled me to eliminate the store and move move all the Application wide state into react query. Using prefetched content and stale data allows a faster largest contentful byte. For instance, at build time some resources are cached for a user to view while waiting for fresh data.
+see:
+
+- https://tanstack.com/query/v4/docs/guides/prefetching
 
 #### Design Resources to Acknowledge
 
@@ -55,8 +59,6 @@ https://www.freepik.com/premium-photo/chicken-shish-kebab-with-vegetables-isolat
 - As far as the code for the design, it was based on code I had from an earlier project in Laravel that I improved upon. In this project i greatly extended my orignal code. And did a custom design for the menu cart pages.
 
 ## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 

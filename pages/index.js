@@ -26,9 +26,7 @@ export async function getStaticProps() {
         categories,
         dehydratedState: dehydrate(queryClient),
       },
-      // revalidate: 60,
-
-      // time: 1000,////????
+      revalidate: 60,
     };
   } catch (e) {
     console.log(e);
